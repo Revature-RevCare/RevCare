@@ -8,3 +8,28 @@ Health Care Management System
     - Must include Covid 19 Section
     - Must include section for room assignment
 - Doctor must be able to finish diagnosis and prescribe treatment
+
+# Teams
+## Team 1
+- Jonathan A
+- Jonathan B
+- Sylvestre
+- Andy
+- Colby
+## Team 2
+- Alex
+- Jorge
+- James
+- Shailendra
+## Team 3
+- Robert
+- Anthony
+- David
+- Yousef
+- Nick
+- Yungdrung
+## Team 4
+- Damola
+- That Ton
+- Sergio
+- Albert
