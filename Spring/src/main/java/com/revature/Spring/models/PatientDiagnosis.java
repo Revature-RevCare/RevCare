@@ -1,7 +1,16 @@
 package com.revature.Spring.models;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import javax.persistence.*;
 
+@Entity
+@Data
+@Table
+@AllArgsConstructor
+@NoArgsConstructor
 public class PatientDiagnosis {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -50,5 +59,6 @@ public class PatientDiagnosis {
     @ManyToOne
     @Column(name = "doctorId")
     private Integer doctorId;
+
 
 }
