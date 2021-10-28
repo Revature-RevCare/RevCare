@@ -53,4 +53,248 @@ public class PatientDiagnosis {
     @Column(name = "doctorId")
     private Integer doctorId;
 
+    public PatientDiagnosis() {
+    }
+
+    public PatientDiagnosis(String fname, String lname, Integer patient_age, String complaint, String symptoms, String med_history, String fam_history, String allergies, String current_meds, String current_date, Integer patient_weight, Integer patient_height, Integer patient_temp, Integer BP, Integer pulse, boolean diagnosis_boolean, String diagnosis_text, String covidId, Integer nurseId, Integer doctorId) {
+        this.fname = fname;
+        this.lname = lname;
+        this.patient_age = patient_age;
+        this.complaint = complaint;
+        this.symptoms = symptoms;
+        this.med_history = med_history;
+        this.fam_history = fam_history;
+        this.allergies = allergies;
+        this.current_meds = current_meds;
+        this.current_date = current_date;
+        this.patient_weight = patient_weight;
+        this.patient_height = patient_height;
+        this.patient_temp = patient_temp;
+        this.BP = BP;
+        this.pulse = pulse;
+        this.diagnosis_boolean = diagnosis_boolean;
+        this.diagnosis_text = diagnosis_text;
+        this.covidId = covidId;
+        this.nurseId = nurseId;
+        this.doctorId = doctorId;
+    }
+
+    public PatientDiagnosis(Integer id, String fname, String lname, Integer patient_age, String complaint, String symptoms, String med_history, String fam_history, String allergies, String current_meds, String current_date, Integer patient_weight, Integer patient_height, Integer patient_temp, Integer BP, Integer pulse, boolean diagnosis_boolean, String diagnosis_text, String covidId, Integer nurseId, Integer doctorId) {
+        this.id = id;
+        this.fname = fname;
+        this.lname = lname;
+        this.patient_age = patient_age;
+        this.complaint = complaint;
+        this.symptoms = symptoms;
+        this.med_history = med_history;
+        this.fam_history = fam_history;
+        this.allergies = allergies;
+        this.current_meds = current_meds;
+        this.current_date = current_date;
+        this.patient_weight = patient_weight;
+        this.patient_height = patient_height;
+        this.patient_temp = patient_temp;
+        this.BP = BP;
+        this.pulse = pulse;
+        this.diagnosis_boolean = diagnosis_boolean;
+        this.diagnosis_text = diagnosis_text;
+        this.covidId = covidId;
+        this.nurseId = nurseId;
+        this.doctorId = doctorId;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getFname() {
+        return fname;
+    }
+
+    public void setFname(String fname) {
+        this.fname = fname;
+    }
+
+    public String getLname() {
+        return lname;
+    }
+
+    public void setLname(String lname) {
+        this.lname = lname;
+    }
+
+    public Integer getPatient_age() {
+        return patient_age;
+    }
+
+    public void setPatient_age(Integer patient_age) {
+        this.patient_age = patient_age;
+    }
+
+    public String getComplaint() {
+        return complaint;
+    }
+
+    public void setComplaint(String complaint) {
+        this.complaint = complaint;
+    }
+
+    public String getSymptoms() {
+        return symptoms;
+    }
+
+    public void setSymptoms(String symptoms) {
+        this.symptoms = symptoms;
+    }
+
+    public String getMed_history() {
+        return med_history;
+    }
+
+    public void setMed_history(String med_history) {
+        this.med_history = med_history;
+    }
+
+    public String getFam_history() {
+        return fam_history;
+    }
+
+    public void setFam_history(String fam_history) {
+        this.fam_history = fam_history;
+    }
+
+    public String getAllergies() {
+        return allergies;
+    }
+
+    public void setAllergies(String allergies) {
+        this.allergies = allergies;
+    }
+
+    public String getCurrent_meds() {
+        return current_meds;
+    }
+
+    public void setCurrent_meds(String current_meds) {
+        this.current_meds = current_meds;
+    }
+
+    public String getCurrent_date() {
+        return current_date;
+    }
+
+    public void setCurrent_date(String current_date) {
+        this.current_date = current_date;
+    }
+
+    public Integer getPatient_weight() {
+        return patient_weight;
+    }
+
+    public void setPatient_weight(Integer patient_weight) {
+        this.patient_weight = patient_weight;
+    }
+
+    public Integer getPatient_height() {
+        return patient_height;
+    }
+
+    public void setPatient_height(Integer patient_height) {
+        this.patient_height = patient_height;
+    }
+
+    public Integer getPatient_temp() {
+        return patient_temp;
+    }
+
+    public void setPatient_temp(Integer patient_temp) {
+        this.patient_temp = patient_temp;
+    }
+
+    public Integer getBP() {
+        return BP;
+    }
+
+    public void setBP(Integer BP) {
+        this.BP = BP;
+    }
+
+    public Integer getPulse() {
+        return pulse;
+    }
+
+    public void setPulse(Integer pulse) {
+        this.pulse = pulse;
+    }
+
+    public boolean isDiagnosis_boolean() {
+        return diagnosis_boolean;
+    }
+
+    public void setDiagnosis_boolean(boolean diagnosis_boolean) {
+        this.diagnosis_boolean = diagnosis_boolean;
+    }
+
+    public String getDiagnosis_text() {
+        return diagnosis_text;
+    }
+
+    public void setDiagnosis_text(String diagnosis_text) {
+        this.diagnosis_text = diagnosis_text;
+    }
+
+    public String getCovidId() {
+        return covidId;
+    }
+
+    public void setCovidId(String covidId) {
+        this.covidId = covidId;
+    }
+
+    public Integer getNurseId() {
+        return nurseId;
+    }
+
+    public void setNurseId(Integer nurseId) {
+        this.nurseId = nurseId;
+    }
+
+    public Integer getDoctorId() {
+        return doctorId;
+    }
+
+    public void setDoctorId(Integer doctorId) {
+        this.doctorId = doctorId;
+    }
+
+    @Override
+    public String toString() {
+        return "PatientDiagnosis{" +
+                "id=" + id +
+                ", fname='" + fname + '\'' +
+                ", lname='" + lname + '\'' +
+                ", patient_age=" + patient_age +
+                ", complaint='" + complaint + '\'' +
+                ", symptoms='" + symptoms + '\'' +
+                ", med_history='" + med_history + '\'' +
+                ", fam_history='" + fam_history + '\'' +
+                ", allergies='" + allergies + '\'' +
+                ", current_meds='" + current_meds + '\'' +
+                ", current_date='" + current_date + '\'' +
+                ", patient_weight=" + patient_weight +
+                ", patient_height=" + patient_height +
+                ", patient_temp=" + patient_temp +
+                ", BP=" + BP +
+                ", pulse=" + pulse +
+                ", diagnosis_boolean=" + diagnosis_boolean +
+                ", diagnosis_text='" + diagnosis_text + '\'' +
+                ", covidId='" + covidId + '\'' +
+                ", nurseId=" + nurseId +
+                ", doctorId=" + doctorId +
+                '}';
+    }
 }
