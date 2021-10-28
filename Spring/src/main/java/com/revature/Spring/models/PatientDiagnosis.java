@@ -13,36 +13,36 @@ public class PatientDiagnosis {
     private String fname;
     @Column(name = "lname")
     private String lname;
-    @Column(name = "age")
-    private Integer age;
+    @Column(name = "patient_age")
+    private Integer patient_age;
     @Column(name="complaint")
     private String complaint;
     @Column(name="symptoms")
     private String symptoms;
-    @Column(name="medhistory")
-    private String medhistory;
-    @Column(name="famhistory")
-    private String famhistory;
+    @Column(name="med_history")
+    private String med_history;
+    @Column(name="fam_history")
+    private String fam_history;
     @Column(name="allergies")
     private String allergies;
-    @Column(name="currentmeds")
-    private String currentmeds;
+    @Column(name="current_meds")
+    private String current_meds;
     @Column(name = "date")
     private String date;
-    @Column(name = "weight")
-    private Integer weight;
-    @Column(name = "height")
-    private Integer height;
-    @Column(name = "temp")
-    private Integer temp;
+    @Column(name = "patient_weight")
+    private Integer patient_weight;
+    @Column(name = "patient_height")
+    private Integer patient_height;
+    @Column(name = "patient_temp")
+    private Integer patient_temp;
     @Column(name = "BP")
     private Integer BP;
     @Column(name = "pulse")
     private Integer pulse;
-    @Column(name = "diagnosisB")
-    private boolean diagnosisB;
-    @Column(name = "diagnosisT")
-    private String diagnosisT;
+    @Column(name = "diagnosis_boolean")
+    private boolean diagnosis_boolean;
+    @Column(name = "diagnosis_text")
+    private String diagnosis_text;
     @OneToOne
     @Column(name="covidId")
     private String covidId;
