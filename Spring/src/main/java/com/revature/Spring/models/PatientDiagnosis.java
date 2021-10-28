@@ -27,8 +27,8 @@ public class PatientDiagnosis {
     private String allergies;
     @Column(name="current_meds")
     private String current_meds;
-    @Column(name = "date")
-    private String date;
+    @Column(name = "current_date")
+    private String current_date;
     @Column(name = "patient_weight")
     private Integer patient_weight;
     @Column(name = "patient_height")
