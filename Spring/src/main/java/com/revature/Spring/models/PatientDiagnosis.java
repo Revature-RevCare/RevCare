@@ -45,14 +45,14 @@ public class PatientDiagnosis implements Serializable {
     @Column(name = "diagnosis_text")
     private String diagnosis_text;
     //@OneToOne
-    @Column(name="covidId")
-    private String covidId;
+    @Column(name="covid_id")
+    private String covid_id;
     //@ManyToOne
-    @Column(name = "nurseId")
-    private Integer nurseId;
+    @Column(name = "nurse_id")
+    private Integer nurse_id;
     //@ManyToOne
-    @Column(name = "doctorId")
-    private Integer doctorId;
+    @Column(name = "doctor_id")
+    private Integer doctor_id;
 
     public PatientDiagnosis() {
     }
