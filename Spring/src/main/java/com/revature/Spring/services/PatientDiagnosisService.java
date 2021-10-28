@@ -21,13 +21,16 @@ public class PatientDiagnosisService {
     //R:
     public PatientDiagnosis getById(int id){return patientDiagnosisRepo.getById(id);}
 
+    public List<PatientDiagnosis> findAllDiagnosis(){return patientDiagnosisRepo.findAll();}
+
     public List<PatientDiagnosis> findAllActiveDiagnosis(Integer id){
         List<PatientDiagnosis> lopd = patientDiagnosisRepo.findAll();
         List<PatientDiagnosis> result = new ArrayList<>();
 
         for(PatientDiagnosis pd : lopd) {
-            if(pd)
-                result.add(t);
+            //check if not verified by doctor yet
+            if(!pd.isDoctor_verification())
+                result.add(pd);
         }
         return result;
     }
