@@ -3,9 +3,9 @@ package com.revature.Spring.models;
 import javax.persistence.*;
 
 public class PatientDiagnosis {
-
-
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(nullable = false, updatable = false)
     private Integer id;
     @Column(name = "fname")
     private String fname;
