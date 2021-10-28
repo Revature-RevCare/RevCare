@@ -59,6 +59,7 @@ public class PatientDiagnosis {
     @ManyToOne
     @Column(name = "doctorId")
     private Integer doctorId;
-
+    @Column(name = "confirm")
+    private Boolean confirm;
 
 }

@@ -8,12 +8,12 @@ import com.revature.Spring.repositories.UserRepo;
 import java.util.Collections;
 import java.util.List;
 
-public class NurseService {
+public class DoctorService {
 
     private PatientDiagnosisRepo pr;
     private UserRepo ur;
 
-    public NurseService(PatientDiagnosisRepo pr, UserRepo ur){
+    public DoctorService(PatientDiagnosisRepo pr, UserRepo ur){
         this.pr = pr;
         this.ur = ur;
     }
@@ -29,5 +29,4 @@ public class NurseService {
     public User getByLastname(String lname){
         return ur.findByLastname(lname);
     }
-
 }
