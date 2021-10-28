@@ -28,8 +28,8 @@ public class NurseService {
         return Collections.singletonList(pr.findByConfirm(confirm));
     }
 
-    public User getByLastname(String last_name){
-        return ur.findByLastname(last_name);
+    public User getByLast(String last){
+        return ur.findByLast(last);
     }
 
 }

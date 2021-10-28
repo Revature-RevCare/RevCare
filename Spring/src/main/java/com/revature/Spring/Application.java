@@ -13,9 +13,9 @@ import org.springframework.web.filter.CorsFilter;
 import java.util.Arrays;
 
 @SpringBootApplication
-@ComponentScan("com.revature") // look for components/stereotypes
-@EnableJpaRepositories("com.revature.repositories")  //repos location
-@EntityScan("com.revature.models") //entities location
+@ComponentScan("com.revature.Spring") // look for components/stereotypes
+@EnableJpaRepositories("com.revature.Spring.repositories")  //repos location
+@EntityScan("com.revature.Spring.models") //entities location
 public class Application {
 
 	public static void main(String[] args) {

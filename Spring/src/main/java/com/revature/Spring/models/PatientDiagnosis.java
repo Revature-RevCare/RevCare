@@ -12,7 +12,6 @@ import javax.persistence.*;
 @Table
 @AllArgsConstructor
 @NoArgsConstructor
-@Component
 public class PatientDiagnosis {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

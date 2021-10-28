@@ -33,7 +33,7 @@ public class DoctorController {
 
     @GetMapping("/{lastname}")
     public User getUser(@RequestBody String last_name){
-        return ds.getByLastname(last_name);
+        return ds.getByLastName(last_name);
     }
 
 

@@ -2,7 +2,6 @@ package com.revature.Spring.controllers;
 
 import com.revature.Spring.models.PatientDiagnosis;
 import com.revature.Spring.models.User;
-import com.revature.Spring.services.DoctorService;
 import com.revature.Spring.services.NurseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -29,7 +28,7 @@ public class NurseController {
     }
 
     @GetMapping("/{lastname}")
-    public User getUser(@RequestBody String last_name){
-        return ns.getByLastname(last_name);
+    public User getUser(@RequestBody String last){
+        return ns.getByLast(last);
     }
 }
