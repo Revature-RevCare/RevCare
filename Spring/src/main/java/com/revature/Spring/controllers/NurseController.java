@@ -29,7 +29,7 @@ public class NurseController {
     }
 
     @GetMapping("/{lastname}")
-    public User getUser(@RequestBody String lname){
-        return ns.getByLastname(lname);
+    public User getUser(@RequestBody String last_name){
+        return ns.getByLastname(last_name);
     }
 }

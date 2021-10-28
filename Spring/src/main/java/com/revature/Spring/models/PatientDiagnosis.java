@@ -3,6 +3,7 @@ package com.revature.Spring.models;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.stereotype.Component;
 
 import javax.persistence.*;
 
@@ -11,10 +12,11 @@ import javax.persistence.*;
 @Table
 @AllArgsConstructor
 @NoArgsConstructor
+@Component
 public class PatientDiagnosis {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(nullable = false, updatable = false)
+//    @Column(nullable = false, updatable = false)
     private Integer id;
     @Column(name = "fname")
     private String fname;
@@ -50,16 +52,18 @@ public class PatientDiagnosis {
     private boolean diagnosisB;
     @Column(name = "diagnosisT")
     private String diagnosisT;
-    @OneToOne
+//    @OneToOne
     @Column(name="covidId")
     private String covidId;
-    @ManyToOne
+//    @ManyToOne
     @Column(name = "nurseId")
     private Integer nurseId;
-    @ManyToOne
+//    @ManyToOne
     @Column(name = "doctorId")
     private Integer doctorId;
     @Column(name = "confirm")
     private Boolean confirm;
+
+
 
 }

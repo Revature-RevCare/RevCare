@@ -4,10 +4,13 @@ import com.revature.Spring.models.PatientDiagnosis;
 import com.revature.Spring.models.User;
 import com.revature.Spring.repositories.PatientDiagnosisRepo;
 import com.revature.Spring.repositories.UserRepo;
+import jdk.nashorn.internal.objects.annotations.Constructor;
+import org.springframework.stereotype.Service;
 
 import java.util.Collections;
 import java.util.List;
 
+@Service
 public class DoctorService {
 
     private PatientDiagnosisRepo pr;
@@ -26,7 +29,7 @@ public class DoctorService {
         return Collections.singletonList(pr.findByConfirm(confirm));
     }
 
-    public User getByLastname(String lname){
-        return ur.findByLastname(lname);
+    public User getByLastname(String last_name){
+        return ur.findByLastname(last_name);
     }
 }
