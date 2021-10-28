@@ -43,13 +43,13 @@ public class PatientDiagnosis {
     private boolean diagnosis_boolean;
     @Column(name = "diagnosis_text")
     private String diagnosis_text;
-    @OneToOne
+    //@OneToOne
     @Column(name="covidId")
     private String covidId;
-    @ManyToOne
+    //@ManyToOne
     @Column(name = "nurseId")
     private Integer nurseId;
-    @ManyToOne
+    //@ManyToOne
     @Column(name = "doctorId")
     private Integer doctorId;
 
