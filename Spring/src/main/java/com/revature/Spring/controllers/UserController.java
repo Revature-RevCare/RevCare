@@ -2,6 +2,7 @@ package com.revature.Spring.controllers;
 
 
 import com.revature.Spring.models.User;
+import com.revature.Spring.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -22,7 +23,7 @@ public class UserController {
 
     //CREATE
     @PostMapping(path ="/addUser", consumes = "application/json", produces = "application/json")
-    public void addUser(@RequestBody Users user){
+    public void addUser(@RequestBody User user){
         userService.addUser(user);
     }
 
@@ -57,7 +58,7 @@ public class UserController {
     //UPDATE
 
     @PutMapping(path ="/update/{user_id}")//, consumes = "application/json", produces = "application/json")
-    public void updateUser (@PathVariable Integer user_id, @RequestBody Users user){
+    public void updateUser (@PathVariable Integer user_id, @RequestBody User user){
 //        Users u = userService.getUser(user_id);
 
         if (Objects.equals(user_id, user.getId())){ // compare the 2 user IDs
