@@ -2,6 +2,8 @@ package com.revature.Spring.models;
 
 import javax.persistence.*;
 
+@Entity
+@Table(name="patient_diagnosis")
 public class PatientDiagnosis {
 
 
