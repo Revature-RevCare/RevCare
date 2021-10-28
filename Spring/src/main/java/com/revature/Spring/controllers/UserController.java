@@ -37,7 +37,25 @@ public class UserController {
     public User getUser(@PathVariable Integer user_id){
         return userService.getUser(user_id);
     }
+    @GetMapping(path = "/findUsername/{username}")
+    public User getByUsername(@PathVariable String username){
+        // returns a user if correct username found. Will return null if the username does not exist.
+//
+//      List<User> allUsers = userService.getAllUsers();
+        List<User> allUsers = userRepo.findAll();
 
+        User u = new User();
+
+        for (int i = 0; i < allUsers.size(); i++){
+            if (Objects.equals(username, allUsers.get(i).getUsername())) {
+
+                u = userService.getUser(allUsers.get(i).getUser_id());
+                return u;
+            }
+        }
+        return null;
+
+    }
 
     //UPDATE
 
