@@ -57,7 +57,7 @@ public class PatientDiagnosis implements Serializable {
     public PatientDiagnosis() {
     }
 
-    public PatientDiagnosis(String fname, String lname, Integer patient_age, String complaint, String symptoms, String med_history, String fam_history, String allergies, String current_meds, String current_date, Integer patient_weight, Integer patient_height, Integer patient_temp, Integer blood_pressure, Integer pulse, boolean doctor_verification, String diagnosis_text, String covidId, Integer nurseId, Integer doctorId) {
+    public PatientDiagnosis(String fname, String lname, Integer patient_age, String complaint, String symptoms, String med_history, String fam_history, String allergies, String current_meds, String current_date, Integer patient_weight, Integer patient_height, Integer patient_temp, Integer blood_pressure, Integer pulse, boolean doctor_verification, String diagnosis_text, String covid_id, Integer nurse_id, Integer doctor_id) {
         this.fname = fname;
         this.lname = lname;
         this.patient_age = patient_age;
@@ -75,12 +75,12 @@ public class PatientDiagnosis implements Serializable {
         this.pulse = pulse;
         this.doctor_verification = doctor_verification;
         this.diagnosis_text = diagnosis_text;
-        this.covidId = covidId;
-        this.nurseId = nurseId;
-        this.doctorId = doctorId;
+        this.covid_id = covid_id;
+        this.nurse_id = nurse_id;
+        this.doctor_id = doctor_id;
     }
 
-    public PatientDiagnosis(Integer id, String fname, String lname, Integer patient_age, String complaint, String symptoms, String med_history, String fam_history, String allergies, String current_meds, String current_date, Integer patient_weight, Integer patient_height, Integer patient_temp, Integer blood_pressure, Integer pulse, boolean doctor_verification, String diagnosis_text, String covidId, Integer nurseId, Integer doctorId) {
+    public PatientDiagnosis(Integer id, String fname, String lname, Integer patient_age, String complaint, String symptoms, String med_history, String fam_history, String allergies, String current_meds, String current_date, Integer patient_weight, Integer patient_height, Integer patient_temp, Integer blood_pressure, Integer pulse, boolean doctor_verification, String diagnosis_text, String covid_id, Integer nurse_id, Integer doctor_id) {
         this.id = id;
         this.fname = fname;
         this.lname = lname;
@@ -99,9 +99,9 @@ public class PatientDiagnosis implements Serializable {
         this.pulse = pulse;
         this.doctor_verification = doctor_verification;
         this.diagnosis_text = diagnosis_text;
-        this.covidId = covidId;
-        this.nurseId = nurseId;
-        this.doctorId = doctorId;
+        this.covid_id = covid_id;
+        this.nurse_id = nurse_id;
+        this.doctor_id = doctor_id;
     }
 
     public Integer getId() {
@@ -248,28 +248,28 @@ public class PatientDiagnosis implements Serializable {
         this.diagnosis_text = diagnosis_text;
     }
 
-    public String getCovidId() {
-        return covidId;
+    public String getCovid_id() {
+        return covid_id;
     }
 
-    public void setCovidId(String covidId) {
-        this.covidId = covidId;
+    public void setCovid_id(String covid_id) {
+        this.covid_id = covid_id;
     }
 
-    public Integer getNurseId() {
-        return nurseId;
+    public Integer getNurse_id() {
+        return nurse_id;
     }
 
-    public void setNurseId(Integer nurseId) {
-        this.nurseId = nurseId;
+    public void setNurse_id(Integer nurse_id) {
+        this.nurse_id = nurse_id;
     }
 
-    public Integer getDoctorId() {
-        return doctorId;
+    public Integer getDoctor_id() {
+        return doctor_id;
     }
 
-    public void setDoctorId(Integer doctorId) {
-        this.doctorId = doctorId;
+    public void setDoctor_id(Integer doctor_id) {
+        this.doctor_id = doctor_id;
     }
 
     @Override
@@ -293,9 +293,9 @@ public class PatientDiagnosis implements Serializable {
                 ", pulse=" + pulse +
                 ", doctor_verification=" + doctor_verification +
                 ", diagnosis_text='" + diagnosis_text + '\'' +
-                ", covidId='" + covidId + '\'' +
-                ", nurseId=" + nurseId +
-                ", doctorId=" + doctorId +
+                ", covid_id='" + covid_id + '\'' +
+                ", nurse_id=" + nurse_id +
+                ", doctor_id=" + doctor_id +
                 '}';
     }
 }
