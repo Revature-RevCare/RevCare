@@ -36,12 +36,12 @@ public class PatientDiagnosis implements Serializable {
     private Integer patient_height;
     @Column(name = "patient_temp")
     private Integer patient_temp;
-    @Column(name = "BP")
-    private Integer BP;
+    @Column(name = "blood_pressure")
+    private Integer blood_pressure;
     @Column(name = "pulse")
     private Integer pulse;
-    @Column(name = "diagnosis_boolean")
-    private boolean diagnosis_boolean;
+    @Column(name = "doctor_verification")
+    private boolean doctor_verification;
     @Column(name = "diagnosis_text")
     private String diagnosis_text;
     //@OneToOne
@@ -57,7 +57,7 @@ public class PatientDiagnosis implements Serializable {
     public PatientDiagnosis() {
     }
 
-    public PatientDiagnosis(String fname, String lname, Integer patient_age, String complaint, String symptoms, String med_history, String fam_history, String allergies, String current_meds, String current_date, Integer patient_weight, Integer patient_height, Integer patient_temp, Integer BP, Integer pulse, boolean diagnosis_boolean, String diagnosis_text, String covidId, Integer nurseId, Integer doctorId) {
+    public PatientDiagnosis(String fname, String lname, Integer patient_age, String complaint, String symptoms, String med_history, String fam_history, String allergies, String current_meds, String current_date, Integer patient_weight, Integer patient_height, Integer patient_temp, Integer blood_pressure, Integer pulse, boolean doctor_verification, String diagnosis_text, String covidId, Integer nurseId, Integer doctorId) {
         this.fname = fname;
         this.lname = lname;
         this.patient_age = patient_age;
@@ -71,16 +71,16 @@ public class PatientDiagnosis implements Serializable {
         this.patient_weight = patient_weight;
         this.patient_height = patient_height;
         this.patient_temp = patient_temp;
-        this.BP = BP;
+        this.blood_pressure = blood_pressure;
         this.pulse = pulse;
-        this.diagnosis_boolean = diagnosis_boolean;
+        this.doctor_verification = doctor_verification;
         this.diagnosis_text = diagnosis_text;
         this.covidId = covidId;
         this.nurseId = nurseId;
         this.doctorId = doctorId;
     }
 
-    public PatientDiagnosis(Integer id, String fname, String lname, Integer patient_age, String complaint, String symptoms, String med_history, String fam_history, String allergies, String current_meds, String current_date, Integer patient_weight, Integer patient_height, Integer patient_temp, Integer BP, Integer pulse, boolean diagnosis_boolean, String diagnosis_text, String covidId, Integer nurseId, Integer doctorId) {
+    public PatientDiagnosis(Integer id, String fname, String lname, Integer patient_age, String complaint, String symptoms, String med_history, String fam_history, String allergies, String current_meds, String current_date, Integer patient_weight, Integer patient_height, Integer patient_temp, Integer blood_pressure, Integer pulse, boolean doctor_verification, String diagnosis_text, String covidId, Integer nurseId, Integer doctorId) {
         this.id = id;
         this.fname = fname;
         this.lname = lname;
@@ -95,9 +95,9 @@ public class PatientDiagnosis implements Serializable {
         this.patient_weight = patient_weight;
         this.patient_height = patient_height;
         this.patient_temp = patient_temp;
-        this.BP = BP;
+        this.blood_pressure = blood_pressure;
         this.pulse = pulse;
-        this.diagnosis_boolean = diagnosis_boolean;
+        this.doctor_verification = doctor_verification;
         this.diagnosis_text = diagnosis_text;
         this.covidId = covidId;
         this.nurseId = nurseId;
@@ -216,12 +216,12 @@ public class PatientDiagnosis implements Serializable {
         this.patient_temp = patient_temp;
     }
 
-    public Integer getBP() {
-        return BP;
+    public Integer getBlood_pressure() {
+        return blood_pressure;
     }
 
-    public void setBP(Integer BP) {
-        this.BP = BP;
+    public void setBlood_pressure(Integer blood_pressure) {
+        this.blood_pressure = blood_pressure;
     }
 
     public Integer getPulse() {
@@ -232,12 +232,12 @@ public class PatientDiagnosis implements Serializable {
         this.pulse = pulse;
     }
 
-    public boolean isDiagnosis_boolean() {
-        return diagnosis_boolean;
+    public boolean isDoctor_verification() {
+        return doctor_verification;
     }
 
-    public void setDiagnosis_boolean(boolean diagnosis_boolean) {
-        this.diagnosis_boolean = diagnosis_boolean;
+    public void setDoctor_verification(boolean doctor_verification) {
+        this.doctor_verification = doctor_verification;
     }
 
     public String getDiagnosis_text() {
@@ -289,9 +289,9 @@ public class PatientDiagnosis implements Serializable {
                 ", patient_weight=" + patient_weight +
                 ", patient_height=" + patient_height +
                 ", patient_temp=" + patient_temp +
-                ", BP=" + BP +
+                ", blood_pressure=" + blood_pressure +
                 ", pulse=" + pulse +
-                ", diagnosis_boolean=" + diagnosis_boolean +
+                ", doctor_verification=" + doctor_verification +
                 ", diagnosis_text='" + diagnosis_text + '\'' +
                 ", covidId='" + covidId + '\'' +
                 ", nurseId=" + nurseId +
