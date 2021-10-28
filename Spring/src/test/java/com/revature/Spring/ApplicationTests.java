@@ -18,8 +18,11 @@ class ApplicationTests {
 //
 //	@MockBean
 //	private final CovidVerificationRepo covidRepo;
+//	@Test
+//	void contextLoads() {
+//	}
 	@Test
-	void contextLoads() {
-	}
+	public void getApplicationTest(){
 
+	}
 }
