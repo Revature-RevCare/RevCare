@@ -5,9 +5,9 @@ import javax.persistence.*;
 @Entity
 @Table(name="patient_diagnosis")
 public class PatientDiagnosis {
-
-
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(nullable = false, updatable = false)
     private Integer id;
     @Column(name = "fname")
     private String fname;
