@@ -38,22 +38,6 @@ public class UserController {
         return userService.getUser(user_id);
     }
 
-    @GetMapping(path = "/findUsername/{username}")
-    public User getByUsername(@PathVariable String username){
-        // returns a user if correct username found. Will return null if the username does not exist.
-        List<User> allUsers = userService.getAllUsers();
-        User u = new User();
-
-        for (int i = 0; i < allUsers.size(); i++){
-            if (Objects.equals(username, allUsers.get(i).getUsername())) {
-
-                u = userService.getUser(allUsers.get(i).getId());
-                return u;
-            }
-        }
-        return null;
-
-    }
 
     //UPDATE
 
@@ -61,7 +45,7 @@ public class UserController {
     public void updateUser (@PathVariable Integer user_id, @RequestBody User user){
 //        Users u = userService.getUser(user_id);
 
-        if (Objects.equals(user_id, user.getId())){ // compare the 2 user IDs
+        if (Objects.equals(user_id, user.getUser_id())){ // compare the 2 user IDs
             userService.updateUser(user);
         }
 
