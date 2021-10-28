@@ -1,10 +1,11 @@
 package com.revature.Spring.models;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
 @Table(name="patient_diagnosis")
-public class PatientDiagnosis {
+public class PatientDiagnosis implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false, updatable = false)
