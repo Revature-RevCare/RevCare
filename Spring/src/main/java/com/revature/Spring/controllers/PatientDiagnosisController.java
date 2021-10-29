@@ -21,17 +21,4 @@ public class PatientDiagnosisController {
         this.patientDiagnosisService = patientDiagnosisService;
     }
 
-    @GetMapping(value = "/all")
-    public ResponseEntity<List<PatientDiagnosis>> getActiveDiagnosis() {
-        List<PatientDiagnosis> patientDiagnoses = patientDiagnosisService.findAllActiveDiagnosis();
-        return new ResponseEntity<>(patientDiagnoses, HttpStatus.OK);
-    }
-
-    @GetMapping(value = "/find/{id}")
-    public ResponseEntity<PatientDiagnosis> getDiagnosisById(@PathVariable("id") Integer id) throws JsonProcessingException {
-        PatientDiagnosis pd = patientDiagnosisService.getById(id);
-        return new ResponseEntity<>(pd, HttpStatus.OK);
-    }
-
-
 }
