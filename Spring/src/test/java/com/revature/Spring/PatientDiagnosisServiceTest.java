@@ -23,6 +23,7 @@ public class PatientDiagnosisServiceTest {
     @Autowired
     private PatientDiagnosisService patientDiagnosisService;
 
+
     @MockBean
     private PatientDiagnosisRepo patientDiagnosisRepo;
 
@@ -48,5 +49,5 @@ public class PatientDiagnosisServiceTest {
         assertEquals(1,patientDiagnosisService.findAllActiveDiagnosis().size());
     }
 
-    
+
 }

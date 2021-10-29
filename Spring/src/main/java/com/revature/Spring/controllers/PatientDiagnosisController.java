@@ -17,7 +17,7 @@ public class PatientDiagnosisController {
     private final PatientDiagnosisService patientDiagnosisService;
 
     @Autowired
-    public PatientDiagnosisController(PatientDiagnosisService patientDiagnosisService, UserService userService) {
+    public PatientDiagnosisController(PatientDiagnosisService patientDiagnosisService) {
 
         this.patientDiagnosisService = patientDiagnosisService;
     }
