@@ -39,7 +39,7 @@ public class DoctorTests {
         when(repositoryp.findByConfirm(confirm)).thenReturn((PatientDiagnosis) Stream
                 .of(new PatientDiagnosis(1, "Jonathon", "Beeles", 28, false))
                 .collect(Collectors.toList()));
-        assertEquals(1, service.findByConfirm(confirm));
+        assertEquals(1, service.findByConfirm(confirm).size());
     }
 
     @Test
@@ -48,7 +48,7 @@ public class DoctorTests {
         when(repositoryu.findByLast(last)).thenReturn((User) Stream
                 .of(new User(1, "Jonathon", "Beeles", "Stanford", "MD", "doctor@doctor.com", "pass", "555-555-5555"))
                 .collect(Collectors.toList()));
-        assertEquals(1, service.getByLastName(last));
+        assertEquals(1, service.getByLastName(last).size());
     }
 
     // get all test if needed:
