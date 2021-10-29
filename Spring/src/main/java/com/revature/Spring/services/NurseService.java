@@ -28,7 +28,7 @@ public class NurseService {
         return Collections.singletonList(pr.findByConfirm(confirm));
     }
 
-    public User getByLast(String last){
+    public User findByLast(String last){
         return ur.findByLast(last);
     }
 

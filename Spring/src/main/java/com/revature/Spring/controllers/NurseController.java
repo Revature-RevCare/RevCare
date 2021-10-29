@@ -13,7 +13,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping(path = "/nurses")
-public class NurseController {
+public class  NurseController {
 
     private NurseService ns;
 
@@ -23,12 +23,12 @@ public class NurseController {
     }
 
     @GetMapping
-    public List<PatientDiagnosis> getByConfirm(@RequestBody Boolean confirm){
+    public List<PatientDiagnosis> findByConfirm(@RequestBody Boolean confirm){
         return ns.findByConfirm(confirm);
     }
 
     @GetMapping("/{lastname}")
-    public User getUser(@RequestBody String last){
-        return ns.getByLast(last);
+    public User findUser(@RequestBody String last){
+        return ns.findByLast(last);
     }
 }
