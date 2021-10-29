@@ -28,11 +28,11 @@ public class CovidVerificationService {
         return covidRepo.save(covid);
     }
 
-    public void update(CovidVerification covid){
-        covidRepo.save(covid);
-    }
-
-    public void delete(Integer id){
-        covidRepo.delete(covidRepo.getById(id));
-    }
+//    public void update(CovidVerification covid){
+//        covidRepo.save(covid);
+//    }
+//
+//    public void delete(Integer id){
+//        covidRepo.delete(covidRepo.getById(id));
+//    }
 }

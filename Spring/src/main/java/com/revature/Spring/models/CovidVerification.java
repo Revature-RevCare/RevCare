@@ -7,8 +7,8 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 
 @Entity
+@Table(name = "covid_verification")
 @Data
-@Table
 @AllArgsConstructor
 @NoArgsConstructor
 public class CovidVerification {
@@ -16,10 +16,10 @@ public class CovidVerification {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "covid_id")
-    int covidId;
+    private Integer covidId;
     @Column(name = "covid_status")
-    String covidStatus;
+    private String covidStatus;
     @Column(name = "vaccination_status")
-    boolean vaccinationStatus;
+    private boolean vaccinationStatus;
 
 }

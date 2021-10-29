@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@Controller
+@RestController
 @RequestMapping("/covid")
 public class CovidVerificationController {
 
@@ -24,20 +24,25 @@ public class CovidVerificationController {
         return covidService.findAll();
     }
 
+    @GetMapping(path = "/{id}")
+    public CovidVerification getById(@PathVariable("id") int id){
+        return covidService.getById(id);
+    }
+
     @PostMapping(consumes = "application/json", produces = "application/json")
     public CovidVerification addCovid(@RequestBody CovidVerification covid){
             return covidService.addCovid(covid);
     }
 
-    @PutMapping(path="/{id}")
-    public void updateCovid(@PathVariable("id") int id, @RequestBody CovidVerification covid) {
-        if (id == covid.getCovidId()) {
-            covidService.update(covid);// this save method is coming from the JpaRepository -> it is like Hibernate's saveOrUpdate();
-        }
-    }
-
-    @DeleteMapping(path="/{id}")
-    public void deleteUser(@PathVariable("id") int id) {
-        covidService.delete(id);
-    }
+//    @PutMapping(path="/{id}")
+//    public void updateCovid(@PathVariable("id") int id, @RequestBody CovidVerification covid) {
+//        if (id == covid.getCovidId()) {
+//            covidService.update(covid);// this save method is coming from the JpaRepository -> it is like Hibernate's saveOrUpdate();
+//        }
+//    }
+//
+//    @DeleteMapping(path="/{id}")
+//    public void deleteUser(@PathVariable("id") int id) {
+//        covidService.delete(id);
+//    }
 }
