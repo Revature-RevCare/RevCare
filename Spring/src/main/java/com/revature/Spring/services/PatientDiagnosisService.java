@@ -23,7 +23,7 @@ public class PatientDiagnosisService {
 
     public List<PatientDiagnosis> findAllDiagnosis(){return patientDiagnosisRepo.findAll();}
 
-    public List<PatientDiagnosis> findAllActiveDiagnosis(Integer id){
+    public List<PatientDiagnosis> findAllActiveDiagnosis(){
         List<PatientDiagnosis> lopd = patientDiagnosisRepo.findAll();
         List<PatientDiagnosis> result = new ArrayList<>();
 
