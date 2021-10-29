@@ -47,4 +47,10 @@ public class PatientDiagnosisController {
         return new ResponseEntity<>(newPatient, HttpStatus.CREATED);
     }
 
+    @PostMapping("/delete")
+    public ResponseEntity<PatientDiagnosis> removePatient(@RequestBody PatientDiagnosis patient){
+        patientDiagnosisService.deleteDiagnosis(patient.getId());
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
 }
