@@ -4,25 +4,22 @@ import com.revature.Spring.models.User;
 import com.revature.Spring.repositories.UserRepo;
 import com.revature.Spring.services.UserService;
 import org.junit.jupiter.api.Test;
-import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.junit4.SpringRunner;
+import org.junit.runner.RunWith;
 
 import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 import static org.mockito.Mockito.*;
-
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class UserServiceTest {
-
-
+class UserServiceTest {
 
     //Testing User services using Mockito
 
