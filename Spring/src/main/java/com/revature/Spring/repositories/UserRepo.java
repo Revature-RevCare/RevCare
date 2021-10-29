@@ -1,6 +1,9 @@
 package com.revature.Spring.repositories;
 
-public interface UserRepo {
+import com.revature.Spring.models.User;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface UserRepo extends JpaRepository<User, Integer> {
 
     //test
 }

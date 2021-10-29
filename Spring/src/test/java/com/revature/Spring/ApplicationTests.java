@@ -23,6 +23,20 @@ import static org.mockito.Mockito.*;
 @SpringBootTest
 class ApplicationTests {
 
+<<<<<<< HEAD
 
+=======
+//	@Autowired
+//	private final CovidVerificationService covidService;
+//
+//	@MockBean
+//	private final CovidVerificationRepo covidRepo;
+//	@Test
+//	void contextLoads() {
+//	}
+	@Test
+	public void getApplicationTest(){
+>>>>>>> 026bad97b4476e65da58d5761f2d9da483fa341d
 
+	}
 }
