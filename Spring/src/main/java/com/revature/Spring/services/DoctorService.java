@@ -20,9 +20,9 @@ public class DoctorService {
         this.ur = ur;
     }
 
-    public List<PatientDiagnosis> findAllPatientDiagnosis(){
-        return pr.findAll();
-    }
+//    public List<PatientDiagnosis> findAllPatientDiagnosis(){
+//        return pr.findAll();
+//    }
 
     public List<PatientDiagnosis> findByConfirm(Boolean confirm){
         return Collections.singletonList(pr.findByConfirm(confirm));

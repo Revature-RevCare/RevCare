@@ -23,7 +23,10 @@ public class PatientDiagnosis {
     private String lname;
     @Column(name = "age")
     private Integer age;
-    @Column(name="complaint")
+    @Column(name = "confirm")
+    private Boolean confirm;
+
+   /* @Column(name="complaint")
     private String complaint;
     @Column(name="symptoms")
     private String symptoms;
@@ -50,18 +53,17 @@ public class PatientDiagnosis {
     @Column(name = "diagnosisB")
     private boolean diagnosisB;
     @Column(name = "diagnosisT")
-    private String diagnosisT;
+    private String diagnosisT;*/
 //    @OneToOne
-    @Column(name="covidId")
-    private String covidId;
+//    @Column(name="covidId")
+//    private String covidId;
 //    @ManyToOne
-    @Column(name = "nurseId")
-    private Integer nurseId;
+//    @Column(name = "nurseId")
+//    private Integer nurseId;
 //    @ManyToOne
-    @Column(name = "doctorId")
-    private Integer doctorId;
-    @Column(name = "confirm")
-    private Boolean confirm;
+//    @Column(name = "doctorId")
+//    private Integer doctorId;
+
 
 
 
