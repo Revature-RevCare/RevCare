@@ -12,6 +12,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -45,10 +46,8 @@ public class DoctorTests {
     @Test
     public void getByLastNameTest() {
         String last="Beeles";
-        when(repositoryu.findByLast(last)).thenReturn((User) Stream
-                .of(new User(1, "Jonathon", "Beeles", "Stanford", "MD", "doctor@doctor.com", "pass", "555-555-5555"))
-                .collect(Collectors.toList()));
-        assertEquals(1, service.findByLastName(last).size());
+        when(repositoryu.findByLast(last)).thenReturn(new User(1, "Jonathon", "Beeles", "Stanford", "MD", "doctor@doctor.com", "pass", "555-555-5555"));
+        assertEquals(last, service.findByLastName(last).getLast());
     }
 
     // get all test if needed:

@@ -47,10 +47,8 @@ public class NurseTests {
     @Test
     public void getByLastTest() {
         String last="Beeles";
-        when(repositoryu.findByLast(last)).thenReturn((User) Stream
-                .of(new User(1, "Jonathon", "Beeles", "Stanford", "MD", "doctor@doctor.com", "pass", "555-555-5555"))
-                .collect(Collectors.toList()));
-        assertEquals(1, service.findByLast(last).size());
+        when(repositoryu.findByLast(last)).thenReturn(new User(1, "Jonathon", "Beeles", "Stanford", "MD", "doctor@doctor.com", "pass", "555-555-5555"));
+        assertEquals(last, service.findByLast(last).getLast());
     }
 
     @Test
