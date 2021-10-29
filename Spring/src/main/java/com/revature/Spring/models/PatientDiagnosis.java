@@ -3,6 +3,7 @@ package com.revature.Spring.models;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.Objects;
 
 @Entity
 @Table(name="patient_diagnosis")
@@ -311,5 +312,18 @@ public class PatientDiagnosis implements Serializable {
                 ", nurse_id=" + nurse_id +
                 ", doctor_id=" + doctor_id +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof PatientDiagnosis)) return false;
+        PatientDiagnosis that = (PatientDiagnosis) o;
+        return Float.compare(that.patient_weight, patient_weight) == 0 && Float.compare(that.patient_height, patient_height) == 0 && Float.compare(that.patient_temp, patient_temp) == 0 && doctor_verification == that.doctor_verification && Objects.equals(id, that.id) && Objects.equals(fname, that.fname) && Objects.equals(lname, that.lname) && Objects.equals(patient_age, that.patient_age) && Objects.equals(complaint, that.complaint) && Objects.equals(symptoms, that.symptoms) && Objects.equals(med_history, that.med_history) && Objects.equals(fam_history, that.fam_history) && Objects.equals(allergies, that.allergies) && Objects.equals(current_meds, that.current_meds) && Objects.equals(current_date, that.current_date) && Objects.equals(blood_pressure_high, that.blood_pressure_high) && Objects.equals(blood_pressure_low, that.blood_pressure_low) && Objects.equals(pulse, that.pulse) && Objects.equals(diagnosis_text, that.diagnosis_text) && Objects.equals(covid_id, that.covid_id) && Objects.equals(nurse_id, that.nurse_id) && Objects.equals(doctor_id, that.doctor_id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, fname, lname, patient_age, complaint, symptoms, med_history, fam_history, allergies, current_meds, current_date, patient_weight, patient_height, patient_temp, blood_pressure_high, blood_pressure_low, pulse, doctor_verification, diagnosis_text, covid_id, nurse_id, doctor_id);
     }
 }
