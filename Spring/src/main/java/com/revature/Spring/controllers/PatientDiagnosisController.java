@@ -36,8 +36,8 @@ public class PatientDiagnosisController {
 
     @GetMapping("/all")
     public ResponseEntity<List<PatientDiagnosis>> getAllDiagnosises () {
-        List<PatientDiagnosis> pokemons = patientDiagnosisService.findAllDiagnosis();
-        return new ResponseEntity<>(pokemons, HttpStatus.OK);
+        List<PatientDiagnosis> patients = patientDiagnosisService.findAllDiagnosis();
+        return new ResponseEntity<>(patients, HttpStatus.OK);
     }
 
 

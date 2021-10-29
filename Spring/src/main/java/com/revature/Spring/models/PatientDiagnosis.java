@@ -32,9 +32,9 @@ public class PatientDiagnosis implements Serializable {
     @Column(name = "current_date")
     private LocalDate current_date;
     @Column(name = "patient_weight")
-    private Integer patient_weight;
+    private float patient_weight;
     @Column(name = "patient_height")
-    private Integer patient_height;
+    private float patient_height;
     @Column(name = "patient_temp")
     private float patient_temp;
     @Column(name = "blood_pressure_high")
@@ -197,7 +197,7 @@ public class PatientDiagnosis implements Serializable {
         this.current_date = current_date;
     }
 
-    public Integer getPatient_weight() {
+    public float getPatient_weight() {
         return patient_weight;
     }
 
@@ -205,7 +205,7 @@ public class PatientDiagnosis implements Serializable {
         this.patient_weight = patient_weight;
     }
 
-    public Integer getPatient_height() {
+    public float getPatient_height() {
         return patient_height;
     }
 
