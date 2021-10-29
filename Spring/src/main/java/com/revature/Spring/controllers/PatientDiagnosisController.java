@@ -29,6 +29,7 @@ public class PatientDiagnosisController {
         this.patientDiagnosisService = patientDiagnosisService;
     }
 
+<<<<<<< HEAD
     @GetMapping(value = "/all")
     public ResponseEntity<List<PatientDiagnosis>> getActiveDiagnosis() {
         List<PatientDiagnosis> patientDiagnoses = patientDiagnosisService.findAllActiveDiagnosis();
@@ -65,4 +66,6 @@ public class PatientDiagnosisController {
         return new ResponseEntity<>(newPatient, HttpStatus.CREATED);
     }
 
+=======
+>>>>>>> da973315d7d8ed02acf457ed9ad7d8300b62459d
 }
