@@ -5,6 +5,7 @@ import com.revature.Spring.repositories.PatientDiagnosisRepo;
 import com.revature.Spring.services.PatientDiagnosisService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mockito.Mock;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
@@ -15,14 +16,13 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import static org.junit.Assert.assertEquals;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class PatientDiagnosisServiceTest {
     @Autowired
     private PatientDiagnosisService patientDiagnosisService;
-
 
     @MockBean
     private PatientDiagnosisRepo patientDiagnosisRepo;
@@ -49,5 +49,30 @@ public class PatientDiagnosisServiceTest {
         assertEquals(1,patientDiagnosisService.findAllActiveDiagnosis().size());
     }
 
+    @Test
+    public void saveDiagnosisTest(){
+        PatientDiagnosis pd = new PatientDiagnosis(1,"test1","test1",20,"nothing",
+                "cough","n/a","n/a","n/a","n/a", LocalDate.parse("2021-11-11"),130,170,
+                37.5f,130,70,80,false,"cold",1,1,1);
+        when(patientDiagnosisRepo.save(pd)).thenReturn(pd);
+        assertEquals(pd,patientDiagnosisService.addNewDiagnosis(pd));
+    }
 
+    @Test
+    public void deleteDiagnosisTest(){
+        PatientDiagnosis pd = new PatientDiagnosis(1,"test1","test1",20,"nothing",
+                "cough","n/a","n/a","n/a","n/a", LocalDate.parse("2021-11-11"),130,170,
+                37.5f,130,70,80,false,"cold",1,1,1);
+        patientDiagnosisService.deleteDiagnosis(1);
+        verify(patientDiagnosisRepo,times(1)).deleteById(1);
+    }
+
+    @Test
+    public void getByDiagnosisIdTest(){
+        PatientDiagnosis pd = new PatientDiagnosis(1,"test1","test1",20,"nothing",
+                "cough","n/a","n/a","n/a","n/a", LocalDate.parse("2021-11-11"),130,170,
+                37.5f,130,70,80,false,"cold",1,1,1);
+        when(patientDiagnosisRepo.findById(1)).thenReturn(java.util.Optional.of(pd));
+        assertEquals(pd,patientDiagnosisService.getById(1));
+    }
 }

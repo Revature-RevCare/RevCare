@@ -19,7 +19,10 @@ public class PatientDiagnosisService {
 
     //CRUD:
     //R:
-    public PatientDiagnosis getById(int id){return patientDiagnosisRepo.getById(id);}
+    public PatientDiagnosis getById(int id){
+        return patientDiagnosisRepo.findById(id)
+                .orElseThrow(() -> new RuntimeException("patient diagnosis not found."));
+    }
 
     public List<PatientDiagnosis> findAllDiagnosis(){return patientDiagnosisRepo.findAll();}
 
