@@ -40,7 +40,7 @@ public class PatientDiagnosisController {
         return new ResponseEntity<>(patients, HttpStatus.OK);
     }
 
-    @PostMapping("/add")
+    @PostMapping(value = "/add")
     public ResponseEntity<PatientDiagnosis> addPatient(@RequestBody PatientDiagnosis patient) {
         PatientDiagnosis newPatient = patientDiagnosisService.addNewDiagnosis(patient);
         return new ResponseEntity<>(newPatient, HttpStatus.CREATED);
