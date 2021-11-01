@@ -1,5 +1,6 @@
 package com.revature.Spring.services;
 
+import com.revature.Spring.exceptions.ApplicationNotFoundException;
 import com.revature.Spring.models.CovidVerification;
 import com.revature.Spring.repositories.CovidVerificationRepo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +18,7 @@ public class CovidVerificationService {
     }
 
     public CovidVerification getById(Integer id){
-        return covidRepo.getById(id);
+        return covidRepo.findCovidVerificationById(id).orElseThrow(()->new ApplicationNotFoundException("Application Id " + id + " Application not found by this Id"));
     }
 
     public List<CovidVerification> findAll(){
@@ -28,11 +29,11 @@ public class CovidVerificationService {
         return covidRepo.save(covid);
     }
 
-//    public void update(CovidVerification covid){
+//    public void updateApplication(CovidVerification covid){
 //        covidRepo.save(covid);
 //    }
 //
-//    public void delete(Integer id){
+//    public void deleteApplication(Integer id){
 //        covidRepo.delete(covidRepo.getById(id));
 //    }
 }

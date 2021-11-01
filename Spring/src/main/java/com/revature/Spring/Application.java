@@ -22,10 +22,7 @@ public class Application {
 	public static void main(String[] args) {
 		SpringApplication.run(Application.class, args);
 	}
-<<<<<<< Updated upstream
-=======
-//
->>>>>>> Stashed changes
+
 //	@Bean
 //	public CorsFilter corsFilter() {
 //		CorsConfiguration corsConfiguration = new CorsConfiguration();
@@ -40,10 +37,9 @@ public class Application {
 //		UrlBasedCorsConfigurationSource urlBasedCorsConfigurationSource = new UrlBasedCorsConfigurationSource();
 //		urlBasedCorsConfigurationSource.registerCorsConfiguration("/**", corsConfiguration);
 //		return new CorsFilter(urlBasedCorsConfigurationSource);
-<<<<<<< Updated upstream
-=======
+
 //
 //	}
->>>>>>> Stashed changes
+
 
 }

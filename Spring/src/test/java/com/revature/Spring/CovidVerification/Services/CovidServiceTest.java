@@ -20,7 +20,7 @@ import static org.mockito.Mockito.*;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class CovidVerificationTest {
+public class CovidServiceTest {
     @Autowired
     private CovidVerificationService covidService;
 
@@ -30,7 +30,7 @@ public class CovidVerificationTest {
 
     //	Test to get all covid applications
     @Test
-    public void getApplicationTest(){
+    public void findAllTest(){
         Mockito.when(covidRepo.findAll()).thenReturn(Stream.of(new CovidVerification(1,"No", false), new CovidVerification(2, "Yes", true)).collect(Collectors.toList()));
         Assertions.assertEquals(2, covidService.findAll().size());
     }
@@ -38,7 +38,7 @@ public class CovidVerificationTest {
 //	Test to check and see Covid application adding data into database
 
     @Test
-    public void saveApplicationTest(){
+    public void saveTest(){
         CovidVerification covid = new CovidVerification(1,"no", false);
         covidService.addCovid(covid);
         verify(covidRepo, times(1)).save(covid);
@@ -47,7 +47,7 @@ public class CovidVerificationTest {
     // Test to get an Application By id
 
     @Test
-    public void getApplicationById(){
+    public void getByIdTest(){
         int id =1;
         when(covidRepo.getById(id)).thenReturn(new CovidVerification(1, "Yes", false));
         Assertions.assertEquals(id, covidService.getById(id).getCovidId());
