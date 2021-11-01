@@ -1,6 +1,7 @@
 package com.revature.Spring;
 
 import com.revature.Spring.models.PatientDiagnosis;
+import com.revature.Spring.models.User;
 import com.revature.Spring.repositories.PatientDiagnosisRepo;
 import com.revature.Spring.services.PatientDiagnosisService;
 import org.junit.Test;
@@ -74,5 +75,16 @@ public class PatientDiagnosisServiceTest {
                 37.5f,130,70,80,false,"cold",1,1,1);
         when(patientDiagnosisRepo.findById(1)).thenReturn(java.util.Optional.of(pd));
         assertEquals(pd,patientDiagnosisService.getById(1));
+    }
+
+    @Test
+    public void updateDiagnosisTest(){
+        PatientDiagnosis pd = new PatientDiagnosis(1,"test1","test1",20,"nothing",
+                "cough","n/a","n/a","n/a","n/a", LocalDate.parse("2021-11-11"),130,170,
+                37.5f,130,70,80,false,"cold",1,1,1);
+       // userService.updateUser(user);
+        patientDiagnosisService.updateDiagnosis(pd);
+        verify(patientDiagnosisRepo, times(1)).save(pd);
+
     }
 }
