@@ -40,13 +40,11 @@ public class PatientDiagnosisController {
         return new ResponseEntity<>(patients, HttpStatus.OK);
     }
 
-
-    @PostMapping("/add")
+    @PostMapping(value = "/add")
     public ResponseEntity<PatientDiagnosis> addPatient(@RequestBody PatientDiagnosis patient) {
         PatientDiagnosis newPatient = patientDiagnosisService.addNewDiagnosis(patient);
         return new ResponseEntity<>(newPatient, HttpStatus.CREATED);
     }
-
 
     @PostMapping("put/update")
     public ResponseEntity<PatientDiagnosis> patientDiagnosisUpdate(@RequestBody PatientDiagnosis patientDiagnosis) {
@@ -54,9 +52,9 @@ public class PatientDiagnosisController {
         return new ResponseEntity<>(updateDiagnosis, HttpStatus.OK);
     }
 
-    @PostMapping("delete/delete")
-    public ResponseEntity<PatientDiagnosis> removePatient(@RequestBody PatientDiagnosis patient){
-        patientDiagnosisService.deleteDiagnosis(patient.getId());
+    @PostMapping("delete/{id}")
+    public ResponseEntity<?> removePatient(@PathVariable("id") Integer id){
+        patientDiagnosisService.deleteDiagnosis(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
