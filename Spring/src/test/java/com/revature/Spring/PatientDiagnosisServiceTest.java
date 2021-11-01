@@ -87,4 +87,65 @@ public class PatientDiagnosisServiceTest {
         verify(patientDiagnosisRepo, times(1)).save(pd);
 
     }
+
+    @Test
+    public void constructorTest(){
+        PatientDiagnosis pd = new PatientDiagnosis("test1","test1",20,"nothing",
+                "cough","n/a","n/a","n/a","n/a", LocalDate.parse("2021-11-11"),130,170,
+                37.5f,130,70,80,false,"cold",1,1,1);
+        PatientDiagnosis pd2 = new PatientDiagnosis();
+        pd2.setBlood_pressure_high(130);
+        pd2.setFname("test1");
+        pd2.setLname("test1");
+        pd2.setPatient_age(20);
+        pd2.setComplaint("nothing");
+        pd2.setSymptoms("cough");
+        pd2.setMed_history("n/a");
+        pd2.setFam_history("n/a");
+        pd2.setAllergies("n/a");
+        pd2.setCurrent_meds("n/a");
+        pd2.setCurrent_date(LocalDate.parse("2021-11-11"));
+        pd2.setPatient_height(170);
+        pd2.setPatient_weight(130);
+        pd2.setPatient_temp(37.5f);
+        pd2.setBlood_pressure_low(70);
+        pd2.setPulse(80);
+        pd2.setDoctor_verification(false);
+        pd2.setDiagnosis_text("cold");
+        pd2.setCovid_id(1);
+        pd2.setDoctor_id(1);
+        pd2.setNurse_id(1);
+        assertEquals(pd,pd2);
+    }
+
+    @Test
+    public void toStringTest(){
+        PatientDiagnosis pd = new PatientDiagnosis(1,"test1","test1",20,"nothing",
+                "cough","n/a","n/a","n/a","n/a", LocalDate.parse("2021-11-11"),130,170,
+                37.5f,130,70,80,false,"cold",1,1,1);
+        PatientDiagnosis pd2 = new PatientDiagnosis();
+        pd2.setId(1);
+        pd2.setBlood_pressure_high(130);
+        pd2.setFname("test1");
+        pd2.setLname("test1");
+        pd2.setPatient_age(20);
+        pd2.setComplaint("nothing");
+        pd2.setSymptoms("cough");
+        pd2.setMed_history("n/a");
+        pd2.setFam_history("n/a");
+        pd2.setAllergies("n/a");
+        pd2.setCurrent_meds("n/a");
+        pd2.setCurrent_date(LocalDate.parse("2021-11-11"));
+        pd2.setPatient_height(170);
+        pd2.setPatient_weight(130);
+        pd2.setPatient_temp(37.5f);
+        pd2.setBlood_pressure_low(70);
+        pd2.setPulse(80);
+        pd2.setDoctor_verification(false);
+        pd2.setDiagnosis_text("cold");
+        pd2.setCovid_id(1);
+        pd2.setDoctor_id(1);
+        pd2.setNurse_id(1);
+        assertEquals(pd.toString(),pd2.toString());
+    }
 }
