@@ -82,7 +82,7 @@ public class PatientDiagnosisServiceTest {
         PatientDiagnosis pd = new PatientDiagnosis(1,"test1","test1",20,"nothing",
                 "cough","n/a","n/a","n/a","n/a", LocalDate.parse("2021-11-11"),130,170,
                 37.5f,130,70,80,false,"cold",1,1,1);
-       // userService.updateUser(user);
+       
         patientDiagnosisService.updateDiagnosis(pd);
         verify(patientDiagnosisRepo, times(1)).save(pd);
 
