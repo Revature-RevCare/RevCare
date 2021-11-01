@@ -9,6 +9,12 @@ import { NursesComponent } from './components/nurses/nurses.component';
 import { DoctorsComponent } from './components/doctors/doctors.component';
 import { DiagnosisComponent } from './components/diagnosis/diagnosis.component';
 import { CovidComponent } from './components/covid/covid.component';
+<<<<<<< HEAD
+=======
+import { DoctorFormComponent } from './patient-diagnos/components/doctor-form/doctor-form.component';
+import { OldActiveCaseComponent } from './patient-diagnos/components/old-active-case/old-active-case.component';
+import { PatientFormComponent } from './patient-diagnos/components/patient-form/patient-form.component';
+>>>>>>> doctor_profile
 
 @NgModule({
   declarations: [
@@ -18,7 +24,14 @@ import { CovidComponent } from './components/covid/covid.component';
     NursesComponent,
     DoctorsComponent,
     DiagnosisComponent,
+<<<<<<< HEAD
     CovidComponent
+=======
+    CovidComponent,
+    DoctorFormComponent,
+    OldActiveCaseComponent,
+    PatientFormComponent
+>>>>>>> doctor_profile
   ],
   imports: [
     BrowserModule,
