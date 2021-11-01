@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { CovidVerificationComponent } from './covid-verification.component';
 
 describe('CovidVerificationComponent', () => {
@@ -23,12 +22,18 @@ describe('CovidVerificationComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('testing component',()=>{
-    expect(component.ngOnInit()).toBeTruthy;
+  // it('testing component',()=>{
+  //   expect(component.ngOnInit()).toBeTruthy;
+  // });
+
+  it('testing vaccination result',()=>{
+    expect(component.covidResults.value.vaccinationStatus).toBe(true);
   });
 
-  it('testing covid result',()=>{
-    expect(component.onSubmit).toBe(false);
-  });
+  it('testing button', ()=>{
+    expect(onload).toBeTruthy;
+  })
+
+  it('testing ')
   
 });

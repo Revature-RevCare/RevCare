@@ -18,9 +18,28 @@ export class CovidVerificationComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onSubmit(covidInfo: NgForm){
-    console.log(covidInfo);
-    const covidResults = new Covid(covidInfo.value.covidStatus, covidInfo.value.vaccinationStatus);
+  addPost(input : any){
+    console.log(input)
+    this.postService.addPost(input)
+      .subscribe(
+        res => {
+          console.log(res)
+          window.location.reload();
+        },
+        err => console.log(err)
+      )
   }
+
+  onSubmit(covidInfo: NgForm){
+    console.log(covidInfo.value);
+
+    const covidResults = new Covid(covidInfo.value.covidStatus, covidInfo.value.vaccinationStatus);
+    document.getElementById("formPage")!.style.display = "none";
+  }
+
+  openForm(){
+    document.getElementById("formPage")!.style.display = "block";
+  }
+  
 
 }
