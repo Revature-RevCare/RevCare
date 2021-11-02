@@ -64,6 +64,10 @@ public class UserController {
 
         return null;
     }
+    @GetMapping(path="/find/{user_email}")
+    public User getByUserEmail2(@PathVariable String user_email){
+        return userService.getByEmail(user_email);
+    }
 
     //UPDATE
 
