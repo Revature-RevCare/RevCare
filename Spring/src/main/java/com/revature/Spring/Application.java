@@ -14,8 +14,8 @@ import java.util.Arrays;
 
 
 @SpringBootApplication
-//@ComponentScan("com.revature.Spring") // look for components/stereotypes
-//@EnableJpaRepositories("com.revature.Spring.repositories") //tells spring where to find our repos so hibernate can do its work
+@ComponentScan("com.revature.Spring") // look for components/stereotypes
+@EnableJpaRepositories("com.revature.Spring.repositories") //tells spring where to find our repos so hibernate can do its work
 @EntityScan("com.revature.Spring.models")
 
 public class Application {
