@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
-import {Covid} from 'src/app/model/covidVerification'
+import {Covid} from 'src/app/models/covidVerification'
+import { CovidVerificationService } from 'src/app/services/covid-verification.service';
 
 
 @Component({
@@ -11,16 +12,14 @@ import {Covid} from 'src/app/model/covidVerification'
 })
 export class CovidVerificationComponent implements OnInit {
 
-  constructor(private router: Router) { }
-
-  covidResults: Covid | any;
+  constructor(private covidService: CovidVerificationService) { }
 
   ngOnInit(): void {
   }
 
-  addPost(input : any){
+  addCovid(input : any){
     console.log(input)
-    this.postService.addPost(input)
+    this.covidService.addCovid(input)
       .subscribe(
         res => {
           console.log(res)
@@ -30,16 +29,10 @@ export class CovidVerificationComponent implements OnInit {
       )
   }
 
-  onSubmit(covidInfo: NgForm){
-    console.log(covidInfo.value);
-
-    const covidResults = new Covid(covidInfo.value.covidStatus, covidInfo.value.vaccinationStatus);
-    document.getElementById("formPage")!.style.display = "none";
-  }
-
-  openForm(){
-    document.getElementById("formPage")!.style.display = "block";
-  }
+  
+ // openForm(){
+ //  document.getElementById("formPage")!.style.display = "block";
+  //}
   
 
 }

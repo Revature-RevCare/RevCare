@@ -26,9 +26,6 @@ describe('CovidVerificationComponent', () => {
   //   expect(component.ngOnInit()).toBeTruthy;
   // });
 
-  it('testing vaccination result',()=>{
-    expect(component.covidResults.value.vaccinationStatus).toBe(true);
-  });
 
   it('testing button', ()=>{
     expect(onload).toBeTruthy;

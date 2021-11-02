@@ -1,21 +1,18 @@
-<!-- <button (click)="openForm()">show form</button> -->
-<div class="card-body" id="formPage" >
-   <form class="covid-Form" (ngSubmit)="onSubmit(covidForm)" #covidForm="ngForm">
+<div class="card-body" >
      <h1 style="text-align: center;">Covid Form</h1>
         <label>Covid Contamination: 
-        <select >
-              <option type="text" class="covidStatus" id="covidStatus" name="covidStatus">Select Option</option>
-              <option type="text" class="covidStatus" id="Exposed" name="Exposed" value="exposed" ngModel>I was Exposed to</option>
-              <option type="text" class="covidStatus" id="Had" name="Had" value="had" ngModel>I Had</option>
-              <option type="text" class="covidStatus" id="Have" name="Have" value="have" ngModel>I Have</option>
+        <select #CovidStatus>
+              <option type="text" class="covidStatus" value="no exposure to covid" ngModel>No Exposure to Covid</option>
+              <option type="text" class="covidStatus"  value="exposed to covid" ngModel>I was Exposed to Covid</option>
+              <option type="text" class="covidStatus"  value="had covid" ngModel>I Had Covid</option>
+              <option type="text" class="covidStatus"  value="have covid" ngModel>I Have Covid</option>
             </select> Covid-19</label>
               <br>
               <div class="vaccine">
               <label>Checkmark the box if you have been fully vaccinated:
-            <input type="checkbox" value="true" ngModel></label>
+            <input type="checkbox" value="true" ngModel #vaccinationStatus></label>
         </div>
-           <button class="w-100 btn btn-lg btn-primary" type="submit">Submit Form</button>
+           <button class="w-100 btn btn-lg btn-primary" type="submit" (click)="addCovid({covidStatus: CovidStatus.value, vaccinationStatus: vaccinationStatus.checked})">Submit Form</button>
          <br>
-   </form>
 </div>    
     
