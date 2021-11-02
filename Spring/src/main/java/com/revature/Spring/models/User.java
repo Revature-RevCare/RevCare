@@ -11,18 +11,25 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int user_id;
 
+    @Column
     private String first_name;
 
+    @Column
     private String last_name;
 
+    @Column
     private String education;
 
+    @Column
     private String title;
 
+    @Column
     private String email;
 
+    @Column
     private String password;
 
+    @Column
     private String phone_number;
 
     // Constructors here

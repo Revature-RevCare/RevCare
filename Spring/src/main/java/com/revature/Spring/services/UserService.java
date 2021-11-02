@@ -18,18 +18,14 @@ public class UserService {
     }
 
     // CREATE
-    public void addUser(User user) {
-        userRepo.save(user);
-    }
+    public void addUser(User user) {userRepo.save(user);}
 
     // READ
     public List<User> getAllUsers() {
         return userRepo.findAll();
     }
 
-    public User getUser(Integer user_id) {
-        return userRepo.findById(user_id).orElse(null);
-    }
+    public User getUser(int user_id) {return userRepo.findById(user_id).orElse(null);}
 
     // UPDATE
     public void updateUser(User user) {
