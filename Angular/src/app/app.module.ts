@@ -9,6 +9,10 @@ import { NursesComponent } from './components/nurses/nurses.component';
 import { DoctorsComponent } from './components/doctors/doctors.component';
 import { DiagnosisComponent } from './components/diagnosis/diagnosis.component';
 import { CovidComponent } from './components/covid/covid.component';
+import { HeaderComponent } from './components/includes/header/header.component';
+import { FooterComponent } from './components/includes/footer/footer.component';
+import { HomeComponent } from './components/home/home.component';
+import { HeroComponent } from './components/hero/hero.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +22,11 @@ import { CovidComponent } from './components/covid/covid.component';
     NursesComponent,
     DoctorsComponent,
     DiagnosisComponent,
-    CovidComponent
+    CovidComponent,
+    HeaderComponent,
+    FooterComponent,
+    HomeComponent,
+    HeroComponent
   ],
   imports: [
     BrowserModule,
