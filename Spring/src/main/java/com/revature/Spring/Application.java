@@ -2,14 +2,22 @@ package com.revature.Spring;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
 
 import java.util.Arrays;
 
+
 @SpringBootApplication
+@ComponentScan("com.revature.Spring") // look for components/stereotypes
+@EnableJpaRepositories("com.revature.Spring.repositories") //tells spring where to find our repos so hibernate can do its work
+@EntityScan("com.revature.Spring.models")
+
 public class Application {
 
 	public static void main(String[] args) {
@@ -30,7 +38,15 @@ public class Application {
 //		UrlBasedCorsConfigurationSource urlBasedCorsConfigurationSource = new UrlBasedCorsConfigurationSource();
 //		urlBasedCorsConfigurationSource.registerCorsConfiguration("/**", corsConfiguration);
 //		return new CorsFilter(urlBasedCorsConfigurationSource);
+
 //
 //	}
+
+
+
+//
+//	}
+
+
 
 }

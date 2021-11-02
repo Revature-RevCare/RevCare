@@ -17,7 +17,7 @@ public class PatientDiagnosisController {
     private final PatientDiagnosisService patientDiagnosisService;
 
     @Autowired
-    public PatientDiagnosisController(PatientDiagnosisService patientDiagnosisService, UserService userService) {
+    public PatientDiagnosisController(PatientDiagnosisService patientDiagnosisService) {
 
         this.patientDiagnosisService = patientDiagnosisService;
     }
@@ -36,15 +36,26 @@ public class PatientDiagnosisController {
 
     @GetMapping("/all")
     public ResponseEntity<List<PatientDiagnosis>> getAllDiagnosises () {
-        List<PatientDiagnosis> pokemons = patientDiagnosisService.findAllDiagnosis();
-        return new ResponseEntity<>(pokemons, HttpStatus.OK);
+        List<PatientDiagnosis> patients = patientDiagnosisService.findAllDiagnosis();
+        return new ResponseEntity<>(patients, HttpStatus.OK);
     }
 
-
-    @PostMapping("/add")
+    @PostMapping(value = "/add")
     public ResponseEntity<PatientDiagnosis> addPatient(@RequestBody PatientDiagnosis patient) {
         PatientDiagnosis newPatient = patientDiagnosisService.addNewDiagnosis(patient);
         return new ResponseEntity<>(newPatient, HttpStatus.CREATED);
+    }
+
+    @PostMapping("put/update")
+    public ResponseEntity<PatientDiagnosis> patientDiagnosisUpdate(@RequestBody PatientDiagnosis patientDiagnosis) {
+        PatientDiagnosis updateDiagnosis = patientDiagnosisService.updateDiagnosis(patientDiagnosis);
+        return new ResponseEntity<>(updateDiagnosis, HttpStatus.OK);
+    }
+
+    @PostMapping("delete/{id}")
+    public ResponseEntity<?> removePatient(@PathVariable("id") Integer id){
+        patientDiagnosisService.deleteDiagnosis(id);
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 
 }
