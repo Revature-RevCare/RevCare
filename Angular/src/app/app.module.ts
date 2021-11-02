@@ -11,9 +11,8 @@ import { NursesComponent } from './components/nurses/nurses.component';
 import { DoctorsComponent } from './components/doctors/doctors.component';
 import { DiagnosisComponent } from './components/diagnosis/diagnosis.component';
 import { CovidComponent } from './components/covid/covid.component';
-import { DoctorFormComponent } from './patient-diagnos/components/doctor-form/doctor-form.component';
-import { OldActiveCaseComponent } from './patient-diagnos/components/old-active-case/old-active-case.component';
-import { PatientFormComponent } from './patient-diagnos/components/patient-form/patient-form.component';
+import { DoctorFormComponent } from './components/doctor-form/doctor-form.component';
+import { OldActiveCaseComponent } from './components/old-active-case/old-active-case.component';
 import { CovidVerificationComponent } from './components/covidVerification/covid-verification.component';
 import { CovidVerificationService } from './services/covid-verification.service';
 
@@ -28,7 +27,6 @@ import { CovidVerificationService } from './services/covid-verification.service'
     CovidComponent,
     DoctorFormComponent,
     OldActiveCaseComponent,
-    PatientFormComponent,
     CovidVerificationComponent
   ],
   imports: [
