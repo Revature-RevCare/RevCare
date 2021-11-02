@@ -1,1 +1,40 @@
-<p>nurses works!</p>
+<style>
+    .column {
+        float: left;
+        width: 33.3%;
+        align-items: center;
+        margin-left: 250px;
+        margin-right: -300px;
+    }
+
+    .row::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+</style>
+<div class="row">
+    <div class="column">
+        <button (click)="clickEventOne()">Profile</button>
+    </div>
+    <div class="column">
+        <button (click)="clickEventTwo()">List of Patient Diagnosis</button>       
+    </div>
+    <div class="column">
+        <button (click)="clickEventThree()">Patient Diagnosis</button>
+    </div>
+</div>
+
+<div class="content" style="text-align: center;">
+    <!-- <container-element [ngSwitch]="list1 == true"></container-element> -->
+    <div *ngIf="list1">
+        <h1>{{ name }}</h1>
+    </div>
+    <div *ngIf="list2">
+        <h1>List of Forms</h1>
+    </div>
+    <div *ngIf="list3">
+        <h1>Patient Diagnosis Form</h1>
+    </div>
+</div>
