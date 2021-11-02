@@ -2,10 +2,8 @@ package com.revature.Spring.repositories;
 
 import com.revature.Spring.models.User;
 import org.springframework.data.jpa.repository.JpaRepository;
-<<<<<<< HEAD
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
-=======
->>>>>>> userMockito
+
 import org.springframework.stereotype.Repository;
 
 @Repository
