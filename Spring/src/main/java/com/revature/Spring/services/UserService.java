@@ -1,5 +1,6 @@
 package com.revature.Spring.services;
 
+<<<<<<< HEAD
 import com.revature.Spring.models.User;
 import com.revature.Spring.repositories.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,6 +8,10 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+=======
+import org.springframework.stereotype.Service;
+
+>>>>>>> staging
 @Service
 public class UserService {
 
