@@ -12,10 +12,17 @@ import org.springframework.web.filter.CorsFilter;
 
 import java.util.Arrays;
 
+
 @SpringBootApplication
+<<<<<<< HEAD
 @ComponentScan("com.revature.Spring") // look for components/stereotypes
 @EnableJpaRepositories("com.revature.Spring.repositories")  //repos location
 @EntityScan("com.revature.Spring.models") //entities location
+=======
+//@ComponentScan("com.revature.Spring")
+@EnableJpaRepositories("com.revature.Spring.repositories") //tells spring where to find our repos so hibernate can do its work
+@EntityScan("com.revature.Spring.models")
+>>>>>>> covidVerification
 public class Application {
 
 	public static void main(String[] args) {
@@ -36,7 +43,15 @@ public class Application {
 //		UrlBasedCorsConfigurationSource urlBasedCorsConfigurationSource = new UrlBasedCorsConfigurationSource();
 //		urlBasedCorsConfigurationSource.registerCorsConfiguration("/**", corsConfiguration);
 //		return new CorsFilter(urlBasedCorsConfigurationSource);
+<<<<<<< HEAD
 //
 //	}
+=======
+
+
+//
+//	}
+
+>>>>>>> covidVerification
 
 }
