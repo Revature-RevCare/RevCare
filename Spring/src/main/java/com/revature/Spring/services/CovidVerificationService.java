@@ -18,7 +18,9 @@ public class CovidVerificationService {
     }
 
     public CovidVerification getById(Integer id){
-        return covidRepo.findCovidVerificationById(id).orElseThrow(()->new ApplicationNotFoundException("Application Id " + id + " Application not found by this Id"));
+        // This line of code doesn't work.
+//        return covidRepo.findCovidVerificationById(id).orElseThrow(()->new ApplicationNotFoundException("Application Id " + id + " Application not found by this Id"));
+        return covidRepo.findById(id).orElse(null);
     }
 
     public List<CovidVerification> findAll(){
