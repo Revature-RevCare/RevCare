@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from 'src/app/models/userModel';
 
 @Component({
   selector: 'app-nurses',
@@ -7,7 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NursesComponent implements OnInit {
 
-  name: string = "Nurse Dan";
+  user: User = {
+    user_id: 1,
+    first_name: "Dan",
+    last_name: "Felleman",
+    title: "Nurse",
+    email: "nurse.danl@gmail.com",
+    password: "password",
+    phone_number: "103-456-7890"
+  }
 
   constructor() { }
 

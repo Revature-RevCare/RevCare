@@ -14,8 +14,8 @@ export class DoctorsComponent implements OnInit {
     user_id: 1,
     first_name: "Robert",
     last_name: "Campbell",
-    title: "Nurse",
-    email: "nurse.campbell@gmail.com",
+    title: "Doctor",
+    email: "dr.campbell@gmail.com",
     password: "thispassword",
     phone_number: "123-456-7890"
   }
