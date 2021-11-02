@@ -1,4 +1,5 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
+import { By } from '@angular/platform-browser';
 import { CovidVerificationComponent } from './covid-verification.component';
 
 describe('CovidVerificationComponent', () => {
@@ -22,15 +23,14 @@ describe('CovidVerificationComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  // it('testing component',()=>{
-  //   expect(component.ngOnInit()).toBeTruthy;
-  // });
-
-
-  it('testing button', ()=>{
-    expect(onload).toBeTruthy;
-  })
-
-  it('testing ')
+//   it("Should show options when toggle option is clicked",fakeAsync(() => {
+//     fixture.detectChanges();
+//     let toggleButton = fixture.debugElement.queryAll(By.css('[covidStatus]'));
+//     toggleButton[0].nativeElement.click();
+//     tick();
+//     fixture.detectChanges();
+//     let list = fixture.debugElement.queryAll(By.css('select.covidStatus'));  
+//     console.log(list[0]);
+// }));
   
 });

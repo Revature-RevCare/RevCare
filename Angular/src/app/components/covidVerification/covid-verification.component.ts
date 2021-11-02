@@ -22,17 +22,11 @@ export class CovidVerificationComponent implements OnInit {
     this.covidService.addCovid(input)
       .subscribe(
         res => {
-          console.log(res)
-          window.location.reload();
+          console.log(res);
+          document.getElementById("card-body")!.style.display = "none";
         },
         err => console.log(err)
       )
   }
-
-  
- // openForm(){
- //  document.getElementById("formPage")!.style.display = "block";
-  //}
-  
 
 }
