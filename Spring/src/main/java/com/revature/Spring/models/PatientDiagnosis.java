@@ -327,3 +327,6 @@ public class PatientDiagnosis implements Serializable {
         return Objects.hash(id, fname, lname, patient_age, complaint, symptoms, med_history, fam_history, allergies, current_meds, current_date, patient_weight, patient_height, patient_temp, blood_pressure_high, blood_pressure_low, pulse, doctor_verification, diagnosis_text, covid_id, nurse_id, doctor_id);
     }
 }
+
+
+

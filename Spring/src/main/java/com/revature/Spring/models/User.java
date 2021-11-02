@@ -1,9 +1,14 @@
 package com.revature.Spring.models;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name = "users")
+
 public class User {
 
     //Instance Variables
@@ -13,7 +18,8 @@ public class User {
 
     private String first_name;
 
-    private String last_name;
+    @Column(name = "last_name")
+    private String last;
 
     private String education;
 
@@ -29,11 +35,11 @@ public class User {
     public User() {
     }
 
-    public User(int user_id, String first_name, String last_name, String education,
+    public User(int user_id, String first_name, String last, String education,
                 String title, String email, String password, String phone_number) {
         this.user_id = user_id;
         this.first_name = first_name;
-        this.last_name = last_name;
+        this.last = last;
         this.education = education;
         this.title = title;
         this.email = email;
@@ -59,12 +65,12 @@ public class User {
         this.first_name = first_name;
     }
 
-    public String getLast_name() {
-        return last_name;
+    public String getLast() {
+        return last;
     }
 
-    public void setLast_name(String last_name) {
-        this.last_name = last_name;
+    public void setLast(String last) {
+        this.last = last;
     }
 
     public String getEducation() {
@@ -113,7 +119,7 @@ public class User {
         return "User{" +
                 "user_id=" + user_id +
                 ", first_name='" + first_name + '\'' +
-                ", last_name='" + last_name + '\'' +
+                ", last_name='" + last + '\'' +
                 ", education='" + education + '\'' +
                 ", title='" + title + '\'' +
                 ", email='" + email + '\'' +
