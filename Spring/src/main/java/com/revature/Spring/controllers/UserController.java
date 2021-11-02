@@ -26,6 +26,20 @@ public class UserController {
     public void addUser(@RequestBody User user){
         userService.addUser(user);
     }
+    @PostMapping(path = "/login")
+    public User loginUser(@RequestBody User user){
+        List<User> allUsers = userService.getAllUsers();
+
+        for (int i=0; i < allUsers.size(); i ++){
+            if (Objects.equals(user.getEmail(), allUsers.get(i).getEmail()) &&
+                    Objects.equals(user.getPassword(), allUsers.get(i).getPassword())){
+
+                return userService.getUser(allUsers.get(i).getUser_id());
+            }
+        }
+
+        return null;
+    }
 
     //READ
 
@@ -36,6 +50,19 @@ public class UserController {
     @GetMapping(path ="/find/{user_id}")
     public User getUser(@PathVariable Integer user_id){
         return userService.getUser(user_id);
+    }
+    @GetMapping(path="/find/{user_email}")
+    public User getByUserEmail(@PathVariable String user_email){
+        List<User> allUsers = userService.getAllUsers();
+        User u;
+
+        for (int i= 0; i < allUsers.size(); i ++){
+            if (Objects.equals(user_email, allUsers.get(i).getEmail())){
+                return userService.getUser((allUsers.get(i).getUser_id()));
+            }
+        }
+
+        return null;
     }
 
     //UPDATE
