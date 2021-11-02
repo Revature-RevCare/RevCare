@@ -15,7 +15,7 @@ import { DoctorFormComponent } from './patient-diagnos/components/doctor-form/do
 import { OldActiveCaseComponent } from './patient-diagnos/components/old-active-case/old-active-case.component';
 import { PatientFormComponent } from './patient-diagnos/components/patient-form/patient-form.component';
 import { CovidVerificationComponent } from './components/covidVerification/covid-verification.component';
-import { CovidVerificationService } from './services/covid-verification.service';
+
 
 @NgModule({
   declarations: [
