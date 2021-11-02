@@ -4,6 +4,10 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 
+# IDE-specific files and folders
+.idea/
+*.iml
+
 ### STS ###
 .apt_generated
 .classpath
