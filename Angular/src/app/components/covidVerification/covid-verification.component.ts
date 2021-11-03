@@ -3,6 +3,8 @@ import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import {Covid} from 'src/app/models/covidVerification'
 import { CovidVerificationService } from 'src/app/services/covid-verification.service';
+import { CookieService } from 'ngx-cookie-service'
+
 
 
 @Component({
@@ -12,7 +14,7 @@ import { CovidVerificationService } from 'src/app/services/covid-verification.se
 })
 export class CovidVerificationComponent implements OnInit {
 
-  constructor(private covidService: CovidVerificationService) { }
+  constructor(private covidService: CovidVerificationService ) { }
 
   ngOnInit(): void {
   }
@@ -22,6 +24,7 @@ export class CovidVerificationComponent implements OnInit {
     this.covidService.addCovid(input)
       .subscribe(
         res => {
+         
           console.log(res);
           document.getElementById("card-body")!.style.display = "none";
         },
