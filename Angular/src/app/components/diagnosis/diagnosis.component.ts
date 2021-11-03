@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CovidVerificationService } from 'src/app/services/covid-verification.service';
 
+
 @Component({
   selector: 'app-diagnosis',
   templateUrl: './diagnosis.component.html',
