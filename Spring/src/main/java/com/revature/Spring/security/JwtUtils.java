@@ -18,11 +18,11 @@ public class JwtUtils {
     private static final Logger logger = LoggerFactory.getLogger(JwtUtils.class);
 
 
-    @Value("${jwt.secret}")
+    @Value("${spring.app.jwt.secret}")
     private String jwtSecret;
 
-    @Value("${jwtExpirationMs}")
-    private int jwtExpirationMs;
+//    @Value("${spring.app.jwtExpirationMs}")
+    private int jwtExpirationMs = 8900000;
 
 
     public String generateJwtToken(Authentication authentication) {

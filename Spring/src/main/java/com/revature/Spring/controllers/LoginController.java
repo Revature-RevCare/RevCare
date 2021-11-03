@@ -67,6 +67,7 @@ public class LoginController {
                 userDetails.getUser_id(),
                 userDetails.getUsername(),
                 userDetails.getEmail(),
+                userDetails.getTitle(),
                 roles));
     }
 
@@ -92,7 +93,7 @@ public class LoginController {
         user.setEducation(signupRequest.getEducation());
         user.setUsername(signupRequest.getUsername());
         user.setEmail(signupRequest.getEmail());
-        user.setPassword(signupRequest.getPassword());
+        user.setPassword(encoder.encode(signupRequest.getPassword()));
         user.setPhone_number(signupRequest.getPhone_number());
         user.setTitle(signupRequest.getTitle());
 //        user.setRoles(signupRequest.getRole("ADMIN"));
