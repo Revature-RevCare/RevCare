@@ -11,6 +11,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.Column;
 
@@ -106,6 +107,11 @@ public class UserDetailsImpl implements UserDetails {
         return password;
     }
 
+    @Override
+    public String getUsername() {
+        return null;
+    }
+
     public String getPhone_number() {
         return phone_number;
     }
@@ -142,4 +148,4 @@ public class UserDetailsImpl implements UserDetails {
 
 //    public String getUsername() {
 //    }
-//}
+}
