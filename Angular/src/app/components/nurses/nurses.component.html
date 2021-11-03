@@ -16,18 +16,17 @@
 </style>
 <div class="row">
     <div class="column">
-        <button (click)="clickEventOne()">Profile</button>
+        <button class="btn btn-primary" (click)="clickEventOne()">Profile</button>
     </div>
     <div class="column">
-        <button (click)="clickEventTwo()">List of Patient Diagnosis</button>       
+        <button class="btn btn-primary" (click)="clickEventTwo()">List of Patient Diagnosis</button>       
     </div>
     <div class="column">
-        <button (click)="clickEventThree()">Patient Diagnosis</button>
+        <button class="btn btn-primary" (click)="clickEventThree()">Patient Diagnosis</button>
     </div>
 </div>
 
 <div class="content" style="text-align: center;">
-    <!-- <container-element [ngSwitch]="list1 == true"></container-element> -->
     <div *ngIf="list1">
         <h1>Welcome {{ user.title }} {{ user.first_name }} {{ user.last_name }}</h1>
     </div>
@@ -37,12 +36,11 @@
     <div *ngIf="list3">
         <div class="row">
             <div class="column">
-                <app-patient-form></app-patient-form>
+                <app-diagnosis></app-diagnosis>
             </div>
             <div class="column">
                 <app-covid-verification></app-covid-verification>
             </div>
         </div>
-        
     </div>
 </div>
