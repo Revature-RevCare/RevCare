@@ -44,11 +44,13 @@ public class CovidControllerTest {
     @MockBean
     private CovidVerificationRepo covidRepo;
 
+    //Create a Mock MVC
     @Test
     public void shouldCreateMockMVC(){
         Assert.assertNotNull(mvc);
     }
 
+    // Test for fetching all Application
     @Test
     public void findAllFetchTest() throws Exception {
         List<CovidVerification> covid = Arrays.asList(
@@ -63,6 +65,7 @@ public class CovidControllerTest {
         System.out.println(covid);
     }
 
+    // Test for finding an application by Id
     @Test
     public void findByIdTest() throws Exception {
         CovidVerification covid = new CovidVerification();
@@ -77,6 +80,8 @@ public class CovidControllerTest {
                 .andExpect(MockMvcResultMatchers.jsonPath("$.vaccinationStatus").value(false))
                 .andExpect(status().isOk());
     }
+
+    // Test for saving an application 
     @Test
     public void saveCovidTest() throws Exception {
         CovidVerification covid = new CovidVerification();
