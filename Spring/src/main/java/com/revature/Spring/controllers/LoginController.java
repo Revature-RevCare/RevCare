@@ -4,6 +4,10 @@ package com.revature.Spring.controllers;
 import com.revature.Spring.models.ERole;
 import com.revature.Spring.models.Role;
 import com.revature.Spring.models.User;
+import com.revature.Spring.payload.request.LoginRequest;
+import com.revature.Spring.payload.request.SignupRequest;
+import com.revature.Spring.payload.response.JwtResponse;
+import com.revature.Spring.payload.response.MessageResponse;
 import com.revature.Spring.repositories.RoleRepo;
 import com.revature.Spring.repositories.UserRepo;
 import com.revature.Spring.security.JwtUtils;
@@ -46,10 +50,10 @@ public class LoginController {
     @Autowired
     JwtUtils jwtUtils;
 
-    @PostMapping("signin")
-    public ResponseEntity<?> authenticateUser(@Valid @RequestBody User user){ //took out loginrequest
+    @PostMapping("/signin")
+    public ResponseEntity<?> authenticateUser(@Valid @RequestBody LoginRequest loginRequest){ //took out loginrequest
         Authentication authentication = authenticationManager.authenticate(
-                new UsernamePasswordAuthenticationToken(user.getUsername(), user.getPassword()));
+                new UsernamePasswordAuthenticationToken(loginRequest.getUsername(), loginRequest.getPassword()));
 
         SecurityContextHolder.getContext().setAuthentication(authentication);
         String jwt = jwtUtils.generateJwtToken(authentication);
@@ -60,33 +64,40 @@ public class LoginController {
                 .collect(Collectors.toList());
 
         return ResponseEntity.ok(new JwtResponse(jwt,
-                userDetails.getId(),
+                userDetails.getUser_id(),
                 userDetails.getUsername(),
                 userDetails.getEmail(),
                 roles));
     }
 
     @PostMapping("/signup")
-    public EntityResponse<?> registerUser(@Valid @RequestBody User user){
+    public ResponseEntity<?> registerUser(@Valid @RequestBody SignupRequest signupRequest){
 
-        if (userRepo.existsByUsername(user.getUsername())) {
+        if (userRepo.existsByUsername(signupRequest.getUsername())) {
             return ResponseEntity
                     .badRequest()
                     .body(new MessageResponse("Error: Username is already taken!"));
         }
 
-        if (userRepo.existsByEmail(user.getEmail())) {
+        if (userRepo.existsByEmail(signupRequest.getEmail())) {
             return ResponseEntity
                     .badRequest()
                     .body(new MessageResponse("Error: Email is already in use!"));
         }
 
         // Create new user's account
-        User u = new User(user.getUsername(),
-                signUpRequest.getEmail(),
-                encoder.encode(user.getPassword()));
+        User user = new User();
+        user.setFirst_name(signupRequest.getFirst_name());
+        user.setLast(signupRequest.getLast());
+        user.setEducation(signupRequest.getEducation());
+        user.setUsername(signupRequest.getUsername());
+        user.setEmail(signupRequest.getEmail());
+        user.setPassword(signupRequest.getPassword());
+        user.setPhone_number(signupRequest.getPhone_number());
+        user.setTitle(signupRequest.getTitle());
+//        user.setRoles(signupRequest.getRole("ADMIN"));
 
-        Set<String> strRoles = user.getRole();
+        Set<Role> strRoles = user.getRoles();
         Set<Role> roles = new HashSet<>();
 
         if (strRoles == null) {
@@ -95,23 +106,18 @@ public class LoginController {
             roles.add(userRole);
         } else {
             strRoles.forEach(role -> {
-                switch (role) {
-                    case "admin":
-                        Role adminRole = roleRepo.findByName(ERole.ROLE_ADMIN)
-                                .orElseThrow(() -> new RuntimeException("Error: Role is not found."));
-                        roles.add(adminRole);
-
-                        break;
-                    case "mod":
-                        Role modRole = roleRepo.findByName(ERole.ROLE_MODERATOR)
-                                .orElseThrow(() -> new RuntimeException("Error: Role is not found."));
-                        roles.add(modRole);
-
-                        break;
-                    default:
-                        Role userRole = roleRepo.findByName(ERole.ROLE_USER)
-                                .orElseThrow(() -> new RuntimeException("Error: Role is not found."));
-                        roles.add(userRole);
+                if ("admin".equals(roles)) {
+                    Role adminRole = roleRepo.findByName(ERole.ROLE_ADMIN)
+                            .orElseThrow(() -> new RuntimeException("Error: Role is not found."));
+                    roles.add(adminRole);
+                } else if ("mod".equals(roles)) {
+                    Role modRole = roleRepo.findByName(ERole.ROLE_MODERATOR)
+                            .orElseThrow(() -> new RuntimeException("Error: Role is not found."));
+                    roles.add(modRole);
+                } else {
+                    Role userRole = roleRepo.findByName(ERole.ROLE_USER)
+                            .orElseThrow(() -> new RuntimeException("Error: Role is not found."));
+                    roles.add(userRole);
                 }
             });
         }
