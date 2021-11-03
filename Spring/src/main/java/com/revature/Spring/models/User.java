@@ -48,7 +48,6 @@ public class User {
 
 
 
-
     public User(int user_id, String first_name, String last, String education,
                 String title, String email, String username, String password, String phone_number) {
         this.user_id = user_id;
@@ -61,6 +60,8 @@ public class User {
         this.password = password;
         this.phone_number = phone_number;
     }
+
+
 
 
     // Getters and Setters
@@ -160,6 +161,8 @@ public class User {
                 ", phone_number='" + phone_number + '\'' +
                 '}';
     }
+
+
 
 
 //    @Override
