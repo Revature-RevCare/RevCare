@@ -14,9 +14,6 @@
     padding-bottom: 10px; 
 }
 
-.container{
-    filter:blur();
-}
 .form-popup {
     display: none;
     position: fixed;
