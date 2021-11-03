@@ -34,6 +34,10 @@
             </div>
           </div>
         </div>
+
+
+
+
         <div class="form-group">
           <label for="email">Email</label>
           <input
@@ -52,6 +56,8 @@
             </div>
           </div>
         </div>
+
+
         <div class="form-group">
           <label for="password">Password</label>
           <input
@@ -69,6 +75,81 @@
               Password must be at least 6 characters
             </div>
           </div>
+        </div>
+
+        <div class="form-group">
+            <label for="first_name">First Name</label>
+            <input
+              type="text"
+              class="form-control"
+              name="first_name"
+              [(ngModel)]="form.first_name"
+              required
+              #first_name="ngModel"
+            />
+            <div class="alert-danger" *ngIf="first_name.errors && f.submitted">
+              <div *ngIf="first_name.errors.required">First Name is required</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="last_name">Last Name</label>
+            <input
+              type="text"
+              class="form-control"
+              name="last_name"
+              [(ngModel)]="form.last_name"
+              required
+              #last_name="ngModel"
+            />
+            <div class="alert-danger" *ngIf="last_name.errors && f.submitted">
+              <div *ngIf="last_name.errors.required">Last Name is required</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="education">Education</label>
+            <input
+              type="text"
+              class="form-control"
+              name="education"
+              [(ngModel)]="form.education"
+              required
+              #education="ngModel"
+            />
+            <div class="alert-danger" *ngIf="education.errors && f.submitted">
+              <div *ngIf="education.errors.required">Education is required</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="title">Title</label>
+            <input
+              type="text"
+              class="form-control"
+              name="title"
+              [(ngModel)]="form.title"
+              required
+              #title="ngModel"
+            />
+            <div class="alert-danger" *ngIf="title.errors && f.submitted">
+              <div *ngIf="title.errors.required">Title is required</div>
+            </div>
+        </div>
+
+
+
+        <div class="form-group">
+            <label for="phone_number">Phone Number</label>
+            <input
+              type="text"
+              class="form-control"
+              name="phone_number"
+              [(ngModel)]="form.phone_number"
+              required
+              #phone_number="ngModel"
+            />
+            <div class="alert-danger" *ngIf="phone_number.errors && f.submitted">
+              <div *ngIf="phone_number.errors.required">Phone Number is required</div>
+            </div>
         </div>
         <div class="form-group">
           <button class="btn btn-primary btn-block">Sign Up</button>
