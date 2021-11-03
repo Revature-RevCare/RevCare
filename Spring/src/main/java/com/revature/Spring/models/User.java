@@ -27,6 +27,8 @@ public class User {
 
     private String email;
 
+    private String username;
+
     private String password;
 
     private String phone_number;
@@ -36,13 +38,14 @@ public class User {
     }
 
     public User(int user_id, String first_name, String last, String education,
-                String title, String email, String password, String phone_number) {
+                String title, String email, String username, String password, String phone_number) {
         this.user_id = user_id;
         this.first_name = first_name;
         this.last = last;
         this.education = education;
         this.title = title;
         this.email = email;
+        this.username = username;
         this.password = password;
         this.phone_number = phone_number;
     }
@@ -97,6 +100,14 @@ public class User {
         this.email = email;
     }
 
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
     public String getPassword() {
         return password;
     }
@@ -114,17 +125,34 @@ public class User {
     }
 
     // Override the to string method here
+
     @Override
     public String toString() {
         return "User{" +
                 "user_id=" + user_id +
                 ", first_name='" + first_name + '\'' +
-                ", last_name='" + last + '\'' +
+                ", last='" + last + '\'' +
                 ", education='" + education + '\'' +
                 ", title='" + title + '\'' +
                 ", email='" + email + '\'' +
+                ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
                 ", phone_number='" + phone_number + '\'' +
                 '}';
     }
+
+
+//    @Override
+//    public String toString() {
+//        return "User{" +
+//                "user_id=" + user_id +
+//                ", first_name='" + first_name + '\'' +
+//                ", last_name='" + last + '\'' +
+//                ", education='" + education + '\'' +
+//                ", title='" + title + '\'' +
+//                ", email='" + email + '\'' +
+//                ", password='" + password + '\'' +
+//                ", phone_number='" + phone_number + '\'' +
+//                '}';
+//    }
 }
