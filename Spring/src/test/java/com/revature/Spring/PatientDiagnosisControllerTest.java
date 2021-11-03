@@ -11,6 +11,7 @@ import org.junit.runner.RunWith;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -27,7 +28,8 @@ import static java.util.Arrays.asList;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
-
+@RunWith(SpringRunner.class)
+@SpringBootTest
 @WebMvcTest(controllers = PatientDiagnosisController.class)
 public class PatientDiagnosisControllerTest {
 
@@ -41,6 +43,10 @@ public class PatientDiagnosisControllerTest {
     private ObjectMapper objectMapper;
 
     private List<PatientDiagnosis> patientDiagnoses;
+
+    @Test
+    void contextLoads() {
+    }
 
     @Test
     public void shouldGetAllDiagnosisControllerTest() throws Exception {
