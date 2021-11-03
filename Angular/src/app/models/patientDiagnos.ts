@@ -1,3 +1,5 @@
+import { Covid } from "./covidVerification";
+
 export interface patientForm{
    Patientid: number;
    FirstName: string;
@@ -18,7 +20,7 @@ export interface patientForm{
    Pulse: number;
    Doctorverification: boolean;
    Diagnosis: string;
-   Covidid: number;
+   Covidid: Covid;
    Nurseid: number;
    Doctorid: number;
 }
