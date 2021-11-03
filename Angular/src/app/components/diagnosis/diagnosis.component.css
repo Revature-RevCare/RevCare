@@ -1,15 +1,10 @@
 .card-body{
-    display: none;
-    position: auto;
     padding-left: 10px;
     padding-right: 10px;
-    margin-left: auto;
-    margin-right: auto;
-    height: 500px;
+    height: 150px;
     width: 400px;
     box-shadow: rgba(3, 3, 3, 0.24);
     background-color: rgba(0, 0, 0, 0.301);
-    z-index: 9;
     color: rgb(0, 0, 0);
     border-radius: 8px;
 }
@@ -21,4 +16,13 @@
 
 .container{
     filter:blur();
+}
+.form-popup {
+    display: none;
+    position: fixed;
+    bottom: 600px;
+    right: 800px;
+    box-shadow: rgb(3, 3, 3);
+    z-index: 9;
+    color: white;
 }
