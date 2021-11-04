@@ -4,7 +4,8 @@ import { Observable } from 'rxjs';
 import { patientForm } from '../models/patientDiagnos';
 import { map, catchError } from 'rxjs/operators';
 import { DoctorFormComponent } from '../components/doctor-form/doctor-form.component';
-
+import { HttpHeaders } from '@angular/common/http';
+import { TokenStorageService } from './token-storage.service';
 
 
 @Injectable({
@@ -14,11 +15,16 @@ export class DnnService {
 
   private baseUrl: string = "http://localhost:8080/diagnosis";
 
-  private headers = {'Content-Type': 'application/json'}
+  constructor(private http: HttpClient, private tokenStorage: TokenStorageService) { }
 
-  constructor(private http: HttpClient) { }
+  jwtToken = this.tokenStorage.getUser();
+
+  headers = new HttpHeaders().set('content-type', 'application/json')
+                             .set('Access-Control-Allow-Origin', '*')
+                             .set('Authorization', this.jwtToken);
 
   getDiagnosis(): Observable<any> {
+    this.setHeaders();
     return this.http.get(this.baseUrl + "/all")
     .pipe(
       map(response => response as patientForm[]),
@@ -27,10 +33,18 @@ export class DnnService {
   };
 
   getByConfirm(): Observable<any> {
+    this.setHeaders();
     return this.http.get(this.baseUrl + "/active")
     .pipe(
       map(response => response as patientForm[]),
       catchError(err => err)
     )
   };
+
+  setHeaders(): void {
+    this.jwtToken = this.tokenStorage.getUser().token;
+
+    this.headers = new HttpHeaders().set('Content-type', 'application/json')
+                             .set('authorization', this.jwtToken);
+  }
 }
