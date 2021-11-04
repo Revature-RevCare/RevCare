@@ -7,9 +7,10 @@ import { environment } from 'src/environments/environment';
 @Injectable({providedIn: 'root'})
 export class DiagnosisService{
     private apiServerUrl = environment.apiBaseUrl;
+    constructor(private http: HttpClient){}
 
     public addPatientDiagnosis(patientDiagnos: patientForm): Observable<patientForm> {
-        return this.http.post<[patientForm]>(`${this.apiServerUrl}/diagnosis/add`, patientDiagnos);
+        return this.http.post<patientForm>(`${this.apiServerUrl}/diagnosis/add`, patientDiagnos);
       }
 
     public updatePatientDiagnosis(patientDiagnos: patientForm): Observable<patientForm> {
