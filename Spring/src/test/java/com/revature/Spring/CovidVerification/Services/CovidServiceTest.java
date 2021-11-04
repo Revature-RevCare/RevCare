@@ -5,13 +5,14 @@ import com.revature.Spring.services.CovidVerificationService;
 import org.junit.jupiter.api.Assertions;
 //import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
+import org.mockito.invocation.InvocationOnMock;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.junit.runner.RunWith;
 import org.junit.Test;
-import java.util.Optional;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -48,8 +49,18 @@ public class CovidServiceTest {
 
     @Test
     public void getByIdTest(){
-        int id =1;
-        when(covidRepo.getById(id)).thenReturn(new CovidVerification(1, "Yes", false));
-        Assertions.assertEquals(id, covidService.getById(id).getCovidId());
+        CovidVerification covid = new CovidVerification(1, "yes", false);
+        when(covidRepo.findById(1)).thenReturn(java.util.Optional.of(covid));
+        Assertions.assertEquals(covid, covidService.getById(1));
     }
+
+//    @Test
+//    public void getByDiagnosisIdTest(){
+//        PatientDiagnosis pd = new PatientDiagnosis(1,"test1","test1",20,"nothing",
+//                "cough","n/a","n/a","n/a","n/a", LocalDate.parse("2021-11-11"),130,170,
+//                37.5f,130,70,80,false,"cold",1,1,1);
+//        when(patientDiagnosisRepo.findById(1)).thenReturn(java.util.Optional.of(pd));
+//        assertEquals(pd,patientDiagnosisService.getById(1));
+//    }
+
 }
