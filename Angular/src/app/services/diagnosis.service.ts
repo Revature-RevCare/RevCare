@@ -6,7 +6,7 @@ import { environment } from 'src/environments/environment';
 
 @Injectable({providedIn: 'root'})
 export class DiagnosisService{
-    private apiServerUrl = environment.apiBaseUrl;
+    private apiServerUrl = environment.baseUrl;
     constructor(private http: HttpClient){}
 
     public addPatientDiagnosis(patientDiagnos: patientForm): Observable<patientForm> {
