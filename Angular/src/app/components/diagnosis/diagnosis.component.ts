@@ -1,6 +1,7 @@
 import { Component, ElementRef, OnInit, TemplateRef, ViewChild } from '@angular/core';
 import { CovidVerificationService } from 'src/app/services/covid-verification.service';
 import { CookieService } from 'ngx-cookie-service'
+import { TokenStorageService } from 'src/app/services/token-storage.service';
 
 function openForm(){
   document.getElementById("myForm")!.style.display = "block";
@@ -20,12 +21,14 @@ function closeForm(){
 })
 export class DiagnosisComponent implements OnInit {
 
-
+  
     
-  constructor(private covidService: CovidVerificationService, private cookieService: CookieService) { }
+  constructor(private covidService: CovidVerificationService, private cookieService: CookieService, private tokenStorage: TokenStorageService) { }
 
   ngOnInit(): void {
-   openForm();
+    openForm();
+    this.tokenStorage.getToken(); 
+    this.tokenStorage.getUser().token;
   }
   
 
