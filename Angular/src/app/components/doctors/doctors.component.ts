@@ -30,6 +30,10 @@ export class DoctorsComponent implements OnInit {
     this.activeDiagnosis;
   }
 
+  click() {
+    console.log("doctor click");
+  }
+
   activeDiagnosis() {
     this.dnnService.getByConfirm()
       .subscribe(
