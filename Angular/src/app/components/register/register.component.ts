@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
 
+
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -12,7 +13,7 @@ export class RegisterComponent implements OnInit {
     email: null,
     password: null,
     first_name: null,
-    last_name: null,
+    last: null,
     education: null,
     title: null,
     phone_number: null
