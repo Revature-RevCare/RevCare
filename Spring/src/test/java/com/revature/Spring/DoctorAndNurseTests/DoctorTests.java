@@ -34,6 +34,8 @@
 //    @MockBean
 //    private PatientDiagnosisRepo repositoryp;
 //
+<<<<<<< HEAD
+=======
 //    @Test
 //    public void findByConfirmTest() {
 //        Boolean confirm=false;
@@ -42,6 +44,25 @@
 //                .collect(Collectors.toList()));
 //        assertEquals(1, service.findByConfirm(confirm).size());
 //    }
+//
+//    @Test
+//    public void getByLastNameTest() {
+//        String last="Beeles";
+//        when(repositoryu.findByLast(last)).thenReturn(new User(1, "Jonathon", "Beeles", "Stanford", "MD", "doctor@doctor.com", "pass", "555-555-5555"));
+//        assertEquals(last, service.findByLastName(last).getLast());
+//    }
+
+    // get all test if needed:
+>>>>>>> loginJwt
+//    @Test
+//    public void findByConfirmTest() {
+//        Boolean confirm=false;
+//        when(repositoryp.findByConfirm(confirm)).thenReturn((PatientDiagnosis) Stream
+//                .of(new PatientDiagnosis(1, "Jonathon", "Beeles", 28, false))
+//                .collect(Collectors.toList()));
+//        assertEquals(1, service.findByConfirm(confirm).size());
+//    }
+<<<<<<< HEAD
 //
 //    @Test
 //    public void getByLastNameTest() {
@@ -60,4 +81,7 @@
 ////        assertEquals(2, service.getUsers().size());
 ////    }
 //
+=======
+
+>>>>>>> loginJwt
 //}

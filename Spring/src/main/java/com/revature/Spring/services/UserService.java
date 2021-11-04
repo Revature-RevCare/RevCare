@@ -1,9 +1,12 @@
 package com.revature.Spring.services;
 
+<<<<<<< HEAD
 
 
 
 
+=======
+>>>>>>> loginJwt
 import com.revature.Spring.models.User;
 import com.revature.Spring.repositories.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +14,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+<<<<<<< HEAD
 
 
 
@@ -19,6 +23,8 @@ import java.util.List;
 
 
 
+=======
+>>>>>>> loginJwt
 @Service
 public class UserService {
 
