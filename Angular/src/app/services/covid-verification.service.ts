@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpClientModule } from '@angular/common/http';
 import { Covid } from '../models/covidVerification';
 import { Observable } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
