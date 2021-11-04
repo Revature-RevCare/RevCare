@@ -1,4 +1,5 @@
-<<<<<<< HEAD
+import { Covid } from "./covidVerification";
+
 export interface patientForm {
    id: number;
    fname: string;
@@ -19,35 +20,7 @@ export interface patientForm {
    pulse: number;
    doctor_verification: boolean;
    diagnosis_text: string;
-   covid_id: number;
+   covid_id: Covid;
    nurse_id: number;
    doctor_id: number;
 
-=======
-import { Covid } from "./covidVerification";
-
-export interface patientForm{
-   Patientid: number;
-   FirstName: string;
-   LastName: string;
-   PatientAge: number;
-   Complaint: string;
-   Symptoms: string;
-   MedicalHistory: string;
-   FamilyHistory: string;
-   Allergies: string;
-   CurrentMedication: string;
-   CurrentDate: string;
-   Weight: number;
-   Height: number;
-   Temperature: number;
-   BloodpresureH: number;
-   BloodpresureL: number;
-   Pulse: number;
-   Doctorverification: boolean;
-   Diagnosis: string;
-   Covidid: Covid;
-   Nurseid: number;
-   Doctorid: number;
->>>>>>> staging
-}
