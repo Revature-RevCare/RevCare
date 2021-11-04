@@ -23,4 +23,4 @@ export interface patientForm {
    covid_id: Covid;
    nurse_id: number;
    doctor_id: number;
-
+}
