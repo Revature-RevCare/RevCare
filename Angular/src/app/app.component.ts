@@ -7,11 +7,7 @@ import { TokenStorageService } from './services/token-storage.service';
   styleUrls: ['./app.component.css']
 })
 
-<<<<<<< HEAD
-export class AppComponent {
-  title = 'RevCare';
-}
-=======
+
 export class AppComponent implements OnInit {
   private roles: string[] = [];
   isLoggedIn = false;
@@ -40,4 +36,3 @@ export class AppComponent implements OnInit {
     window.location.reload();
   }
 }
->>>>>>> loginJwt

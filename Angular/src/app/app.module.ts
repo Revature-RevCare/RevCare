@@ -16,9 +16,9 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { BoardAdminComponent } from './components/board-admin/board-admin.component';
 import { BoardModeratorComponent } from './components/board-moderator/board-moderator.component';
 import { BoardUserComponent } from './components/board-user/board-user.component';
-import { DoctorFormComponent } from './patient-diagnos/components/doctor-form/doctor-form.component';
-import { OldActiveCaseComponent } from './patient-diagnos/components/old-active-case/old-active-case.component';
-import { PatientFormComponent } from './patient-diagnos/components/patient-form/patient-form.component';
+import { DoctorFormComponent } from './components/doctor-form/doctor-form.component';
+import { OldActiveCaseComponent } from './components/old-active-case/old-active-case.component';
+import { PatientFormComponent } from './components/patient-form/patient-form.component';
 import { authInterceptorProviders } from './helpers/auth.interceptor';
 
 
@@ -31,7 +31,7 @@ import { authInterceptorProviders } from './helpers/auth.interceptor';
     NursesComponent,
     DoctorsComponent,
     DiagnosisComponent,
-    CovidComponent,
+    
     DoctorFormComponent,
     OldActiveCaseComponent,
     PatientFormComponent,
