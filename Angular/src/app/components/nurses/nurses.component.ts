@@ -44,7 +44,7 @@ export class NursesComponent implements OnInit {
   ngOnInit(): void {
     this.activeDiagnosis();
     this.tokenStorage.getToken(); 
-    this.tokenStorage.getUser();
+    //this.tokenStorage.getUser();
   }
 
   click() {
@@ -60,8 +60,9 @@ export class NursesComponent implements OnInit {
           console.log(this.alldiagnosis);
         },
         err => {
-          this.errorMessage = err.error.message; 
-          console.log(this.errorMessage);        
+          //this.errorMessage = err.error.message; 
+          //console.log(this.errorMessage); 
+          console.log(err);       
         });
   }
 
