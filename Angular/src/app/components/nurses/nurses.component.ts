@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from 'src/app/models/userModel';
+import { DnnService } from 'src/app/services/dnn.service';
+import { patientForm } from 'src/app/models/patientDiagnos';
 
 @Component({
   selector: 'app-nurses',
@@ -7,11 +10,37 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NursesComponent implements OnInit {
 
-  name: string = "Nurse Dan";
+  user: User = {
+    user_id: 1,
+    first_name: "Dan",
+    last_name: "Felleman",
+    title: "Nurse",
+    email: "nurse.danl@gmail.com",
+    password: "password",
+    phone_number: "103-456-7890"
+  }
 
-  constructor() { }
+  alldiagnosis: patientForm[] = [];
+  
+  constructor(private dnnService: DnnService) { }
 
   ngOnInit(): void {
+    this.activeDiagnosis();
+  }
+
+  click() {
+    console.log(this.alldiagnosis);
+  }
+
+  activeDiagnosis() {
+    this.dnnService.getDiagnosis()
+      .subscribe(
+        resp => {
+          this.alldiagnosis = resp;
+          console.log(this.alldiagnosis);
+        },
+        error => console.log(error)           
+      )
   }
 
   list1: boolean = false;

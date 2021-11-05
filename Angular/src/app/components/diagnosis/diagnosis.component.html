@@ -158,13 +158,14 @@
   <div class="back">
       <div class="modal-body">
         <div class="card-body" id="covid">
-          <h1 style="text-align: center;">Covid Form</h1>
+          <h1 class="head" style="text-align: center;">Covid Form</h1>
+            <div class="vacc-body">
             <label>Covid Contamination: 
             <select class="covidStatus" #CovidStatus>
-                  <option type="text" value="no exposure to covid"  >No Exposure to Covid</option>
-                  <option type="text" value="exposed to covid" >I was Exposed to Covid</option>
-                  <option type="text" value="had covid"  >I Had Covid</option>
-                  <option type="text" value="have covid" >I Have Covid</option>
+                  <option type="text" value="no exposure to covid"  >No Exposure to</option>
+                  <option type="text" value="exposed to covid" >I was Exposed to</option>
+                  <option type="text" value="had covid"  >I Had</option>
+                  <option type="text" value="have covid" >I Have</option>
                 </select> Covid-19</label>
                   <br>
                   <div class="vaccine">
@@ -172,7 +173,9 @@
                 <input type="checkbox" value="true" name="vaccinated" ngModel #vaccinationStatus></label>
             </div>
                 <button class="w-100 btn btn-lg btn-primary" type="submit" (click)="addCovid({covidStatus: CovidStatus.value, vaccinationStatus: vaccinationStatus.checked})" data-dismiss="modal">Submit Form</button>
-    </div>      </div>
+              </div>
+            </div>     
+        </div>
       <div class="modal-footer">
       </div>
 </div>

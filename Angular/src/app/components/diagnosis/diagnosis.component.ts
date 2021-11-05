@@ -5,11 +5,13 @@ import { CookieService } from 'ngx-cookie-service'
 function openForm(){
   document.getElementById("myForm")!.style.display = "block";
   document.getElementById("body")!.style.filter = "blur(4px)";
+  document.getElementById("body")!.style.pointerEvents = "none";
 }
 
 function closeForm(){
   document.getElementById("myForm")!.style.display = "none";
   document.getElementById("body")!.style.filter = "blur(0px)";
+  document.getElementById("body")!.style.pointerEvents = "all";
 }
 
 

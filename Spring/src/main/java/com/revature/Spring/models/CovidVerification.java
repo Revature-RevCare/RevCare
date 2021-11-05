@@ -1,3 +1,4 @@
+
 package com.revature.Spring.models;
 
 import lombok.AllArgsConstructor;
@@ -25,3 +26,4 @@ public class CovidVerification implements Serializable {
     private boolean vaccinationStatus;
 
 }
+
