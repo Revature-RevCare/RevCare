@@ -10,6 +10,7 @@ export class DiagnosisService{
     constructor(private http: HttpClient){}
 
     public addPatientDiagnosis(patientDiagnos: patientForm): Observable<patientForm> {
+        //header here
         return this.http.post<patientForm>(`${this.apiServerUrl}/diagnosis/add`, patientDiagnos);
       }
 
