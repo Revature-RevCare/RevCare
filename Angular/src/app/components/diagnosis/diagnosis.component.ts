@@ -2,6 +2,7 @@ import { Component, ElementRef, OnInit, TemplateRef, ViewChild } from '@angular/
 import { CovidVerificationService } from 'src/app/services/covid-verification.service';
 import { CookieService } from 'ngx-cookie-service'
 import { TokenStorageService } from 'src/app/services/token-storage.service';
+import { NgForm } from '@angular/forms';
 
 function openForm(){
   document.getElementById("myForm")!.style.display = "block";
@@ -31,6 +32,11 @@ export class DiagnosisComponent implements OnInit {
     this.tokenStorage.getUser().token;
   }
   
+
+  onSubmit(f:NgForm){
+    
+  }
+
 
   addCovid(input : any){
     console.log(input)

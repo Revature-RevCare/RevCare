@@ -23,13 +23,11 @@ public class CovidVerificationController {
     public CovidVerificationController(CovidVerificationService covidService){
         this.covidService = covidService;
     }
-
    @GetMapping()
     public ResponseEntity<List<CovidVerification>> getAllCovidApplications(){
         List<CovidVerification> covidVerificationList = covidService.findAll();
         return new ResponseEntity<>(covidVerificationList, HttpStatus.OK);
    }
-
    @GetMapping("/find/{id}")
     public ResponseEntity<CovidVerification> getApplicationById(@PathVariable("id") Integer id){
         CovidVerification covid = covidService.getById(id);
