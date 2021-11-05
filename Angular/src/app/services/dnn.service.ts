@@ -3,7 +3,6 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { patientForm } from '../models/patientDiagnos';
 import { map, catchError } from 'rxjs/operators';
-import { DoctorFormComponent } from '../components/doctor-form/doctor-form.component';
 import { HttpHeaders } from '@angular/common/http';
 import { TokenStorageService } from './token-storage.service';
 
