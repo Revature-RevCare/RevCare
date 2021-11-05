@@ -14,6 +14,10 @@
   src: local("Futura"), url(./assets/fonts/Futura/Futura-Std-Book.otf) format("truetype");
 }
 
+body {
+  background-color:  #FCB414;
+  height: 100%;
+}
 
 .bg-orange{
   background-color: #f26925 !important;
