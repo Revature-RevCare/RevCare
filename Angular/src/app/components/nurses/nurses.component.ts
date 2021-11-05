@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/models/userModel';
 import { DnnService } from 'src/app/services/dnn.service';
 import { patientForm } from 'src/app/models/patientDiagnos';
+import { HttpHeaders } from '@angular/common/http';
+import { TokenStorageService } from 'src/app/services/token-storage.service';
 
 @Component({
   selector: 'app-nurses',
@@ -21,11 +23,20 @@ export class NursesComponent implements OnInit {
   }
 
   alldiagnosis: patientForm[] = [];
+
+  // jwtToken = sessionStorage.getToken('auth-user');
+
+  // headers = new HttpHeaders().set('content-type', 'application/json')
+  //                            .set('Access-Control-Allow-Origin', '*')
+  //                            .set('authorization', this.jwtToken);
+;
   
-  constructor(private dnnService: DnnService) { }
+  constructor(private dnnService: DnnService, private tokenStorage: TokenStorageService) { }
 
   ngOnInit(): void {
     this.activeDiagnosis();
+    this.tokenStorage.getToken(); 
+    this.tokenStorage.getUser();
   }
 
   click() {
@@ -33,6 +44,7 @@ export class NursesComponent implements OnInit {
   }
 
   activeDiagnosis() {
+    console.log("We are in the area where we should start accessing the database.")
     this.dnnService.getDiagnosis()
       .subscribe(
         resp => {
