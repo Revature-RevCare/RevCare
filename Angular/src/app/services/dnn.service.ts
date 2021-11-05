@@ -17,15 +17,17 @@ export class DnnService {
 
   constructor(private http: HttpClient, private tokenStorage: TokenStorageService) { }
 
-  jwtToken = this.tokenStorage.getUser();
+  jwtToken = this.tokenStorage.getUser().token;
 
   headers = new HttpHeaders().set('content-type', 'application/json')
                              .set('Access-Control-Allow-Origin', '*')
-                             .set('Authorization', this.jwtToken);
+                             .set('Authorization', `Bearer ${this.jwtToken}`);
 
   getDiagnosis(): Observable<any> {
     this.setHeaders();
-    return this.http.get(this.baseUrl + "/all")
+    console.log(this.headers)
+    return this.http.get(this.baseUrl + "/all", {headers: this.headers})
+
     .pipe(
       map(response => response as patientForm[]),
       catchError(err => err)
@@ -43,8 +45,10 @@ export class DnnService {
 
   setHeaders(): void {
     this.jwtToken = this.tokenStorage.getUser().token;
-
+    console.log('testing headers')
+    console.log(this.jwtToken)
     this.headers = new HttpHeaders().set('Content-type', 'application/json')
-                             .set('authorization', this.jwtToken);
+    .set('Authorization', `Bearer ${this.jwtToken}`);
+    console.log(this.headers)
   }
 }
