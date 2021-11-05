@@ -20,7 +20,6 @@ import { HeaderComponent } from './components/includes/header/header.component';
 import { FooterComponent } from './components/includes/footer/footer.component';
 import { HeroComponent } from './components/hero/hero.component';
 import { OldActiveCaseComponent } from './components/old-active-case/old-active-case.component';
-
 import { authInterceptorProviders } from './helpers/auth.interceptor';
 import { CookieService } from 'ngx-cookie-service';
 import { DoctorFormComponent } from './components/doctor-form/doctor-form.component';

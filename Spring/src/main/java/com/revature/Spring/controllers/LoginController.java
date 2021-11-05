@@ -62,13 +62,14 @@ public class LoginController {
         List<String> roles = userDetails.getAuthorities().stream()
                 .map(item -> item.getAuthority())
                 .collect(Collectors.toList());
-
+        System.out.println(jwt);
         return ResponseEntity.ok(new JwtResponse(jwt,
                 userDetails.getUser_id(),
                 userDetails.getUsername(),
                 userDetails.getEmail(),
                 userDetails.getTitle(),
                 roles));
+
     }
 
     @PostMapping("/signup")
