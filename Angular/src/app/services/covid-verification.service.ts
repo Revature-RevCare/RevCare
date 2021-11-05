@@ -19,13 +19,13 @@ export class CovidVerificationService {
 
   constructor(private http: HttpClient, private tokenStorage: TokenStorageService ) { }
 
-  jwtToken: any;
-  // = this.tokenStorage.getUser();
+  jwtToken
+  = this.tokenStorage.getUser();
 
-  headers: any;
-  //  = new HttpHeaders().set('content-type', 'application/json')
-  //                            .set('Access-Control-Allow-Origin', '*')
-  //                            .set('Authorization', this.jwtToken);
+  headers
+   = new HttpHeaders().set('content-type', 'application/json')
+                             .set('Access-Control-Allow-Origin', '*')
+                             .set('Authorization', this.jwtToken);
 
   addCovid(covid: Covid): Observable<any>{
     
@@ -56,8 +56,8 @@ export class CovidVerificationService {
     this.jwtToken = this.tokenStorage.getUser().token;
 
 
-    this.headers = new HttpHeaders().set('Content-type', 'application/json')
-                             .set('Authorization', this.jwtToken);
+    this.headers = new HttpHeaders().set('content-type', 'application/json')
+    .set('Authorization', `Bearer ${this.jwtToken}`);
   }
 
 
