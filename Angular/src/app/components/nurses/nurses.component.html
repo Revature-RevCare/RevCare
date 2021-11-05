@@ -28,7 +28,10 @@
 
 <div class="content" style="text-align: center;">
     <div *ngIf="list1">
-        <h1>Welcome {{ user.title }} {{ user.first_name }} {{ user.last_name }}</h1>
+        <h1>Welcome {{ user.title }} {{ user.username }}</h1>
+        <p>{{ user.first_name}} {{ user.last_name }}</p>
+        <p>{{ user.email }}</p>
+        <p>{{ user.phone_number }}</p>
     </div>
     <div *ngIf="list2">
         <h1>List of Forms</h1>

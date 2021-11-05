@@ -12,8 +12,12 @@ import { TokenStorageService } from 'src/app/services/token-storage.service';
 })
 export class NursesComponent implements OnInit {
 
+  errorMessage: string = '';
+
+  //should not print; prints logged in user's info
   user: User = {
     user_id: 1,
+    username: "Dan4444",
     first_name: "Dan",
     last_name: "Felleman",
     title: "Nurse",
@@ -31,7 +35,11 @@ export class NursesComponent implements OnInit {
   //                            .set('authorization', this.jwtToken);
 ;
   
-  constructor(private dnnService: DnnService, private tokenStorage: TokenStorageService) { }
+  constructor(private dnnService: DnnService, private tokenStorage: TokenStorageService) {
+    this.user = this.tokenStorage.getUser();
+    console.log(this.user);
+   } 
+
 
   ngOnInit(): void {
     this.activeDiagnosis();
@@ -45,14 +53,16 @@ export class NursesComponent implements OnInit {
 
   activeDiagnosis() {
     console.log("We are in the area where we should start accessing the database.")
-    this.dnnService.getDiagnosis()
+    this.dnnService.getDiagnosis()//401 error
       .subscribe(
         resp => {
           this.alldiagnosis = resp;
           console.log(this.alldiagnosis);
         },
-        error => console.log(error)           
-      )
+        err => {
+          this.errorMessage = err.error.message; 
+          console.log(this.errorMessage);        
+        });
   }
 
   list1: boolean = false;
