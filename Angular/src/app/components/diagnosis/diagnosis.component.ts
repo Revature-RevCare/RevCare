@@ -61,6 +61,7 @@ export class DiagnosisComponent implements OnInit {
  
   onSubmit(f:NgForm){
     let covidForm = JSON.parse(JSON.parse(this.cookieService.get('covidInfo')));
+    let nurse = this.tokenStorage.getUser();
     let pform:string = `{
       "fname":"${f.value.fname}",
       "lname":"${f.value.lname}",
@@ -81,7 +82,7 @@ export class DiagnosisComponent implements OnInit {
       "doctor_verification":${false},
       "diagnosis_text":"${f.value.diagnosis}",
       "covid_id":${covidForm.covidId},
-      "nurse_id":${/*get_from_cookie*/},
+      "nurse_id":${nurse.id},
       "doctor_id":-1
       }`;
     this.diagnosisService.addPatientDiagnosis(pform).subscribe(
