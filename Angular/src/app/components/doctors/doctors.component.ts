@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/models/userModel';
 import { DnnService } from 'src/app/services/dnn.service';
 import { patientForm } from 'src/app/models/patientDiagnos';
+import { TokenStorageService } from 'src/app/services/token-storage.service';
 
 @Component({
   selector: 'app-doctors',
@@ -14,6 +15,7 @@ export class DoctorsComponent implements OnInit {
 
   user: User = {
     user_id: 1,
+    username: "",
     first_name: "Robert",
     last_name: "Campbell",
     title: "Doctor",
@@ -24,7 +26,10 @@ export class DoctorsComponent implements OnInit {
 
   activeD: patientForm[] = [];
 
-  constructor(private dnnService: DnnService) { }
+  constructor(private dnnService: DnnService, private tokenService: TokenStorageService) { 
+    this.user = tokenService.getUser();
+    console.log(this.user);
+  }
 
   ngOnInit(): void {
     this.activeDiagnosis;
