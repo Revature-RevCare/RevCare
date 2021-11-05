@@ -9,7 +9,7 @@ export class DiagnosisService{
     private apiServerUrl = environment.baseUrl;
     constructor(private http: HttpClient){}
 
-    public addPatientDiagnosis(patientDiagnos: patientForm): Observable<patientForm> {
+    public addPatientDiagnosis(patientDiagnos: string): Observable<patientForm> {
         return this.http.post<patientForm>(`${this.apiServerUrl}/diagnosis/add`, patientDiagnos);
       }
 
