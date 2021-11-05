@@ -32,7 +32,7 @@ export class DoctorsComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    this.activeDiagnosis;
+    this.activeDiagnosis();
   }
 
   click() {
@@ -44,6 +44,7 @@ export class DoctorsComponent implements OnInit {
       .subscribe(
         resp => {
           this.activeD = resp;
+          console.log(this.activeD);
         },
         error => console.log(error)
       )

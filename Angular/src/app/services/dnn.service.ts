@@ -26,7 +26,7 @@ export class DnnService {
   getDiagnosis(): Observable<any> {
     this.setHeaders();
     console.log(this.headers)
-    return this.http.get(this.baseUrl + "/all", {headers: this.headers})
+    return this.http.get(this.baseUrl + "/all")
 
     .pipe(
       map(response => response as patientForm[]),
