@@ -19,7 +19,7 @@ export class DoctorsComponent implements OnInit {
 
   user: User = {
     user_id: 1,
-    username: "",
+    username: "Dan555",
     first_name: "Robert",
     last_name: "Campbell",
     title: "Doctor",
@@ -36,7 +36,7 @@ export class DoctorsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.activeDiagnosis;
+    this.activeDiagnosis();
   }
 
   click() {
@@ -48,6 +48,7 @@ export class DoctorsComponent implements OnInit {
       .subscribe(
         resp => {
           this.activeD = resp;
+          console.log(this.activeD);
         },
         error => console.log(error)
       )
