@@ -80,7 +80,7 @@ export class DiagnosisComponent implements OnInit {
       "blood_pressure_low":${f.value.bplow},
       "pulse":${f.value.pulse},
       "doctor_verification":${false},
-      "diagnosis_text":"${f.value.diagnosis}",
+      "diagnosis_text":"${this.jsonHelper(f.value.diagnosis)}",
       "covid_id":${covidForm.covidId},
       "nurse_id":${nurse.id},
       "doctor_id":-1
@@ -96,7 +96,6 @@ export class DiagnosisComponent implements OnInit {
     )
   }
 
-
   addCovid(input : any){
     console.log(input)
     this.covidService.addCovid(input)
@@ -110,5 +109,16 @@ export class DiagnosisComponent implements OnInit {
                 },
         err => console.log(err)
       )
+  }
+
+  private jsonHelper(s:string){
+    return s.replace(/\\n/g, "\\n")
+            .replace(/\\'/g, "\\'")
+            .replace(/\\"/g, '\\"')
+            .replace(/\\&/g, "\\&")
+            .replace(/\\r/g, "\\r")
+            .replace(/\\t/g, "\\t")
+            .replace(/\\b/g, "\\b")
+            .replace(/\\f/g, "\\f");
   }
 }
