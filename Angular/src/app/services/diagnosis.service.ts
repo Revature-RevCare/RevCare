@@ -14,8 +14,13 @@ export class DiagnosisService{
         return this.http.post<patientForm>(`${this.apiServerUrl}/diagnosis/add`, patientDiagnos,{'headers':headers});
       }
 
-    public updatePatientDiagnosis(patientDiagnos: patientForm): Observable<patientForm> {
-        return this.http.post<patientForm>(`${this.apiServerUrl}/diagnosis/put/update`, patientDiagnos);
-      }
+    // public updatePatientDiagnosis(patientDiagnos: patientForm): Observable<patientForm> {
+    //     return this.http.post<patientForm>(`${this.apiServerUrl}/diagnosis/put/update`, patientDiagnos);
+    // }
+
+    public updatePatientDiagnosis(patientDiagnos: string): Observable<patientForm> {
+      let headers = {'content-type':"application/json"}
+      return this.http.post<patientForm>(`${this.apiServerUrl}/diagnosis/put/update`, patientDiagnos,{'headers':headers});
+    }
     
 }

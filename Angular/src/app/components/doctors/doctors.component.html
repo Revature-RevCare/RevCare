@@ -122,11 +122,6 @@
                 <input type="hidden" ngModel="{{editDiagnosis?.fam_history}}" name="family_history" class="form-control" id="family_history" placeholder="Family History">
                 <input type="hidden" ngModel="{{editDiagnosis?.allergies}}" name="patient_allergies" class="form-control" id="patient_allergies" placeholder="Allergies">
                 <input type="hidden" ngModel="{{editDiagnosis?.current_meds}}" name="current_medical" class="form-control" id="current_medical" placeholder="Age">
-                
-                <div class="form-group">
-                    <label for="name">Date</label>
-                    <input type="date" ngModel="{{editDiagnosis?.current_date}}" name="date" class="form-control" id="date" placeholder="Date">
-                </div>
 
                 <input type="hidden" ngModel="{{editDiagnosis?.patient_weight}}" name="weight" class="form-control" id="weight" placeholder="Weight">
                 <input type="hidden" ngModel="{{editDiagnosis?.patient_height}}" name="height" class="form-control" id="height" placeholder="Height">
@@ -147,7 +142,7 @@
 
                 <div class="modal-footer">
                    <button type="button" id="" data-bs-dismiss="modal" class="btn btn-secondary">Close</button>
-                   <button (click)="onUpdateDiagnosis(editForm.value)" data-bs-dismiss="modal" class="btn btn-primary" >Save</button>
+                   <button (click)="onUpdateDiagnosis(editForm)" data-bs-dismiss="modal" class="btn btn-primary" >Save</button>
                 </div>
              </form>
           </div>
