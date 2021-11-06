@@ -9,7 +9,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/diagnosis")
@@ -40,10 +42,35 @@ public class PatientDiagnosisController {
         return new ResponseEntity<>(patients, HttpStatus.OK);
     }
 
-    @PostMapping(value = "/add")
-    public ResponseEntity<PatientDiagnosis> addPatient(@RequestBody PatientDiagnosis patient) {
-        PatientDiagnosis newPatient = patientDiagnosisService.addNewDiagnosis(patient);
-        return new ResponseEntity<>(newPatient, HttpStatus.CREATED);
+    @PostMapping(value = "/add",consumes = "application/json")
+    public ResponseEntity<?> addPatient(@RequestBody Map<String,String> json) {
+        //LocalDate today = LocalDate.now();
+        PatientDiagnosis newPatient = new PatientDiagnosis();
+        newPatient.setFname(json.get("fname"));
+        newPatient.setLname(json.get("lname"));
+        newPatient.setPatient_age(Integer.parseInt(json.get("patient_age")));
+        newPatient.setComplaint(json.get("complaint"));
+        newPatient.setSymptoms(json.get("symptoms"));
+        newPatient.setMed_history(json.get("med_history"));
+        newPatient.setFam_history(json.get("fam_history"));
+        newPatient.setAllergies(json.get("allergies"));
+        newPatient.setCurrent_meds(json.get("current_meds"));
+        newPatient.setCurrent_date(LocalDate.now());
+        newPatient.setPatient_weight(Integer.parseInt(json.get("patient_weight")));
+        newPatient.setPatient_height(Integer.parseInt(json.get("patient_height")));
+        newPatient.setPatient_temp(Float.parseFloat(json.get("patient_temp")));
+        newPatient.setBlood_pressure_high(Integer.parseInt(json.get("blood_pressure_high")));
+        newPatient.setBlood_pressure_low(Integer.parseInt(json.get("blood_pressure_low")));
+        newPatient.setPulse(Integer.parseInt(json.get("pulse")));
+        newPatient.setDoctor_verification(false);
+        newPatient.setDiagnosis_text(json.get("diagnosis_text"));
+        newPatient.setCovid_id(Integer.parseInt(json.get("covid_id")));
+        newPatient.setNurse_id(Integer.parseInt(json.get("nurse_id")));
+        newPatient.setDoctor_id(-1);
+        System.out.println(newPatient);
+        PatientDiagnosis addPatient = patientDiagnosisService.addNewDiagnosis(newPatient);
+        System.out.println(addPatient);
+        return new ResponseEntity<PatientDiagnosis>(addPatient,HttpStatus.CREATED);
     }
 
     @PostMapping("put/update")

@@ -61,6 +61,7 @@ export class DiagnosisComponent implements OnInit {
  
   onSubmit(f:NgForm){
     let covidForm = JSON.parse(JSON.parse(this.cookieService.get('covidInfo')));
+    console.log(covidForm);
     let nurse = this.tokenStorage.getUser();
     let pform:string = `{
       "fname":"${f.value.fname}",
@@ -72,10 +73,10 @@ export class DiagnosisComponent implements OnInit {
       "fam_history":"${f.value.fhistory}",
       "allergies":"${f.value.allergies}",
       "current_meds":"${f.value.meds}",
-      "current_date":${f.value.date},
+      "current_date":"${f.value.date}",
       "patient_weight":${f.value.weight},
       "patient_height":${f.value.height},
-      "patient_temp":${f.value.temp},
+      "patient_temp":${f.value.temperature},
       "blood_pressure_high":${f.value.bphigh},
       "blood_pressure_low":${f.value.bplow},
       "pulse":${f.value.pulse},
@@ -85,6 +86,7 @@ export class DiagnosisComponent implements OnInit {
       "nurse_id":${nurse.id},
       "doctor_id":-1
       }`;
+    console.log(pform);
     this.diagnosisService.addPatientDiagnosis(pform).subscribe(
       (Response)=>{
         alert("diagnosis successfully submitted for doctor to review.");
@@ -101,7 +103,7 @@ export class DiagnosisComponent implements OnInit {
     this.covidService.addCovid(input)
       .subscribe(
         res => {
-          let cookieValue:string=`"{\\"covidId\\":${res.covidId},\\"covidStatus\\":\\"${res.covidStatus}\\",\\"vaccinationStatus\\":\\"${res.vaccinationStatus}}"`;
+          let cookieValue:string=`"{\\"covidId\\":${res.covidId},\\"covidStatus\\":\\"${res.covidStatus}\\",\\"vaccinationStatus\\":\\"${res.vaccinationStatus}\\"}"`;
           this.cookieService.set('covidInfo', cookieValue);
           console.log(cookieValue)
           console.log(res);

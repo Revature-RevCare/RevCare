@@ -30,7 +30,7 @@ public class PatientDiagnosis implements Serializable {
     private String allergies;
     @Column(name="current_meds")
     private String current_meds;
-    @Column(name = "current_date")
+    @Column(name = "submission_date")
     private LocalDate current_date;
     @Column(name = "patient_weight")
     private float patient_weight;
