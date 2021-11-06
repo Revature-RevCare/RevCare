@@ -58,7 +58,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr (click)="click()" *ngFor="let patientForm of activeD">
+                    <tr (click)="click(patientForm)" href="#updateDiagnosisModal" data-bs-toggle="modal" *ngFor="let patientForm of activeD">
                         <th scope="row">{{patientForm.id}}</th>
                         <td>{{patientForm.fname}}</td>  
                         <td>{{patientForm.lname}}</td>
@@ -96,8 +96,8 @@
     <div class="modal-dialog" role="document">
        <div class="modal-content">
           <div class="modal-header">
-             <h5 class="modal-title" id="updateDiagnosisModalLabel">Patient {{editDiagnosis?.fname}} {{editDiagnosis?.lname}} Diagnosis</h5>
-             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+             <h5 class="modal-title" id="updateDiagnosisModalLabel">Patient {{editDiagnosis?.fname}} {{editDiagnosis?.lname}}'s Diagnosis</h5>
+             <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
              <span aria-hidden="true">&times;</span>
              </button>
           </div>
@@ -143,10 +143,11 @@
                 <input type="hidden" ngModel="{{editDiagnosis?.covid_id}}" name="covidId" class="form-control" id="covidId" placeholder="Covid ID">
                 <input type="hidden" ngModel="{{editDiagnosis?.nurse_id}}" name="nurseId" class="form-control" id="nurseId" placeholder="Nurse ID">
                 <input type="hidden" ngModel="{{editDiagnosis?.doctor_id}}" name="doctorId" class="form-control" id="doctorId" placeholder="Covid ID">
+                <input type="hidden" ngModel="{{editDiagnosis?.doctor_verification}}" name="verification" class="form-control" id="verification" placeholder="Covid ID">
 
                 <div class="modal-footer">
-                   <button type="button" id="" data-dismiss="modal" class="btn btn-secondary">Close</button>
-                   <button (click)="onUpdateDiagnosis(editForm.value)" data-dismiss="modal" class="btn btn-primary" >Save</button>
+                   <button type="button" id="" data-bs-dismiss="modal" class="btn btn-secondary">Close</button>
+                   <button (click)="onUpdateDiagnosis(editForm.value)" data-bs-dismiss="modal" class="btn btn-primary" >Save</button>
                 </div>
              </form>
           </div>

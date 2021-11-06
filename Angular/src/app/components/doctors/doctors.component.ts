@@ -39,7 +39,8 @@ export class DoctorsComponent implements OnInit {
     this.activeDiagnosis();
   }
 
-  click() {
+  click(diagnosis: patientForm) {
+    this.editDiagnosis = diagnosis;
     console.log("doctor click");
   }
 
@@ -78,12 +79,13 @@ export class DoctorsComponent implements OnInit {
     this.diagnosisService.updatePatientDiagnosis(diagnosis).subscribe(
       (response: patientForm) => {
         console.log(response);
-        this.activeDiagnosis();
+        // this.activeDiagnosis();
       },
       (error: HttpErrorResponse) => {
         alert(error.message);
       }
     );
   }
+
 
 }
