@@ -73,7 +73,6 @@ export class DiagnosisComponent implements OnInit {
       "fam_history":"${f.value.fhistory}",
       "allergies":"${f.value.allergies}",
       "current_meds":"${f.value.meds}",
-      "current_date":"${f.value.date}",
       "patient_weight":${f.value.weight},
       "patient_height":${f.value.height},
       "patient_temp":${f.value.temperature},

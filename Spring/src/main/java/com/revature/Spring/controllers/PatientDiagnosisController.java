@@ -56,8 +56,8 @@ public class PatientDiagnosisController {
         newPatient.setAllergies(json.get("allergies"));
         newPatient.setCurrent_meds(json.get("current_meds"));
         newPatient.setCurrent_date(LocalDate.now());
-        newPatient.setPatient_weight(Integer.parseInt(json.get("patient_weight")));
-        newPatient.setPatient_height(Integer.parseInt(json.get("patient_height")));
+        newPatient.setPatient_weight(Float.parseFloat(json.get("patient_weight")));
+        newPatient.setPatient_height(Float.parseFloat(json.get("patient_height")));
         newPatient.setPatient_temp(Float.parseFloat(json.get("patient_temp")));
         newPatient.setBlood_pressure_high(Integer.parseInt(json.get("blood_pressure_high")));
         newPatient.setBlood_pressure_low(Integer.parseInt(json.get("blood_pressure_low")));
