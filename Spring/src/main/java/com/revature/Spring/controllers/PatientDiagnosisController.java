@@ -73,10 +73,39 @@ public class PatientDiagnosisController {
         return new ResponseEntity<PatientDiagnosis>(addPatient,HttpStatus.CREATED);
     }
 
-    @PostMapping("put/update")
-    public ResponseEntity<PatientDiagnosis> patientDiagnosisUpdate(@RequestBody PatientDiagnosis patientDiagnosis) {
-        PatientDiagnosis updateDiagnosis = patientDiagnosisService.updateDiagnosis(patientDiagnosis);
-        return new ResponseEntity<>(updateDiagnosis, HttpStatus.OK);
+//    @PostMapping("put/update")
+//    public ResponseEntity<PatientDiagnosis> patientDiagnosisUpdate(@RequestBody PatientDiagnosis patientDiagnosis) {
+//        PatientDiagnosis updateDiagnosis = patientDiagnosisService.updateDiagnosis(patientDiagnosis);
+//        return new ResponseEntity<>(updateDiagnosis, HttpStatus.OK);
+//    }
+
+    @PostMapping(value ="put/update",consumes = "application/json")
+    public ResponseEntity<?> patientDiagnosisUpdate(@RequestBody Map<String,String> json) {
+        PatientDiagnosis updateDiagnos = new PatientDiagnosis();
+        updateDiagnos.setId(Integer.parseInt(json.get("id")));
+        updateDiagnos.setFname(json.get("fname"));
+        updateDiagnos.setLname(json.get("lname"));
+        updateDiagnos.setPatient_age(Integer.parseInt(json.get("patient_age")));
+        updateDiagnos.setComplaint(json.get("complaint"));
+        updateDiagnos.setSymptoms(json.get("symptoms"));
+        updateDiagnos.setMed_history(json.get("med_history"));
+        updateDiagnos.setFam_history(json.get("fam_history"));
+        updateDiagnos.setAllergies(json.get("allergies"));
+        updateDiagnos.setCurrent_meds(json.get("current_meds"));
+        updateDiagnos.setCurrent_date(LocalDate.now());
+        updateDiagnos.setPatient_weight(Float.parseFloat(json.get("patient_weight")));
+        updateDiagnos.setPatient_height(Float.parseFloat(json.get("patient_height")));
+        updateDiagnos.setPatient_temp(Float.parseFloat(json.get("patient_temp")));
+        updateDiagnos.setBlood_pressure_high(Integer.parseInt(json.get("blood_pressure_high")));
+        updateDiagnos.setBlood_pressure_low(Integer.parseInt(json.get("blood_pressure_low")));
+        updateDiagnos.setPulse(Integer.parseInt(json.get("pulse")));
+        updateDiagnos.setDoctor_verification(Boolean.parseBoolean(json.get("doctor_verification")));
+        updateDiagnos.setDiagnosis_text(json.get("diagnosis_text"));
+        updateDiagnos.setCovid_id(Integer.parseInt(json.get("covid_id")));
+        updateDiagnos.setNurse_id(Integer.parseInt(json.get("nurse_id")));
+        updateDiagnos.setDoctor_id(Integer.parseInt(json.get("doctor_id")));
+        PatientDiagnosis updateDiagnosis = patientDiagnosisService.updateDiagnosis(updateDiagnos);
+        return new ResponseEntity<PatientDiagnosis>(updateDiagnosis, HttpStatus.OK);
     }
 
     @PostMapping("delete/{id}")
