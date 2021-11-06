@@ -80,7 +80,7 @@ export class DiagnosisComponent implements OnInit {
       "blood_pressure_low":${f.value.bplow},
       "pulse":${f.value.pulse},
       "doctor_verification":${false},
-      "diagnosis_text":"${this.jsonHelper(f.value.diagnosis)}",
+      "diagnosis_text":${JSON.stringify(f.value.diagnosis)},
       "covid_id":${covidForm.covidId},
       "nurse_id":${nurse.id},
       "doctor_id":-1
@@ -111,14 +111,4 @@ export class DiagnosisComponent implements OnInit {
       )
   }
 
-  private jsonHelper(s:string){
-    return s.replace(/\\n/g, "\\n")
-            .replace(/\\'/g, "\\'")
-            .replace(/\\"/g, '\\"')
-            .replace(/\\&/g, "\\&")
-            .replace(/\\r/g, "\\r")
-            .replace(/\\t/g, "\\t")
-            .replace(/\\b/g, "\\b")
-            .replace(/\\f/g, "\\f");
-  }
 }
