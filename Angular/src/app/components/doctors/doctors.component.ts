@@ -3,6 +3,8 @@ import { User } from 'src/app/models/userModel';
 import { DnnService } from 'src/app/services/dnn.service';
 import { patientForm } from 'src/app/models/patientDiagnos';
 import { TokenStorageService } from 'src/app/services/token-storage.service';
+import { DiagnosisService } from 'src/app/services/diagnosis.service';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-doctors',
@@ -10,6 +12,8 @@ import { TokenStorageService } from 'src/app/services/token-storage.service';
   styleUrls: ['./doctors.component.css']
 })
 export class DoctorsComponent implements OnInit {
+
+  public editDiagnosis!: patientForm;
 
   name: string = "Doctor Dan";
 
@@ -26,7 +30,7 @@ export class DoctorsComponent implements OnInit {
 
   activeD: patientForm[] = [];
 
-  constructor(private dnnService: DnnService, private tokenService: TokenStorageService) { 
+  constructor(private dnnService: DnnService, private tokenService: TokenStorageService, private diagnosisService: DiagnosisService) { 
     this.user = tokenService.getUser();
     console.log(this.user);
   }
@@ -67,6 +71,18 @@ export class DoctorsComponent implements OnInit {
     this.list3 = !this.list3;
     this.list1 = false;
     this.list2 = false;
+  }
+
+  public onUpdateDiagnosis(diagnosis: patientForm): void {
+    this.diagnosisService.updatePatientDiagnosis(diagnosis).subscribe(
+      (response: patientForm) => {
+        console.log(response);
+        this.activeDiagnosis();
+      },
+      (error: HttpErrorResponse) => {
+        alert(error.message);
+      }
+    );
   }
 
 }
