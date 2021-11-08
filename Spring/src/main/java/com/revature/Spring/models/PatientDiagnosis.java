@@ -30,7 +30,7 @@ public class PatientDiagnosis implements Serializable {
     private String allergies;
     @Column(name="current_meds")
     private String current_meds;
-    @Column(name = "current_date")
+    @Column(name = "submission_date")
     private LocalDate current_date;
     @Column(name = "patient_weight")
     private float patient_weight;
@@ -61,7 +61,7 @@ public class PatientDiagnosis implements Serializable {
     public PatientDiagnosis() {
     }
 
-    public PatientDiagnosis(String fname, String lname, Integer patient_age, String complaint, String symptoms, String med_history, String fam_history, String allergies, String current_meds, LocalDate current_date, Integer patient_weight, Integer patient_height, float patient_temp, Integer blood_pressure_high, Integer blood_pressure_low, Integer pulse, boolean doctor_verification, String diagnosis_text, Integer covid_id, Integer nurse_id, Integer doctor_id) {
+    public PatientDiagnosis(String fname, String lname, Integer patient_age, String complaint, String symptoms, String med_history, String fam_history, String allergies, String current_meds, LocalDate current_date, float patient_weight, float patient_height, float patient_temp, Integer blood_pressure_high, Integer blood_pressure_low, Integer pulse, boolean doctor_verification, String diagnosis_text, Integer covid_id, Integer nurse_id, Integer doctor_id) {
         this.fname = fname;
         this.lname = lname;
         this.patient_age = patient_age;
@@ -202,7 +202,7 @@ public class PatientDiagnosis implements Serializable {
         return patient_weight;
     }
 
-    public void setPatient_weight(Integer patient_weight) {
+    public void setPatient_weight(float patient_weight) {
         this.patient_weight = patient_weight;
     }
 
@@ -210,7 +210,7 @@ public class PatientDiagnosis implements Serializable {
         return patient_height;
     }
 
-    public void setPatient_height(Integer patient_height) {
+    public void setPatient_height(float patient_height) {
         this.patient_height = patient_height;
     }
 

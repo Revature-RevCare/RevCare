@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
 import { TokenStorageService } from 'src/app/services/token-storage.service';
+import { Router } from '@angular/router';
+import { HttpHeaders } from '@angular/common/http';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -16,7 +19,13 @@ export class LoginComponent implements OnInit {
   errorMessage = '';
   roles: string[] = [];
 
-  constructor(private authService: AuthService, private tokenStorage: TokenStorageService) { }
+  jwtToken = this.tokenStorage.getUser();
+
+  headers = new HttpHeaders().set('content-type', 'application/json')
+  .set('Access-Control-Allow-Origin', '*')
+  .set('authorization', this.jwtToken);
+
+  constructor(private authService: AuthService, private tokenStorage: TokenStorageService, private router: Router) { }
 
   ngOnInit(): void {
     if (this.tokenStorage.getToken()) {
@@ -36,7 +45,15 @@ export class LoginComponent implements OnInit {
         this.isLoginFailed = false;
         this.isLoggedIn = true;
         this.roles = this.tokenStorage.getUser().roles;
-        this.reloadPage();
+        // this.reloadPage();
+        console.log(this.tokenStorage.getUser());
+        console.log(this.tokenStorage.getUser().token);
+        console.log(this.tokenStorage.getUser().title);
+        if (this.tokenStorage.getUser().title == "Doctor"){
+          this.router.navigate(['doctors']);
+        } else {
+          this.router.navigate(['nurses']);
+        }
       },
       err => {
         this.errorMessage = err.error.message;
