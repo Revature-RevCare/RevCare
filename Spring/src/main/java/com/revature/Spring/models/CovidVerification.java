@@ -1,7 +1,9 @@
+
 package com.revature.Spring.models;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
@@ -24,3 +26,4 @@ public class CovidVerification implements Serializable {
     private boolean vaccinationStatus;
 
 }
+

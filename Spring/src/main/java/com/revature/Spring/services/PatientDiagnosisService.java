@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-@Transactional
+//@Transactional
 public class PatientDiagnosisService {
     private final PatientDiagnosisRepo patientDiagnosisRepo;
 

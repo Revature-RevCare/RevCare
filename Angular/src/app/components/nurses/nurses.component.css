@@ -1,0 +1,22 @@
+.btn {
+    background-color: #f26925;
+    margin-top: 20px;
+    border-style: solid 2px;
+    border: none;
+    box-shadow: black;
+}
+
+thead {
+    background-color: #474c55;
+    font-weight: bolder;
+    color: white;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+
+}
+
+tbody {
+    background-color: #f26925;
+    color: black;
+    outline: black;
+
+}

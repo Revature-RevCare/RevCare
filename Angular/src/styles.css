@@ -1,1 +1,64 @@
 /* You can add global styles to this file, and also import other style files */
+
+@font-face {
+  font-family:futura-medium;
+  src: local("Futura"), url(./assets/fonts/Futura/Futura-Std-Medium.otf) format("truetype");
+}
+
+@font-face {
+  font-family:futura-bold;
+  src: local("Futura"), url(./assets/fonts/Futura/Futura-Std-Bold.otf) format("truetype");
+}
+@font-face {
+  font-family: "Futura";
+  src: local("Futura"), url(./assets/fonts/Futura/Futura-Std-Book.otf) format("truetype");
+}
+
+body {
+  background-color:  #FCB414;
+  height: 100%;
+}
+
+.bg-orange{
+  background-color: #f26925 !important;
+}
+.text-orange{
+  color: #f26925 !important;
+}
+.bg-dark_gray {
+  background-color: #474c55 !important;
+}
+.text-dark_gray{
+  color: #474c55 !important;
+}
+.bg-white{
+  background-color: #ffffff !important;
+}
+.text-color{
+  color: #ffffff !important;
+}
+.bg-blue{
+  background-color: #72a4c2 !important;
+}
+.text-blue {
+  color: #72a4c2 !important;
+}
+.bg-yellow {
+  background-color: #fcb414 !important;
+}
+.text-yellow {
+  color: #fcb414 !important;
+}
+.bg-light_gray{
+  background-color: #b9b9ba !important;
+}
+.text-light_gray{
+  color: #b9b9ba !important;
+}
+.bg-orange a {
+  color: #ffffff !important;
+}
+.bg-orange a:hover,
+.bg-orange a:active {
+  color: #72a4c2 !important;
+}
