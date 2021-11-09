@@ -22,7 +22,7 @@ export class DoctorsComponent implements OnInit {
     user_id: 1,
     username: "Dan555",
     first_name: "Robert",
-    last_name: "Campbell",
+    last: "Campbell",
     title: "Doctor",
     email: "dr.campbell@gmail.com",
     password: "thispassword",
@@ -76,20 +76,6 @@ export class DoctorsComponent implements OnInit {
     this.list2 = false;
   }
 
-  // public onUpdateDiagnosis(diagnosis: patientForm): void {
-  //   let doctor = this.tokenService.getUser();
-  //   console.log(diagnosis);
-  //   this.diagnosisService.updatePatientDiagnosis(diagnosis).subscribe(
-  //     (response: patientForm) => {
-  //       console.log(response);
-  //       // this.activeDiagnosis();
-  //     },
-  //     (error: HttpErrorResponse) => {
-  //       alert(error.message);
-  //     }
-  //   );
-  // }
-
   public onUpdateDiagnosis(editForm:NgForm): void {
     let doctor = this.tokenService.getUser();
     let pform:string = `{
@@ -120,7 +106,7 @@ export class DoctorsComponent implements OnInit {
     this.diagnosisService.updatePatientDiagnosis(pform).subscribe(
       (response: patientForm) => {
         console.log(response);
-        // this.activeDiagnosis();
+        this.activeDiagnosis();
       },
       (error: HttpErrorResponse) => {
         alert(error.message);

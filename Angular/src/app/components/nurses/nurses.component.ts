@@ -19,7 +19,7 @@ export class NursesComponent implements OnInit {
     user_id: 1,
     username: "Dan4444",
     first_name: "Dan",
-    last_name: "Felleman",
+    last: "Felleman",
     title: "Nurse",
     email: "nurse.danl@gmail.com",
     password: "password",

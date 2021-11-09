@@ -29,10 +29,10 @@
 
     <div class="content" style="text-align: center;">
         <div *ngIf="list1">
-            <h1>Welcome {{ user.title }} {{ user.username }}</h1>
-            <p>{{ user.first_name}} {{ user.last_name }}</p>
-            <p>{{ user.email }}</p>
-            <p>{{ user.phone_number }}</p>
+            <h1>Welcome {{ user.first_name}} {{ user.last }}</h1>
+            <p>Username: {{ user.username }}</p>
+            <p>Job Title: {{ user.title }}</p>
+            <p>Email: {{ user.email }}</p>
         </div>
         <div *ngIf="list2">
             <div class="table-responsive">
