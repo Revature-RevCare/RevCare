@@ -15,8 +15,24 @@ thead {
 }
 
 tbody {
-    background-color: #f26925;
+    background-color: white;
     color: black;
     outline: black;
-
+    height: auto;
+    overflow-y: auto;
+    position: relative;
+    margin-bottom: 100px;
 }
+
+.row {
+    background-color: #FCB414;
+    border-top-style: solid;
+}
+
+body {
+    height: 100%;
+}
+
+/* .button-container {
+    height: 800px;
+} */

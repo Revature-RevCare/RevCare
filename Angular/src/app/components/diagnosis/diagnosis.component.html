@@ -1,93 +1,140 @@
-<body id="body">
-  <div class="container bootstrap snippets bootdey">
-    <h1 class="text-primary"><span class="glyphicon glyphicon-user"></span>Patient Diagnosis</h1>
-    <hr>
+<section id="body">
+  <div class="container">
+    <!-- <h1 class="text-primary"><span class="glyphicon glyphicon-user"></span>Patient Diagnosis</h1>
+    <hr> -->
   
   
     <!-- edit form column -->
-    <div class="col-md-9 personal-info">
-      <div class="alert alert-info alert-dismissable">
+    <div class="personal-info">
+      <!-- <div class="alert alert-info alert-dismissable">
         <a class="panel-close close" data-dismiss="alert">×</a>
         <i class="fa fa-coffee"></i>
         This is an <strong>.alert</strong>. Use this to show important messages to the user.
-      </div>
+      </div> -->
       <h3>Patient info</h3>
   
-      <form #f="ngForm" (ngSubmit)="onSubmit(f)" class="form-horizontal" novalidate>
-        <div class="form-group">
-            <label class="col-lg-3 control-label">First name:</label>
-          <div class="input-group">
-              <input id="fname" name="fname" class="form-control" type="text" value="" ngModel>
+      <form #f="ngForm" (ngSubmit)="onSubmit(f)" class="form-horizontal justify-content-center" novalidate>
+        <div class="row g-2">
+          <div class="col-md-4">
+            <label class="col-form-label">First Name:</label>
+          <!-- </div>
+          <div class="col-auto"> -->
+            <input id="fname" name="fname" class="form-control" type="text" value="" ngModel>
           </div>
-            <label class="col-lg-3 control-label">Last name:</label>
-          <div class="input-group">
-              <input id="lname" name="lname" class="form-control" type="text" value="" ngModel>
+
+          <div class="col-md-4">
+            <label class="col-form-label">Last Name:</label>
+          <!-- </div>
+          <div class="col-auto"> -->
+            <input id="lname" name="lname" class="form-control" type="text" value="" ngModel>
           </div>
-            <label class="col-lg-3 control-label">Patient age:</label>
-          <div class="input-group">
-              <input id="age" name="age" class="form-control" type="number" step="1" value="" ngModel>
+
+          <div class="col-md-4">
+            <label class="col-form-label">Patient Age:</label>
+          <!-- </div>
+          <div class="col-auto"> -->
+            <input id="age" name="age" class="form-control" type="number" step="1" value="" ngModel>
           </div>
-            <label class="col-lg-3 control-label">Patient discomfort:</label>
-          <div class="input-group">
-              <input id="discomfort" name="discomfort" class="form-control" type="text" value="" ngModel>
+        </div>
+
+        <hr>
+
+        <div class="row g-3">
+          <div class="col-md-3">
+            <label class="col-form-label">Patient Discomfort:</label>
+          <!-- </div>
+          <div class="col-auto"> -->
+            <input id="discomfort" name="discomfort" class="form-control" type="text" value="" ngModel>
+          <!-- </div>
+
+          <div class="col-md-3"> -->
+            <label class="col-form-label">Symptoms:</label>
+          <!-- </div>
+          <div class="col-auto"> -->
+            <input id="symptoms" name="symptoms" class="form-control" type="text" value="" ngModel>
           </div>
-            <label class="col-lg-3 control-label">Symptoms:</label>
-          <div class="input-group">
-              <input id="symptoms" name="symptoms" class="form-control" type="text" value="" ngModel>
+
+          <div class="col-md-3">
+            <label class="col-form-label">Medical History:</label>
+          <!-- </div>
+          <div class="col-auto"> -->
+            <input id="mhistory" name="mhistory" class="form-control" type="text" value="" ngModel>
+          <!-- </div>
+
+          <div class="col-md-3"> -->
+            <label class="col-form-label">Family History:</label>
+          <!-- </div>
+          <div class="col-auto"> -->
+            <input id="fhistory" name="fhistory" class="form-control" type="text" value="" ngModel>
           </div>
-            <label class="col-lg-3 control-label">Medical history:</label>
-          <div class="input-group">
-              <input id="mhistory" name="mhistory" class="form-control" type="text" value="" ngModel>
+
+          <div class="col-md-3">
+            <label class="col-form-label">Allergies:</label>
+          <!-- </div>
+          <div class="col-auto">  -->
+            <input id="allergies" name="allergies" class="form-control" type="text" value="" ngModel>
+          
+            <label class="col-form-label">Current Medication:</label>
+          <!-- </div>
+          <div class="col-auto"> -->
+            <input id="meds" name="meds" class="form-control" type="text" value="" ngModel>
           </div>
-            <label class="col-lg-3 control-label">Family history:</label>
-          <div class="input-group">
-              <input id="fhistory" name="fhistory" class="form-control" type="text" value="" ngModel>
+
+          <div class="col-md-3">
+            <label class="col-form-label">Weight:</label>
+          <!-- </div>
+          <div class="col-auto"> -->
+            <input id="weight" name="weight" class="form-control" type="number" step="0.1" value="" ngModel>
+          
+            <label class="col-form-label">Height:</label>
+          <!-- </div>
+          <div class="col-auto">         -->
+            <input id="height" name="height" class="form-control" type="number" step="0.1" value="" ngModel>
           </div>
-            <label class="col-lg-3 control-label">Allergies:</label>
-          <div class="input-group">
-              <input id="allergies" name="allergies" class="form-control" type="text" value="" ngModel>
-          </div>
-            <label class="col-lg-3 control-label">Current medication:</label>
-          <div class="input-group">
-              <input id="meds" name="meds" class="form-control" type="text" value="" ngModel>
-          </div>
-            <label class="col-lg-3 control-label"> Weight:</label>
-          <div class="input-group">
-              <input id="weight" name="weight" class="form-control" type="number" step="0.1" value="" ngModel>
-          </div>
-            <label class="col-lg-3 control-label">Height:</label>
-          <div class="input-group">
-              <input id="height" name="height" class="form-control" type="number" step="0.1" value="" ngModel>
-          </div>
-            <label class="col-lg-3 control-label">Temperature:</label>
-          <div class="input-group">
-              <input id="temperature" name="temperature" class="form-control" type="number" step="0.1" value="" ngModel>
-          </div>
-            <label class="col-lg-3 control-label">Blood Pressure High:</label>
-          <div class="input-group">
+        </div>
+
+        <hr>
+
+        <div class="row justify-content-between">
+          <div class="col-md-6">
+            <label class="col-form-label">Temperature:</label>
+          <!-- </div>
+          <div class="col-md-4"> -->
+            <input id="temperature" name="temperature" class="form-control" type="number" step="0.1" value="" ngModel>
+
+            <label class="col-form-label">Blood Pressure High:</label>
+            <!-- </div>
+            <div class="col-auto"> -->
               <input id="bphigh" name="bphigh" class="form-control" type="number" step="1" value="" ngModel>
-          </div>
-            <label class="col-lg-3 control-label">Blood Pressure Low:</label>
-          <div class="input-group">
+            
+              <label class="col-form-label">Blood Pressure Low:</label>
+            <!-- </div>
+            <div class="col-auto"> -->
               <input id="bplow" name="bplow" class="form-control" type="number" step="1" value="" ngModel>
-          </div>
-            <label class="col-lg-3 control-label">Pulse:</label>
-          <div class="input-group">
+  
+              <label class="col-form-label">Pulse:</label>
+              <!-- </div>
+              <div class="col-auto"> -->
               <input id="pulse" name="pulse" class="form-control" type="number" step="1" value="" ngModel>
           </div>
-            <label class="col-lg-3 control-label">Diagnosis:</label>
-          <div class="input-group">
-              <textarea id="diagnosis" name="diagnosis" class="form-control" type="text" value="" ngModel></textarea>
+
+          <div class="col-md-6">
+            <label class="col-form-label">Diagnosis:</label>
+          <!-- </div>
+          <div class="col-auto"> -->
+            <textarea id="diagnosis" name="diagnosis" class="form-control" rows="10" type="text" value="" ngModel></textarea>
           </div>
-          <div class="text-center">
-            <button data-dismiss="modal" class="btn btn-info">Submit</button>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="column justify-content-center">
+            <button data-dismiss="modal" class="btn btn-info btn-lg btn-block">Submit</button>
           </div>
         </div>
       </form>
     </div>
   </div>
-  <hr>
-</body>
+</section>
 
   <!-- <button class="openModal" id="openModal" #openModal [hidden]="true" data-toggle="modal" data-target="#exampleModal"> -->
 <div class="form-popup" id="myForm">

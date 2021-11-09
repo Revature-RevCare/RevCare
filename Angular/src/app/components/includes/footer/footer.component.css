@@ -7,3 +7,8 @@ footer {
   bottom: 0;
   width: 100%;
 }
+
+.container {
+  margin-top: 0px;
+  padding: 20;
+}
