@@ -36,3 +36,8 @@ body {
 /* .button-container {
     height: 800px;
 } */
+
+.profile {
+    font-weight: bolder;
+    font-size: large;  
+}
