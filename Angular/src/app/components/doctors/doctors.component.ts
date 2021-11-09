@@ -76,20 +76,6 @@ export class DoctorsComponent implements OnInit {
     this.list2 = false;
   }
 
-  // public onUpdateDiagnosis(diagnosis: patientForm): void {
-  //   let doctor = this.tokenService.getUser();
-  //   console.log(diagnosis);
-  //   this.diagnosisService.updatePatientDiagnosis(diagnosis).subscribe(
-  //     (response: patientForm) => {
-  //       console.log(response);
-  //       // this.activeDiagnosis();
-  //     },
-  //     (error: HttpErrorResponse) => {
-  //       alert(error.message);
-  //     }
-  //   );
-  // }
-
   public onUpdateDiagnosis(editForm:NgForm): void {
     let doctor = this.tokenService.getUser();
     let pform:string = `{
