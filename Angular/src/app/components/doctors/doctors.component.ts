@@ -120,7 +120,7 @@ export class DoctorsComponent implements OnInit {
     this.diagnosisService.updatePatientDiagnosis(pform).subscribe(
       (response: patientForm) => {
         console.log(response);
-        // this.activeDiagnosis();
+        this.activeDiagnosis();
       },
       (error: HttpErrorResponse) => {
         alert(error.message);
