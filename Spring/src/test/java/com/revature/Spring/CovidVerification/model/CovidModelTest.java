@@ -10,4 +10,6 @@ import org.springframework.test.context.junit4.SpringRunner;
 @RunWith(SpringRunner.class)
 @WebMvcTest(CovidVerificationController.class)
 public class CovidModelTest {
+
+
 }
