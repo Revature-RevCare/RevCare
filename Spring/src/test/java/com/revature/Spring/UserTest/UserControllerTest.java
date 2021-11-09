@@ -63,7 +63,7 @@ public class UserControllerTest {
 
     @Test
     public void getAllUsersTest() {
-        when(userRepo.findAll()).thenReturn(Stream.of(new User(1, "mike", "mikey",
+        when(userController.getAllUsers()).thenReturn(Stream.of(new User(1, "mike", "mikey",
                 "PHD","Doctor","test123@gmail.com", "working test mokito",
                 "7085555555")).collect(Collectors.toList()));
 
@@ -74,9 +74,9 @@ public class UserControllerTest {
     @Test
     public void getUserTest(){
         int user_id = 1;
-        when(userRepo.findById(user_id)).thenReturn(Optional.of(new User(1,"mike", "mikey",
+        when(userController.getUser(user_id)).thenReturn(new User(1,"mike", "mikey",
                 "PHD", "Doctor", "test123@gmial.com","working test mokito",
-                "7085555555")));
+                "7085555555"));
         assertEquals(user_id, userController.getUser(user_id).getUser_id());
     }
 
