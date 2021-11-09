@@ -15,8 +15,8 @@
 
 </style> -->
 <body>
-    <div class="button-container">
-        <div class="row g-3">
+    
+        <div class="row justify-content-evenly">
             <div class="col-md-4">
                 <button class="btn btn-primary btn-lg btn-block" (click)="clickEventOne()">Profile</button>
             </div>
@@ -27,15 +27,29 @@
                 <button class="btn btn-primary btn-lg btn-block" (click)="clickEventThree()">Patient Diagnosis</button>
             </div>
         </div>
-    </div>
+    
     
 
-    <div class="content" style="text-align: center;">
+    <div class="profile" style="text-align: center;">
         <div *ngIf="list1">
+<<<<<<< HEAD
             <h1>Welcome {{ user.first_name}} {{ user.last }}</h1>
             <p>Username: {{ user.username }}</p>
             <p>Job Title: {{ user.title }}</p>
             <p>Email: {{ user.email }}</p>
+=======
+            <br><br>
+            <h1>Welcome {{ user.first_name}} {{ user.last }}</h1>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+                <p>Username: {{ user.username }}</p>
+                <p>Job Title: {{ user.title }}</p>
+                <p>Email: {{ user.email }}</p>
+>>>>>>> styling
         </div>
         <div *ngIf="list2">
             <div class="table-responsive">
