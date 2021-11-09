@@ -6,14 +6,16 @@ import { NgForm } from '@angular/forms';
 import {patientForm} from 'src/app/models/patientDiagnos'
 import { DiagnosisService } from 'src/app/services/diagnosis.service';
 
-function openForm(){
-  document.getElementById("myForm")!.style.display = "block";
-  document.getElementById("body")!.style.filter = "blur(4px)";
+function openForm(){ //created this function to display our form as a pop-up
+  document.getElementById("myForm")!.style.display = "block"; //used block keyword to let HTML know to display our form
+  document.getElementById("body")!.style.filter = "blur(4px)"; //blur will blur the background content to make it look nicer
+  document.getElementById("body")!.style.pointerEvents = "none"; //pointerEvents to none will not let the mouse click anything else besides the form
 }
 
-function closeForm(){
-  document.getElementById("myForm")!.style.display = "none";
-  document.getElementById("body")!.style.filter = "blur(0px)";
+function closeForm(){ //with this function we will hide away or "close" our form
+  document.getElementById("myForm")!.style.display = "none"; //by stating none this will hide our form once finished
+  document.getElementById("body")!.style.filter = "blur(0px)"; //blur set to 0px will bring back the contents to a better focus
+  document.getElementById("body")!.style.pointerEvents = "all"; //pointerEvents set to all will allow all mouse event to happen again
 }
 
 
