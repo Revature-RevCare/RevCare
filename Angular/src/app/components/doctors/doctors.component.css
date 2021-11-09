@@ -1,6 +1,30 @@
 thead {
-    background-color: #fcb414;
+    background-color: #474c55;
+    font-weight: bolder;
+    color: white;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+
 }
+
+tbody {
+    background-color: white;
+    color: black;
+    outline: black;
+    height: auto;
+    overflow-y: auto;
+    position: relative;
+    margin-bottom: 100px;
+}
+
+.row {
+    background-color: #FCB414;
+    border-top-style: solid;
+}
+
+body {
+    height: 100%;
+}
+
 .btn {
     background-color: #F26925;
     color: #474C55;
@@ -8,4 +32,9 @@ thead {
 
 .row {
     background-color: #FCB414;
+}
+
+.profile {
+    font-weight: bolder;
+    font-size: large;  
 }

@@ -22,7 +22,7 @@ export class DoctorsComponent implements OnInit {
     user_id: 1,
     username: "Dan555",
     first_name: "Robert",
-    last_name: "Campbell",
+    last: "Campbell",
     title: "Doctor",
     email: "dr.campbell@gmail.com",
     password: "thispassword",
