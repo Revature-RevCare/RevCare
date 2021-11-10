@@ -10,6 +10,10 @@ import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 
+/**
+ * UserDetailsServiceImpl implements UserDetailsService
+ * contains override transactional method loadUserByUsername
+ */
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {
 
@@ -17,6 +21,12 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     UserRepo userRepo;
 
 
+    /**
+     * loadUserByUsername
+     * @param username String containing given username
+     * @return UserDetails object via UserDetailsImpl method build
+     * @throws UsernameNotFoundException
+     */
     @Override
     @Transactional
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {

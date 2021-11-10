@@ -8,9 +8,11 @@ import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * User entity model class annotated to connext to the DB table "users".
+ */
 @Entity
 @Table(name = "users")
-
 public class User {
 
     //Instance Variables
@@ -46,8 +48,18 @@ public class User {
     public User() {
     }
 
-
-
+    /**
+     * User all arg Constructor
+     * @param user_id
+     * @param first_name
+     * @param last
+     * @param education
+     * @param title
+     * @param email
+     * @param username
+     * @param password
+     * @param phone_number
+     */
     public User(int user_id, String first_name, String last, String education,
                 String title, String email, String username, String password, String phone_number) {
         this.user_id = user_id;
@@ -60,9 +72,6 @@ public class User {
         this.password = password;
         this.phone_number = phone_number;
     }
-
-
-
 
     // Getters and Setters
     public int getUser_id() {

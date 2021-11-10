@@ -9,6 +9,10 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import java.io.Serializable;
 
+/**
+ * CovidVerification class implements Serializable. Table annotated to match DB table "covid_verification".
+ * Uses lombok @AllArgsConstructor and @NoArgsConstructor annotations
+ */
 @Entity
 @Table(name = "covid_verification")
 @Data

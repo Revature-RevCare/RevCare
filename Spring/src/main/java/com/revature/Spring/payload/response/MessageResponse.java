@@ -4,6 +4,11 @@ public class MessageResponse {
 
     private String message;
 
+    /**
+     * Message response constructor.
+     *
+     * @param message A String containing the message.
+     */
     public MessageResponse(String message) {
         this.message = message;
     }

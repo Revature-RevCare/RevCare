@@ -14,7 +14,18 @@ public class JwtResponse {
     private String title;
     private List<String> roles;
 
+    /**
+     * The JwtResponse constructor.
+     * @param accessToken
+     * @param id
+     * @param username
+     * @param email
+     * @param title
+     * @param roles
+     */
+
     public JwtResponse(String accessToken, int id, String first_name, String last, String username, String email, String title, List<String> roles) {
+
         this.token = accessToken;
         this.id = id;
         this.first_name = first_name;

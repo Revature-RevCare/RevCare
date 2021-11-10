@@ -18,7 +18,15 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-
+/**
+ * The AuthTokenFilter class which extends the OncePerRequestFilter contains autowired instances of JwtUtils
+ * and UserDetailsServiceImpl named jwtUtils and userDetailsService respectively and a Logger instance variable named logger set to a logger
+ * generated in the LoggerFactory.
+ *
+ * It contains an override protected method doFilterInternal and a private method parseJwt which returns a String containing
+ * the authentication token header.
+ *
+ */
 public class AuthTokenFilter extends OncePerRequestFilter {
 
     @Autowired
