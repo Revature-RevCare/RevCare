@@ -14,7 +14,6 @@ public class JwtResponse {
     private String title;
     private List<String> roles;
 
-<<<<<<< HEAD
     /**
      * The JwtResponse constructor.
      * @param accessToken
@@ -24,10 +23,9 @@ public class JwtResponse {
      * @param title
      * @param roles
      */
-    public JwtResponse(String accessToken, int id, String username, String email, String title, List<String> roles) {
-=======
+
     public JwtResponse(String accessToken, int id, String first_name, String last, String username, String email, String title, List<String> roles) {
->>>>>>> origin/staging
+
         this.token = accessToken;
         this.id = id;
         this.first_name = first_name;

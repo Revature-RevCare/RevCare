@@ -67,7 +67,7 @@ public class PatientDiagnosis implements Serializable {
     public PatientDiagnosis() {
     }
 
-<<<<<<< HEAD
+
     /**
      * PatientDiagnosis with args constructor 1
      * @param fname
@@ -93,9 +93,7 @@ public class PatientDiagnosis implements Serializable {
      * @param doctor_id
      */
     public PatientDiagnosis(String fname, String lname, Integer patient_age, String complaint, String symptoms, String med_history, String fam_history, String allergies, String current_meds, LocalDate current_date, Integer patient_weight, Integer patient_height, float patient_temp, Integer blood_pressure_high, Integer blood_pressure_low, Integer pulse, boolean doctor_verification, String diagnosis_text, Integer covid_id, Integer nurse_id, Integer doctor_id) {
-=======
-    public PatientDiagnosis(String fname, String lname, Integer patient_age, String complaint, String symptoms, String med_history, String fam_history, String allergies, String current_meds, LocalDate current_date, float patient_weight, float patient_height, float patient_temp, Integer blood_pressure_high, Integer blood_pressure_low, Integer pulse, boolean doctor_verification, String diagnosis_text, Integer covid_id, Integer nurse_id, Integer doctor_id) {
->>>>>>> origin/staging
+
         this.fname = fname;
         this.lname = lname;
         this.patient_age = patient_age;

@@ -38,28 +38,26 @@ public class CovidVerificationController {
     public CovidVerificationController(CovidVerificationService covidService){
         this.covidService = covidService;
     }
-<<<<<<< HEAD
+
 
     /**
      * getAllCovidApplications returns a ResponseEntity. It maps to the base location for getting all covid applications.
      * @return ResponseEntity with HTTP Status OK.
      */
-=======
->>>>>>> origin/staging
+
    @GetMapping()
     public ResponseEntity<List<CovidVerification>> getAllCovidApplications(){
         List<CovidVerification> covidVerificationList = covidService.findAll();
         return new ResponseEntity<>(covidVerificationList, HttpStatus.OK);
    }
-<<<<<<< HEAD
+
 
     /**
      * getApplicationById maps to /find/id and returns a ResponseEntity for the given id
      * @param id Integer containing the id
      * @return The ResponseEntity for the given id
      */
-=======
->>>>>>> origin/staging
+
    @GetMapping("/find/{id}")
     public ResponseEntity<CovidVerification> getApplicationById(@PathVariable("id") Integer id){
         CovidVerification covid = covidService.getById(id);
