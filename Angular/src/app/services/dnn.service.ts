@@ -12,7 +12,7 @@ import { TokenStorageService } from './token-storage.service';
 })
 export class DnnService {
 
-  private baseUrl: string = "http://localhost:8080/diagnosis";
+  private baseUrl: string = "http://ec2-54-89-183-177.compute-1.amazonaws.com:8080/revcare/diagnosis";
 
   constructor(private http: HttpClient, private tokenStorage: TokenStorageService) { }
 
