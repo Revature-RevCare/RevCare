@@ -43,6 +43,7 @@ export class NursesComponent implements OnInit {
     this.activeDiagnosis();
     this.tokenService.getToken(); 
     this.tokenService.getUser();
+    
   }
 
   click() {

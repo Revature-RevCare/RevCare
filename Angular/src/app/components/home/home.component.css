@@ -1,7 +1,7 @@
 
-*{
-width: 100%;
-height: 800px;
+.container{
+/* width: 100%;
+height: 800px; */
 
 background: #F26925;  /* fallback for old browsers */
 background: -webkit-linear-gradient(to right, #FCB414, #F26925);  /* Chrome 10-25, Safari 5.1-6 */
@@ -9,3 +9,22 @@ background: linear-gradient(to right, #FCB414, #F26925); /* W3C, IE 10+/ Edge, F
 }
 
 /*  */
+
+.img-container{
+    /* width: 100%;
+    align-self: center; */
+   /* justify-content: center; */
+    /* margin-top: 20px;
+    padding: 20px 10px 15px 20px; */
+    /* padding-top: 10px;
+    padding-bottom: 15px; */
+    /* display: block;
+  margin-left: auto;
+  margin-right: auto; */
+}
+
+.header{
+    font-family: futura-bold;
+    padding-top: 10px;
+    text-align: center;
+}
