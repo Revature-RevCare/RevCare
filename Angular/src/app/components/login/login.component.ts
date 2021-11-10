@@ -50,11 +50,11 @@ export class LoginComponent implements OnInit {
         console.log(this.tokenStorage.getUser().token);
         console.log(this.tokenStorage.getUser().title);
         if (this.tokenStorage.getUser().title == "Doctor"){
-          // this.router.navigate(['doctors']);
-          window.location.href="doctors"
+           this.router.navigate(['doctors']);
+          // window.location.href="doctors"
         } else {
-          // this.router.navigate(['nurses']);
-          window.location.href="nurses"
+           this.router.navigate(['nurses']);
+          // window.location.href="nurses"
         }
        
       },
