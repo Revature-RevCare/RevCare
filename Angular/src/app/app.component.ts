@@ -30,11 +30,15 @@ export class AppComponent implements OnInit {
 
       this.username = user.username;
       this.first_name = user.first_name;
+      
     }
+    
   }
 
   logout(): void {
     this.tokenStorageService.signOut();
     window.location.reload();
   }
+
+  
 }

@@ -37,6 +37,7 @@ export class DoctorsComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    
     this.activeDiagnosis();
   }
 
