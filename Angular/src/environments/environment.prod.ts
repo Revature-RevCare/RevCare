@@ -1,4 +1,4 @@
 export const environment = {
-  baseUrl: 'http://localhost:8080',
+  baseUrl: 'http://ec2-54-89-183-177.compute-1.amazonaws.com:8080/revcare',
   production: true
 };

@@ -10,7 +10,7 @@ import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
   providedIn: 'root'
 })
 export class CovidVerificationService {
-  private baseUrl: string = "http://localhost:8080/covid";
+  private baseUrl: string = "http://ec2-54-89-183-177.compute-1.amazonaws.com:8080/revcare/covid";
   // headers = new HttpHeaders().set('content-type', 'application/json')
   // .set('Access-Control-Allow-Origin', '*')
 
