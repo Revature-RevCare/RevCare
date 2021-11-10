@@ -1,4 +1,4 @@
-<style>
+<!-- <style>
     .column {
         float: left;
         width: 33.3%;
@@ -13,26 +13,29 @@
         clear: both;
     }
 
-</style>
+</style> -->
 <body>
-    <div class="row">
-        <div class="column">
-            <button class="btn btn-primary" (click)="clickEventOne()">Profile</button>
-        </div>
-        <div class="column">
-            <button class="btn btn-primary" (click)="clickEventTwo()">List of Patient Diagnosis</button>       
-        </div>
-        <div class="column">
-            <button class="btn btn-primary" (click)="clickEventThree()">Patient Diagnosis</button>
+    <div class="button-container">
+        <div class="row g-3">
+            <div class="col-md-4">
+                <button class="btn btn-primary btn-lg btn-block" (click)="clickEventOne()">Profile</button>
+            </div>
+            <div class="col-md-4">
+                <button class="btn btn-primary btn-lg btn-block" (click)="clickEventTwo()">List of Patient Diagnosis</button>       
+            </div>
+            <div class="col-md-4">
+                <button class="btn btn-primary btn-lg btn-block" (click)="clickEventThree()">Patient Diagnosis</button>
+            </div>
         </div>
     </div>
+    
 
     <div class="content" style="text-align: center;">
         <div *ngIf="list1">
-            <h1>Welcome {{ user.title }} {{ user.username }}</h1>
-            <p>{{ user.first_name}} {{ user.last_name }}</p>
-            <p>{{ user.email }}</p>
-            <p>{{ user.phone_number }}</p>
+            <h1>Welcome {{ user.first_name}} {{ user.last }}</h1>
+            <p>Username: {{ user.username }}</p>
+            <p>Job Title: {{ user.title }}</p>
+            <p>Email: {{ user.email }}</p>
         </div>
         <div *ngIf="list2">
             <div class="table-responsive">
@@ -61,7 +64,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr (click)="click()" *ngFor="let patientForm of alldiagnosis">
+                        <tr style="height: 80px; overflow-y: auto;" (click)="click()" *ngFor="let patientForm of alldiagnosis">
                             <th scope="row">{{patientForm.id}}</th>
                             <td>{{patientForm.fname}}</td>  
                             <td>{{patientForm.lname}}</td>

@@ -19,7 +19,7 @@ export class NursesComponent implements OnInit {
     user_id: 1,
     username: "Dan4444",
     first_name: "Dan",
-    last_name: "Felleman",
+    last: "Felleman",
     title: "Nurse",
     email: "nurse.danl@gmail.com",
     password: "password",
@@ -35,16 +35,14 @@ export class NursesComponent implements OnInit {
   //                            .set('authorization', this.jwtToken);
 ;
   
-  constructor(private dnnService: DnnService, private tokenStorage: TokenStorageService) {
-    this.user = this.tokenStorage.getUser();
+  constructor(private dnnService: DnnService, private tokenService: TokenStorageService) { 
+    this.user = tokenService.getUser();
     console.log(this.user);
-   } 
-
-
+  }
   ngOnInit(): void {
     this.activeDiagnosis();
-    this.tokenStorage.getToken(); 
-    //this.tokenStorage.getUser();
+    this.tokenService.getToken(); 
+    this.tokenService.getUser();
   }
 
   click() {

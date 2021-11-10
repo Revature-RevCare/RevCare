@@ -1,175 +1,154 @@
-<body id="body">
-<div class="container bootstrap snippets bootdey">
-    <h1 class="text-primary"><span class="glyphicon glyphicon-user"></span>Patient Diagnosis</h1>
-    <hr>
+<section id="body">
+  <div class="container">
+    <!-- <h1 class="text-primary"><span class="glyphicon glyphicon-user"></span>Patient Diagnosis</h1>
+    <hr> -->
   
   
     <!-- edit form column -->
-    <div class="col-md-9 personal-info">
-      <div class="alert alert-info alert-dismissable">
+    <div class="personal-info">
+      <!-- <div class="alert alert-info alert-dismissable">
         <a class="panel-close close" data-dismiss="alert">×</a>
         <i class="fa fa-coffee"></i>
         This is an <strong>.alert</strong>. Use this to show important messages to the user.
-      </div>
+      </div> -->
       <h3>Patient info</h3>
   
-      <form class="form-horizontal" role="form">
-        <div class="form-group">
-          <label class="col-lg-3 control-label">Patient id:</label>
-          <div class="col-lg-8">
-            <input class="form-control" type="number" value="dey-dey">
+      <form #f="ngForm" (ngSubmit)="onSubmit(f)" class="form-horizontal justify-content-center" novalidate>
+        <div class="row g-2">
+          <div class="col-md-4">
+            <label class="col-form-label">First Name:</label>
+          <!-- </div>
+          <div class="col-auto"> -->
+            <input id="fname" name="fname" class="form-control" type="text" value="" ngModel>
+          </div>
+
+          <div class="col-md-4">
+            <label class="col-form-label">Last Name:</label>
+          <!-- </div>
+          <div class="col-auto"> -->
+            <input id="lname" name="lname" class="form-control" type="text" value="" ngModel>
+          </div>
+
+          <div class="col-md-4">
+            <label class="col-form-label">Patient Age:</label>
+          <!-- </div>
+          <div class="col-auto"> -->
+            <input id="age" name="age" class="form-control" type="number" step="1" value="" ngModel>
           </div>
         </div>
-        <div class="form-group">
-          <label class="col-lg-3 control-label">First name:</label>
-          <div class="col-lg-8">
-            <input class="form-control" type="text" value="">
+
+        <hr>
+
+        <div class="row g-3">
+          <div class="col-md-3">
+            <label class="col-form-label">Patient Discomfort:</label>
+          <!-- </div>
+          <div class="col-auto"> -->
+            <input id="discomfort" name="discomfort" class="form-control" type="text" value="" ngModel>
+          <!-- </div>
+
+          <div class="col-md-3"> -->
+            <label class="col-form-label">Symptoms:</label>
+          <!-- </div>
+          <div class="col-auto"> -->
+            <input id="symptoms" name="symptoms" class="form-control" type="text" value="" ngModel>
           </div>
-          <div class="form-group">
-            <label class="col-lg-3 control-label">Last name:</label>
-            <div class="col-lg-8">
-              <input class="form-control" type="text" value="">
-            </div>
+
+          <div class="col-md-3">
+            <label class="col-form-label">Medical History:</label>
+          <!-- </div>
+          <div class="col-auto"> -->
+            <input id="mhistory" name="mhistory" class="form-control" type="text" value="" ngModel>
+          <!-- </div>
+
+          <div class="col-md-3"> -->
+            <label class="col-form-label">Family History:</label>
+          <!-- </div>
+          <div class="col-auto"> -->
+            <input id="fhistory" name="fhistory" class="form-control" type="text" value="" ngModel>
           </div>
-          <div class="form-group">
-            <label class="col-lg-3 control-label">Patient age:</label>
-            <div class="col-lg-8">
-              <input class="form-control" type="number" value="">
-            </div>
+
+          <div class="col-md-3">
+            <label class="col-form-label">Allergies:</label>
+          <!-- </div>
+          <div class="col-auto">  -->
+            <input id="allergies" name="allergies" class="form-control" type="text" value="" ngModel>
+          
+            <label class="col-form-label">Current Medication:</label>
+          <!-- </div>
+          <div class="col-auto"> -->
+            <input id="meds" name="meds" class="form-control" type="text" value="" ngModel>
           </div>
-          <div class="form-group">
-            <label class="col-lg-3 control-label">Patient discomfort:</label>
-            <div class="col-lg-8">
-              <input class="form-control" type="text" value="">
-            </div>
+
+          <div class="col-md-3">
+            <label class="col-form-label">Weight:</label>
+          <!-- </div>
+          <div class="col-auto"> -->
+            <input id="weight" name="weight" class="form-control" type="number" step="0.1" value="" ngModel>
+          
+            <label class="col-form-label">Height:</label>
+          <!-- </div>
+          <div class="col-auto">         -->
+            <input id="height" name="height" class="form-control" type="number" step="0.1" value="" ngModel>
           </div>
-          <div class="form-group">
-            <label class="col-lg-3 control-label">Symptoms:</label>
-            <div class="col-lg-8">
-              <input class="form-control" type="text" value="">
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="col-lg-3 control-label">Medical history:</label>
-            <div class="col-lg-8">
-              <input class="form-control" type="text" value="">
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="col-lg-3 control-label">Family history:</label>
-            <div class="col-lg-8">
-              <input class="form-control" type="text" value="">
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="col-lg-3 control-label">Allergies:</label>
-            <div class="col-lg-8">
-              <input class="form-control" type="text" value="">
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="col-lg-3 control-label">Current medication:</label>
-            <div class="col-lg-8">
-              <input class="form-control" type="text" value="">
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="col-lg-3 control-label">Today's date:</label>
-            <div class="col-lg-8">
-              <input class="form-control" type="date" value="">
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="col-lg-3 control-label"> Weight:</label>
-            <div class="col-lg-8">
-              <input class="form-control" type="number" value="">
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="col-lg-3 control-label">Height:</label>
-            <div class="col-lg-8">
-              <input class="form-control" type="number" value="">
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="col-lg-3 control-label">Temperature:</label>
-            <div class="col-lg-8">
-              <input class="form-control" type="number" value="">
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="col-lg-3 control-label">Blood Pressure High:</label>
-            <div class="col-lg-8">
-              <input class="form-control" type="number" value="">
-              
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="col-lg-3 control-label">Blood Pressure Low:</label>
-            <div class="col-lg-8">
-              <input class="form-control" type="number" value="">
-              
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="col-lg-3 control-label">Pulse:</label>
-            <div class="col-lg-8">
-              <input class="form-control" type="number" value="">
-            </div>
-            <div class="form-group">
-              <label class="col-lg-3 control-label">Doctor verification:</label>
-              <div class="col-lg-8">
-                <input type="checkbox" id="verified" name="verified" value="verified">
-                <label for="verified"> Verified</label><br>
+        </div>
+
+        <hr>
+
+        <div class="row justify-content-between">
+          <div class="col-md-6">
+            <label class="col-form-label">Temperature:</label>
+          <!-- </div>
+          <div class="col-md-4"> -->
+            <input id="temperature" name="temperature" class="form-control" type="number" step="0.1" value="" ngModel>
+
+            <label class="col-form-label">Blood Pressure High:</label>
+            <!-- </div>
+            <div class="col-auto"> -->
+              <input id="bphigh" name="bphigh" class="form-control" type="number" step="1" value="" ngModel>
+            
+              <label class="col-form-label">Blood Pressure Low:</label>
+            <!-- </div>
+            <div class="col-auto"> -->
+              <input id="bplow" name="bplow" class="form-control" type="number" step="1" value="" ngModel>
   
-              </div>
-            </div>
-            <div class="form-group">
-              <label class="col-lg-3 control-label">Diagnosis:</label>
-              <div class="col-lg-8">
-                <textarea class="form-control" type="text" value=""></textarea>
-              </div>
-            </div>
-            <div class="form-group">
-              <label class="col-lg-3 control-label">Covid id:</label>
-              <div class="col-lg-8">
-                <input class="form-control" type="number" value="dey-dey">
-              </div>
-            </div>
-            <div class="form-group">
-              <label class="col-lg-3 control-label">Nurse id:</label>
-              <div class="col-lg-8">
-                <input class="form-control" type="number" value="dey-dey">
-              </div>
-            </div>
-            <div class="form-group">
-              <label class="col-lg-3 control-label">Doctor id:</label>
-              <div class="col-lg-8">
-                <input class="form-control" type="number" value="dey-dey">
-              </div>
-            </div>
-            <br>
-            <input type="submit" value="Submit">
+              <label class="col-form-label">Pulse:</label>
+              <!-- </div>
+              <div class="col-auto"> -->
+              <input id="pulse" name="pulse" class="form-control" type="number" step="1" value="" ngModel>
+          </div>
+
+          <div class="col-md-6">
+            <label class="col-form-label">Diagnosis:</label>
+          <!-- </div>
+          <div class="col-auto"> -->
+            <textarea id="diagnosis" name="diagnosis" class="form-control" rows="10" type="text" value="" ngModel></textarea>
+          </div>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="column justify-content-center">
+            <button data-dismiss="modal" class="btn btn-info btn-lg btn-block">Submit</button>
           </div>
         </div>
       </form>
     </div>
   </div>
-  <hr>
-</body>
+</section>
 
   <!-- <button class="openModal" id="openModal" #openModal [hidden]="true" data-toggle="modal" data-target="#exampleModal"> -->
 <div class="form-popup" id="myForm">
   <div class="back">
       <div class="modal-body">
         <div class="card-body" id="covid">
-          <h1 style="text-align: center;">Covid Form</h1>
+          <h1 class="head" style="text-align: center;">Covid Form</h1>
+            <div class="vacc-body">
             <label>Covid Contamination: 
             <select class="covidStatus" #CovidStatus>
-                  <option type="text" value="no exposure to covid"  >No Exposure to Covid</option>
-                  <option type="text" value="exposed to covid" >I was Exposed to Covid</option>
-                  <option type="text" value="had covid"  >I Had Covid</option>
-                  <option type="text" value="have covid" >I Have Covid</option>
+                  <option type="text" value="no exposure to covid"  >No Exposure to</option>
+                  <option type="text" value="exposed to covid" >I was Exposed to</option>
+                  <option type="text" value="had covid"  >I Had</option>
+                  <option type="text" value="have covid" >I Have</option>
                 </select> Covid-19</label>
                   <br>
                   <div class="vaccine">
@@ -177,7 +156,9 @@
                 <input type="checkbox" value="true" name="vaccinated" ngModel #vaccinationStatus></label>
             </div>
                 <button class="w-100 btn btn-lg btn-primary" type="submit" (click)="addCovid({covidStatus: CovidStatus.value, vaccinationStatus: vaccinationStatus.checked})" data-dismiss="modal">Submit Form</button>
-    </div>      </div>
+              </div>
+            </div>     
+        </div>
       <div class="modal-footer">
       </div>
 </div>
