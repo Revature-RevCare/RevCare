@@ -6,7 +6,7 @@
     <nav class="navbar navbar-expand navbar-dark bg-dark">
       <ul class="navbar-nav mr-auto" routerLinkActive="active">
         <li class="nav-item">
-          <a href="/home" class="nav-link" routerLink="home">Home </a>
+           <h3 class="home">RevCare</h3>
         </li>
         <li class="nav-item" *ngIf="showAdminBoard">
           <a href="/admin" class="nav-link" routerLink="admin">Admin Board</a>
@@ -14,9 +14,7 @@
         <li class="nav-item" *ngIf="showModeratorBoard">
           <a href="/mod" class="nav-link" routerLink="mod">Moderator Board</a>
         </li>
-        <li class="nav-item">
-          <a href="/user" class="nav-link" *ngIf="isLoggedIn" routerLink="user">User</a>
-        </li>
+        
       </ul>
 
       <ul class="navbar-nav ml-auto" *ngIf="!isLoggedIn">
@@ -49,7 +47,7 @@
 <app-doctors></app-doctors> -->
 <!-- <app-nurses></app-nurses>  -->
 <!-- * * * * * * * * * * Header * * * * * * * * * * * -->
-<!-- <app-header></app-header> -->
+<app-header></app-header>
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- <app-nurses></app-nurses>  -->
 <!-- * * * * * * * * * * * The content * * * * * * * * * * * -->
