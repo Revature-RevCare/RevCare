@@ -31,6 +31,15 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+/**
+ * LoginController class is annotated for a RestController with RequestMapping at "/api/auth"
+ * <br><br>
+ * <b>Methods</b>
+ * <ul>
+ *      <li>authenticateUser Authenticates the user.</li>
+ *      <li>registerUser Registers a new user. Signup.</li>
+ *  </ul>
+ */
 @RestController
 @RequestMapping("/api/auth")
 public class LoginController {
@@ -50,6 +59,11 @@ public class LoginController {
     @Autowired
     JwtUtils jwtUtils;
 
+    /**
+     * authenticateUser maps to "/signin".
+     * @param loginRequest
+     * @return a ResponseEntity containing user id, username, email, title, and roles.
+     */
     @PostMapping("/signin")
     public ResponseEntity<?> authenticateUser(@Valid @RequestBody LoginRequest loginRequest){ //took out loginrequest
         Authentication authentication = authenticationManager.authenticate(
@@ -72,6 +86,12 @@ public class LoginController {
 
     }
 
+    /**
+     * registerUser maps to "/signup" and creates a new user containing first name, last name, education, username, Email,
+     *      * password, phone number, title and roles.
+     * @param signupRequest
+     * @return errors or a ResponseEntity with success.
+     */
     @PostMapping("/signup")
     public ResponseEntity<?> registerUser(@Valid @RequestBody SignupRequest signupRequest){
 

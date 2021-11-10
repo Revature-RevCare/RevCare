@@ -1,0 +1,7 @@
+com.revature.Spring
+com.revature.Spring.controllers
+com.revature.Spring.models
+com.revature.Spring.payload.request
+com.revature.Spring.payload.response
+com.revature.Spring.security
+com.revature.Spring.services

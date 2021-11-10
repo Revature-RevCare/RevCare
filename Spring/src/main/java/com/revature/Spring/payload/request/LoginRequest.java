@@ -3,6 +3,9 @@ package com.revature.Spring.payload.request;
 
 import javax.validation.constraints.NotBlank;
 
+/**
+ * Class LoginRequest with default no-arg constructor.
+ */
 public class LoginRequest {
 
     @NotBlank

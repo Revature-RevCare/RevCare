@@ -2,6 +2,9 @@ package com.revature.Spring.payload.request;
 
 import java.util.Set;
 
+/**
+ * Class SignupRequest uses default no-arg constructor.
+ */
 public class SignupRequest {
 
     private String username;

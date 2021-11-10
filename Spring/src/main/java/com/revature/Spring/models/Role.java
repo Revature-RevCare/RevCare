@@ -2,6 +2,9 @@ package com.revature.Spring.models;
 
 import javax.persistence.*;
 
+/**
+ * Entity entity model class annotated to match the DB table "roles"
+ */
 @Entity
 @Table(name = "roles")
 public class Role {
@@ -19,6 +22,10 @@ public class Role {
     public Role() {
     }
 
+    /**
+     * Role constructor
+     * @param name ERole instance
+     */
     public Role(ERole name) {
         this.name = name;
     }

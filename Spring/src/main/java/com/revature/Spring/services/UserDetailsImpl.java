@@ -15,7 +15,9 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.Column;
 
-
+/**
+ * UserDetailsImpl implements UserDetails interface
+ */
 public class UserDetailsImpl implements UserDetails {
 
     private static final long serialVersionUID = 1L;
