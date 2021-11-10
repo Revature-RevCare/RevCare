@@ -1,3 +1,4 @@
+
 package com.revature.Spring.repositories;
 
 import com.revature.Spring.models.PatientDiagnosis;
@@ -7,5 +8,8 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface PatientDiagnosisRepo extends JpaRepository<PatientDiagnosis, Integer> {
-    PatientDiagnosis findByConfirm(Boolean confirm);
+//    PatientDiagnosis findByConfirm(Boolean confirm);
 }
+
+
+

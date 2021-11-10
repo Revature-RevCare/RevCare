@@ -1,0 +1,91 @@
+.card-body{    padding-left: 10px;
+    padding-right: 10px;
+    height: auto;
+    width: 400px;
+    box-shadow: 5px 6px 5px rgba(0, 0, 0, 0.445);
+    background-color: rgb(185, 185, 186);
+    color: rgb(20, 20, 20);
+    border-radius: 8px;
+}
+.head{
+    font-family: Futura, Trebuchet MS, Arial, sans-serif; 
+    font-size: 30px; 
+    font-style: normal; 
+    font-variant: normal; 
+    font-weight: 600; 
+    padding-top: 10px;
+}
+.vacc-body{
+    font-family: Futura, Trebuchet MS, Arial, sans-serif; 
+    font-size: 15px; 
+    font-style: normal; 
+    font-weight: 100; 
+}
+.vaccine{
+    padding-top: 10px; 
+    padding-bottom: 10px; 
+}
+.form-popup {
+    position: absolute;
+    top: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 500px;
+    height: 500px;  
+    box-shadow: rgb(3, 3, 3);
+    z-index: 9;
+    color: white;
+}
+button.btn-primary{
+    background-color: rgb(242, 105, 38);
+    color: white;
+    border-radius: 3px;
+    border-style: none;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-bottom: 10px;
+    box-shadow: 1px 1px 1px rgb(65, 24, 4);
+}
+button.btn-primary:hover{
+    background-color: white;
+    color:  #F26925;
+    border: 1px solid #F26925;
+}
+
+.container {
+    width: stretch;
+}
+.btn {
+    margin-top: 10px;
+    background-color: #72A4C2;
+    border-style: solid;
+    border-color: white;
+    font-weight: bolder;
+}
+
+.personal-info {
+    background-color: white;
+}
+
+form {
+    background-color: white;
+    border-style: solid;
+    border-width: 10px;
+    border-color: #72A4C2;
+    border-radius: 10px;
+    padding-top: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 5px;
+}
+section {
+    background-color: white;
+}
+
+body {
+    height: 800px;
+}

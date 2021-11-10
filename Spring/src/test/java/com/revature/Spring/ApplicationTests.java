@@ -23,10 +23,6 @@ import static org.mockito.Mockito.*;
 @SpringBootTest
 class ApplicationTests {
 
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
 //	@Autowired
 //	private final CovidVerificationService covidService;
 //

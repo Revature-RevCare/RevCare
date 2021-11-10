@@ -1,0 +1,38 @@
+.btn {
+    background-color: #f26925;
+    margin-top: 20px;
+    border-style: solid 2px;
+    border: none;
+    box-shadow: black;
+}
+
+thead {
+    background-color: #474c55;
+    font-weight: bolder;
+    color: white;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+
+}
+
+tbody {
+    background-color: white;
+    color: black;
+    outline: black;
+    height: auto;
+    overflow-y: auto;
+    position: relative;
+    margin-bottom: 100px;
+}
+
+.row {
+    background-color: #FCB414;
+    border-top-style: solid;
+}
+
+body {
+    height: 100%;
+}
+
+/* .button-container {
+    height: 800px;
+} */
